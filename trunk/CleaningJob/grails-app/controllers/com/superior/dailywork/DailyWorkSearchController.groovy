@@ -11,7 +11,8 @@ class DailyWorkSearchController {
 		DailyWorkSearchCommand dailySearchCommandInstance = new DailyWorkSearchCommand()
 		respond dailySearchCommandInstance , view:'search'
 	}
-	
+
+	// comment	
 	def search(DailyWorkSearchCommand dailySearchCommandInstance) {
 		if (dailySearchCommandInstance == null) {
 			respond dailySearchCommandInstance , view:'search'
