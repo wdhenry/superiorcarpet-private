@@ -88,6 +88,7 @@
 			<div id="controller-list" role="navigation">
 				<h2>Main Menu:</h2>
 				<ol>
+					<li class="controller"><a href="/CleaningJob/customer/index">Add/Maintain Customers</a></li>
 					<li class="controller"><a href="/CleaningJob/cleaningJob/index">Enter A Cleaning Job</a></li>
 					<li class="controller"><a href="/CleaningJob/extractionJob/index">Enter A Water Extraction Job</a></li>
 					<li class="controller"><a href="/CleaningJob/dailyWork/index">Enter Team Daily Work</a></li>

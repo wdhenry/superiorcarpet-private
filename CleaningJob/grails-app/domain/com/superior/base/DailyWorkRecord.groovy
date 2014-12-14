@@ -6,11 +6,11 @@ class DailyWorkRecord {
 
 	Date date
 	String lead
-	String leadHours
-	String leadMinutes
+	int leadHours
+	int leadMinutes
 	String helper
-	String helperHours
-	String helperMinutes
+	int helperHours
+	int helperMinutes
 	String vanNumber
 	BigDecimal milesDriven
 	BigDecimal hoursOnUnit

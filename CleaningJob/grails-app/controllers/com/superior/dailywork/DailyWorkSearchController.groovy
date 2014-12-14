@@ -11,8 +11,7 @@ class DailyWorkSearchController {
 		DailyWorkSearchCommand dailySearchCommandInstance = new DailyWorkSearchCommand()
 		respond dailySearchCommandInstance , view:'search'
 	}
-
-	// comment	
+	
 	def search(DailyWorkSearchCommand dailySearchCommandInstance) {
 		if (dailySearchCommandInstance == null) {
 			respond dailySearchCommandInstance , view:'search'
@@ -21,11 +20,22 @@ class DailyWorkSearchController {
 		
 		def workList = new ArrayList()
 		if (dailySearchCommandInstance.lead != "NONE") {
-			workList = DailyWorkRecord.findAllByLead(dailySearchCommandInstance.lead)
+			def query = DailyWorkRecord.where {
+				lead == dailySearchCommandInstance.lead &&
+				date in dailySearchCommandInstance.leadLowDate..dailySearchCommandInstance.leadHighDate
+			}
+			workList = query.list()
 		} else if (dailySearchCommandInstance.helper != "NONE") {
-			workList = DailyWorkRecord.findAllByHelper(dailySearchCommandInstance.helper)
+			def query = DailyWorkRecord.where {
+				helper == dailySearchCommandInstance.helper &&
+				date in dailySearchCommandInstance.helperLowDate..dailySearchCommandInstance.helperHighDate
+			}
+			workList = query.list()
 		} else if (dailySearchCommandInstance.lowDate != null) {
-			workList = DailyWorkRecord.findAllByDate(dailySearchCommandInstance.lowDate)
+			def query = DailyWorkRecord.where {
+				date in dailySearchCommandInstance.lowDate..dailySearchCommandInstance.highDate
+			}
+			workList = query.list()
 		} else {
 			dailySearchCommandInstance.errors.rejectValue('', 'No Search Criteria Entered   ')
 			respond dailySearchCommandInstance.errors, view:'search'
@@ -33,6 +43,17 @@ class DailyWorkSearchController {
 		}
 				
 		if (workList.size() > 0) {
+			def DailyWorkRecord totals = new DailyWorkRecord(date: null, lead: "Totals", helper: " ", vanNumber: " ", leadHours: 0, leadMinutes: 0, helperHours: 0, helperMinutes: 0, milesDriven: 0, hoursOnUnit: 0, dollarsCollected: 0.00)
+			for (DailyWorkRecord wr : workList) {
+				totals.leadHours = totals.leadHours + wr.leadHours
+				totals.leadMinutes = totals.leadMinutes + wr.leadMinutes
+				totals.helperHours = totals.helperHours + wr.helperHours
+				totals.helperMinutes = totals.helperMinutes + wr.helperMinutes
+				totals.milesDriven = totals.milesDriven + wr.milesDriven
+				totals.hoursOnUnit = totals.hoursOnUnit + wr.hoursOnUnit
+				totals.dollarsCollected = totals.dollarsCollected + wr.dollarsCollected
+			}
+			workList.add(totals)
 			respond workList, view:'summary', model:[work: workList,
 												dailyWorkJobInstanceCount: workList.size()]
 			return
