@@ -104,6 +104,8 @@
 					<li class="controller"><a href="/CleaningJob/cleaningJobSearch/index">Search for Cleaning Jobs</a></li>
 					<li class="controller"><a href="/CleaningJob/extractionJobSearch/index">Search for Extraction Jobs</a></li>
 					<li class="controller"><a href="/CleaningJob/dailyWorkSearch/index">Search for Daily Work</a></li>
+					<li class="controller"><a href="/CleaningJob/dehumidifiersList/index">List of Dehumidifiers</a></li>
+					<li class="controller"><a href="/CleaningJob/fansList/index">List of Fans</a></li>
 				</ol>
 			</div>
 			
