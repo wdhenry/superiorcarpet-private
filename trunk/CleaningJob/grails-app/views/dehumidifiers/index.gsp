@@ -50,7 +50,9 @@
 					
 						<td><g:formatBoolean boolean="${dehumidifiersInstance.isIn}" /></td>
 					
-						<td>${fieldValue(bean: dehumidifiersInstance, field: "hours")}</td>
+						<td><g:formatNumber number="${dehumidifiersInstance.hours}"
+								type="number" maxFractionDigits="2" minFractionDigits="2" />
+						</td>
 					
 						<td>${fieldValue(bean: dehumidifiersInstance, field: "jobId")}</td>
 					

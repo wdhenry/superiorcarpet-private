@@ -47,7 +47,8 @@
 					</td>
 					<td>
 						<div class="fieldcontain">
-							<g:fieldValue bean="${dehumidifiersInstance}" field="hours"/>
+							<g:formatNumber number="${dehumidifiersInstance.hours}"
+								type="number" maxFractionDigits="2" minFractionDigits="2" />
 						</div>
 					</td>
 					<td>
@@ -73,7 +74,7 @@
 					<td></td>
 					<td>
 						<div class="fieldcontain">
-							<g:formatDate date="${dehumidifiersInstance?.dateOut}" />
+							<g:formatDate format="MM-dd-yyyy" date="${dehumidifiersInstance?.dateOut}" />
 						</div>
 					</td>
 					<td>
@@ -101,7 +102,7 @@
 					<td></td>
 					<td>
 						<div class="fieldcontain">
-							<g:formatDate date="${dehumidifiersInstance?.dateIn}" />
+							<g:formatDate format="MM-dd-yyyy" date="${dehumidifiersInstance?.dateIn}" />
 						</div>
 					</td>
 					<td>

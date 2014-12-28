@@ -53,30 +53,31 @@
 				<g:each in="${dailyWorkRecordInstanceList}" status="i" var="dailyWorkRecordInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-<%--						<td><g:link action="newJob" id="${dailyWorkRecordInstance.id}">${fieldValue(bean: dailyWorkRecordInstance, field: "id")}</g:link></td>--%>
 						<td>${fieldValue(bean: dailyWorkRecordInstance, field: "id")}</td>
 					
-						<td>${fieldValue(bean: dailyWorkRecordInstance, field: "date")}</td>
+						<td><g:formatDate format="MM-dd-yyyy" date="${dailyWorkRecordInstance.date}" /></td>
 						
 						<td>${fieldValue(bean: dailyWorkRecordInstance, field: "lead")}</td>
 					
-						<td>${fieldValue(bean: dailyWorkRecordInstance, field: "leadHours")}</td>
+						<td><g:formatNumber number="${dailyWorkRecordInstance.leadHours}" type="number" /></td>
 					
-						<td>${fieldValue(bean: dailyWorkRecordInstance, field: "leadMinutes")}</td>
+						<td><g:formatNumber number="${dailyWorkRecordInstance.leadMinutes}" type="number" /></td>
 					
 						<td>${fieldValue(bean: dailyWorkRecordInstance, field: "helper")}</td>
 					
-						<td>${fieldValue(bean: dailyWorkRecordInstance, field: "helperHours")}</td>
-						
-						<td>${fieldValue(bean: dailyWorkRecordInstance, field: "helperMinutes")}</td>
-						
+						<td><g:formatNumber number="${dailyWorkRecordInstance.helperHours}" type="number" /></td>
+					
+						<td><g:formatNumber number="${dailyWorkRecordInstance.helperMinutes}" type="number" /></td>
+					
 						<td>${fieldValue(bean: dailyWorkRecordInstance, field: "vanNumber")}</td>
 						
-						<td>${fieldValue(bean: dailyWorkRecordInstance, field: "milesDriven")}</td>
-						
-						<td>${fieldValue(bean: dailyWorkRecordInstance, field: "hoursOnUnit")}</td>
-						
-						<td>${fieldValue(bean: dailyWorkRecordInstance, field: "dollarsCollected")}</td>
+						<td><g:formatNumber number="${dailyWorkRecordInstance.milesDriven}" type="number" /></td>
+					
+						<td><g:formatNumber number="${dailyWorkRecordInstance.hoursOnUnit}" type="number" /></td>
+					
+						<td><g:formatNumber number="${dailyWorkRecordInstance.dollarsCollected}"
+								type="currency" maxFractionDigits="2" currencyCode="USD" />
+						</td>
 					
 					</tr>
 				</g:each>

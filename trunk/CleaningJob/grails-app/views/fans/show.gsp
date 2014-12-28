@@ -72,16 +72,7 @@
 				<li class="fieldcontain">
 					<span id="dateOut-label" class="property-label"><g:message code="fans.dateOut.label" default="Date Out" /></span>
 					
-						<span class="property-value" aria-labelledby="dateOut-label"><g:formatDate date="${fansInstance?.dateOut}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${fansInstance?.dateIn}">
-				<li class="fieldcontain">
-					<span id="dateIn-label" class="property-label"><g:message code="fans.dateIn.label" default="Date In" /></span>
-					
-						<span class="property-value" aria-labelledby="dateIn-label"><g:formatDate date="${fansInstance?.dateIn}" /></span>
+						<span class="property-value" aria-labelledby="dateOut-label"><g:formatDate format="MM-dd-yyyy" date="${fansInstance?.dateOut}" /></span>
 					
 				</li>
 				</g:if>
@@ -103,8 +94,17 @@
 					
 				</li>
 				</g:if>
+				
+				<g:if test="${fansInstance?.isIn}">
+				<li class="fieldcontain">
+					<span id="dateIn-label" class="property-label"><g:message code="fans.dateIn.label" default="Date In" /></span>
+					
+						<span class="property-value" aria-labelledby="dateIn-label"><g:formatDate format="MM-dd-yyyy" date="${fansInstance?.dateIn}" /></span>
+					
+				</li>
+				</g:if>
 			
-				<g:if test="${fansInstance?.leadIn}">
+				<g:if test="${fansInstance?.isIn}">
 				<li class="fieldcontain">
 					<span id="leadIn-label" class="property-label"><g:message code="fans.leadIn.label" default="Lead In" /></span>
 					
@@ -113,7 +113,7 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${fansInstance?.helperIn}">
+				<g:if test="${fansInstance?.isIn}">
 				<li class="fieldcontain">
 					<span id="helperIn-label" class="property-label"><g:message code="fans.helperIn.label" default="Helper In" /></span>
 					

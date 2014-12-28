@@ -49,30 +49,32 @@
 					</tr>
 				</thead>
 				<tbody>
-				<g:each in="${work}" status="i" var="dailyworkInstance">
+				<g:each in="${work}" status="i" var="dailyWorkInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td>${fieldValue(bean: dailyworkInstance, field: "date")}</td>
+						<td><g:formatDate format="MM-dd-yyyy" date="${dailyWorkInstance.date}" /></td>
 						
-						<td>${fieldValue(bean: dailyworkInstance, field: "lead")}</td>
+						<td>${fieldValue(bean: dailyWorkInstance, field: "lead")}</td>
 						
-						<td>${fieldValue(bean: dailyworkInstance, field: "leadHours")}</td>
+						<td><g:formatNumber number="${dailyWorkInstance.leadHours}" type="number" /></td>
 					
-						<td>${fieldValue(bean: dailyworkInstance, field: "leadMinutes")}</td>
+						<td><g:formatNumber number="${dailyWorkInstance.leadMinutes}" type="number" /></td>
 					
-						<td>${fieldValue(bean: dailyworkInstance, field: "helper")}</td>
+						<td>${fieldValue(bean: dailyWorkInstance, field: "helper")}</td>
 					
-						<td>${fieldValue(bean: dailyworkInstance, field: "helperHours")}</td>
-						
-						<td>${fieldValue(bean: dailyworkInstance, field: "helperMinutes")}</td>
+						<td><g:formatNumber number="${dailyWorkInstance.helperHours}" type="number" /></td>
 					
-						<td>${fieldValue(bean: dailyworkInstance, field: "vanNumber")}</td>
+						<td><g:formatNumber number="${dailyWorkInstance.helperMinutes}" type="number" /></td>
+					
+						<td>${fieldValue(bean: dailyWorkInstance, field: "vanNumber")}</td>
 						
-						<td>${fieldValue(bean: dailyworkInstance, field: "milesDriven")}</td>
-						
-						<td>${fieldValue(bean: dailyworkInstance, field: "hoursOnUnit")}</td>
-						
-						<td>${fieldValue(bean: dailyworkInstance, field: "dollarsCollected")}</td>
+						<td><g:formatNumber number="${dailyWorkInstance.milesDriven}" type="number" /></td>
+					
+						<td><g:formatNumber number="${dailyWorkInstance.hoursOnUnit}" type="number" /></td>
+					
+						<td><g:formatNumber number="${dailyWorkInstance.dollarsCollected}"
+								type="currency" maxFractionDigits="2" currencyCode="USD" />
+						</td>
 					
 					</tr>
 				</g:each>

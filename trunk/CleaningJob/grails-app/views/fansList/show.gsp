@@ -66,7 +66,7 @@
 					<td></td>
 					<td>
 						<div class="fieldcontain">
-							<g:formatDate date="${fansInstance?.dateOut}" />
+							<g:formatDate format="MM-dd-yyyy" date="${fansInstance?.dateOut}" />
 						</div>
 					</td>
 					<td>
@@ -93,7 +93,7 @@
 					<td></td>
 					<td>
 						<div class="fieldcontain">
-							<g:formatDate date="${fansInstance?.dateIn}" />
+							<g:formatDate format="MM-dd-yyyy" date="${fansInstance?.dateIn}" />
 						</div>
 					</td>
 					<td>

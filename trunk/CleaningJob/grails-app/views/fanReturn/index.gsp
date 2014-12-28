@@ -57,13 +57,13 @@
 					
 						<td>${fieldValue(bean: fanInstance, field: "jobId")}</td>
 					
-						<td><g:formatDate date="${fanInstance.dateOut}" /></td>
+						<td><g:formatDate format="MM-dd-yyyy" date="${fanInstance.dateOut}" /></td>
 						
 						<td>${fieldValue(bean: fanInstance, field: "leadOut")}</td>
 						
 						<td>${fieldValue(bean: fanInstance, field: "helperOut")}</td>
 						
-						<td>${fieldValue(bean: fanInstance, field: "dateIn")}</td>
+						<td><g:formatDate format="MM-dd-yyyy" date="${fanInstance.dateIn}" /></td>
 						
 						<td>${fieldValue(bean: fanInstance, field: "leadIn")}</td>
 						

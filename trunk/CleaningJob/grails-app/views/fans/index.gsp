@@ -52,7 +52,7 @@
 					
 						<td>${fieldValue(bean: fansInstance, field: "jobId")}</td>
 					
-						<td><g:formatDate date="${fansInstance.dateOut}" /></td>
+						<td><g:formatDate format="MM-dd-yyyy" date="${fansInstance.dateOut}" /></td>
 					
 					</tr>
 				</g:each>

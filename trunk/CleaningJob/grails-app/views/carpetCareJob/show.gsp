@@ -36,7 +36,7 @@
 				<li class="fieldcontain">
 					<span id="date-label" class="property-label"><g:message code="carpetCareJob.date.label" default="Date" /></span>
 					
-						<span class="property-value" aria-labelledby="date-label"><g:formatDate date="${carpetCareJobInstance?.date}" /></span>
+						<span class="property-value" aria-labelledby="date-label"><g:formatDate format="MM-dd-yyyy" date="${carpetCareJobInstance?.date}" /></span>
 					
 				</li>
 				</g:if>
@@ -72,7 +72,10 @@
 				<li class="fieldcontain">
 					<span id="groupRate-label" class="property-label"><g:message code="carpetCareJob.groupRate.label" default="Group Rate" /></span>
 					
-						<span class="property-value" aria-labelledby="groupRate-label"><g:fieldValue bean="${carpetCareJobInstance}" field="groupRate"/></span>
+						<span class="property-value" aria-labelledby="groupRate-label">
+								<g:formatNumber number="${carpetCareJobInstance.groupRate}"
+								type="currency" maxFractionDigits="2" currencyCode="USD" />
+						</span>
 					
 				</li>
 				</g:if>
