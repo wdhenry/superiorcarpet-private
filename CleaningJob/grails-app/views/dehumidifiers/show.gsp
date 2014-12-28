@@ -63,7 +63,10 @@
 				<li class="fieldcontain">
 					<span id="hours-label" class="property-label"><g:message code="dehumidifiers.hours.label" default="Hours" /></span>
 					
-						<span class="property-value" aria-labelledby="hours-label"><g:fieldValue bean="${dehumidifiersInstance}" field="hours"/></span>
+						<span class="property-value" aria-labelledby="hours-label">
+							<g:formatNumber number="${dehumidifiersInstance.hours}"
+								type="number" maxFractionDigits="2" minFractionDigits="2" />
+						</span>
 					
 				</li>
 				</g:if>
@@ -81,20 +84,11 @@
 				<li class="fieldcontain">
 					<span id="dateOut-label" class="property-label"><g:message code="dehumidifiers.dateOut.label" default="Date Out" /></span>
 					
-						<span class="property-value" aria-labelledby="dateOut-label"><g:formatDate date="${dehumidifiersInstance?.dateOut}" /></span>
+						<span class="property-value" aria-labelledby="dateOut-label"><g:formatDate format="MM-dd-yyyy" date="${dehumidifiersInstance?.dateOut}" /></span>
 					
 				</li>
 				</g:if>
-			
-				<g:if test="${dehumidifiersInstance?.dateIn}">
-				<li class="fieldcontain">
-					<span id="dateIn-label" class="property-label"><g:message code="dehumidifiers.dateIn.label" default="Date In" /></span>
-					
-						<span class="property-value" aria-labelledby="dateIn-label"><g:formatDate date="${dehumidifiersInstance?.dateIn}" /></span>
-					
-				</li>
-				</g:if>
-			
+				
 				<g:if test="${dehumidifiersInstance?.leadOut}">
 				<li class="fieldcontain">
 					<span id="leadOut-label" class="property-label"><g:message code="dehumidifiers.leadOut.label" default="Lead Out" /></span>
@@ -109,6 +103,15 @@
 					<span id="helperOut-label" class="property-label"><g:message code="dehumidifiers.helperOut.label" default="Helper Out" /></span>
 					
 						<span class="property-value" aria-labelledby="helperOut-label"><g:fieldValue bean="${dehumidifiersInstance}" field="helperOut"/></span>
+					
+				</li>
+				</g:if>
+				
+				<g:if test="${dehumidifiersInstance?.dateIn}">
+				<li class="fieldcontain">
+					<span id="dateIn-label" class="property-label"><g:message code="dehumidifiers.dateIn.label" default="Date In" /></span>
+					
+						<span class="property-value" aria-labelledby="dateIn-label"><g:formatDate format="MM-dd-yyyy" date="${dehumidifiersInstance?.dateIn}" /></span>
 					
 				</li>
 				</g:if>

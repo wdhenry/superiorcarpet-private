@@ -43,15 +43,15 @@
 					
 						<td><g:link action="details" id="${waterExtractionJobInstance.id}">${fieldValue(bean: waterExtractionJobInstance, field: "id")}</g:link></td>
 					
-						<td><g:formatDate date="${waterExtractionJobInstance.date}" /></td>
+						<td><g:formatDate format="MM-dd-yyyy" date="${waterExtractionJobInstance.date}" /></td>
 					
 						<td>${fieldValue(bean: waterExtractionJobInstance, field: "lead")}</td>
 					
 						<td>${fieldValue(bean: waterExtractionJobInstance, field: "helper")}</td>
 					
-						<td><g:formatDate date="${waterExtractionJobInstance.startTime}" /></td>
+						<td><g:formatDate format="hh:mm a" date="${waterExtractionJobInstance.startTime}" /></td>
 					
-						<td><g:formatDate date="${waterExtractionJobInstance.endTime}" /></td>
+						<td><g:formatDate format="hh:mm a" date="${waterExtractionJobInstance.endTime}" /></td>
 					
 					</tr>
 				</g:each>

@@ -57,13 +57,13 @@
 					
 						<td>${fieldValue(bean: dehumidifiersInstance, field: "jobId")}</td>
 						
-						<td>${fieldValue(bean: dehumidifiersInstance, field: "dateOut")}</td>
+						<td><g:formatDate format="MM-dd-yyyy" date="${dehumidifiersInstance?.dateOut}" /></td>
 					
 						<td>${fieldValue(bean: dehumidifiersInstance, field: "leadOut")}</td>
 						
 						<td>${fieldValue(bean: dehumidifiersInstance, field: "helperOut")}</td>
 						
-						<td>${fieldValue(bean: dehumidifiersInstance, field: "dateIn")}</td>
+						<td><g:formatDate format="MM-dd-yyyy" date="${dehumidifiersInstance?.dateIn}" /></td>
 						
 						<td>${fieldValue(bean: dehumidifiersInstance, field: "leadIn")}</td>
 						

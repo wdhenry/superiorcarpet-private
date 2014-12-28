@@ -43,7 +43,7 @@
 					
 						<td><g:link action="details" id="${carpetCareJobInstance.id}">${fieldValue(bean: carpetCareJobInstance, field: "id")}</g:link></td>
 					
-						<td><g:formatDate date="${carpetCareJobInstance.date}" /></td>
+						<td><g:formatDate format="MM-dd-yyyy" date="${carpetCareJobInstance.date}" /></td>
 					
 						<td>${fieldValue(bean: carpetCareJobInstance, field: "lead")}</td>
 					
@@ -51,7 +51,8 @@
 					
 						<td>${fieldValue(bean: carpetCareJobInstance, field: "groupName")}</td>
 					
-						<td>${fieldValue(bean: carpetCareJobInstance, field: "groupRate")}</td>
+						<td><g:formatNumber number="${carpetCareJobInstance.groupRate}"
+								type="currency" maxFractionDigits="2" currencyCode="USD" /></td>
 					
 					</tr>
 				</g:each>
