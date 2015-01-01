@@ -21,7 +21,7 @@
 				<g:select name="lead" from="${com.superior.base.Lead.list()}"
 						optionKey="leadName" optionValue="leadName" 
 						value="${extractionJobCommandInstance?.lead}"
-						noSelection="${['null':'Pick a Name']}"/>
+						noSelection="${['Pick a Name':'Pick a Name']}"/>
 			</div>
 		</td>
 		<td>	
@@ -29,7 +29,7 @@
 				<g:select name="helper" from="${com.superior.base.Helper.list()}"
 						optionKey="helperName" optionValue="helperName" 
 						value="${extractionJobCommandInstance?.helper}"
-						noSelection="${['null':'None']}"/>
+						noSelection="${['None':'None']}"/>
 			</div>
 		</td>
 		<td>
