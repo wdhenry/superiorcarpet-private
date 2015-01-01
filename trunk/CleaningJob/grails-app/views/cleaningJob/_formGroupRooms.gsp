@@ -14,7 +14,7 @@
 				<g:select name="roomName1" from="${com.superior.base.RoomName.list()}"
 						optionKey="roomName" optionValue="roomName" 
 						value="${cleaningJobCommandInstance?.roomName1}"
-						noSelection="${['null':'Pick a Room']}"/>
+						noSelection="${['Pick a Room':'Pick a Room']}"/>
 			</div>
 		</td>
 		<td>
@@ -48,7 +48,7 @@
 				<g:select name="roomName2" from="${com.superior.base.RoomName.list()}"
 						optionKey="roomName" optionValue="roomName" 
 						value="${cleaningJobCommandInstance?.roomName2}"
-						noSelection="${['null':'Pick a Room']}"/>
+						noSelection="${['Pick a Room':'Pick a Room']}"/>
 			</div>
 		</td>
 		<td>
@@ -81,7 +81,7 @@
 				<g:select name="roomName3" from="${com.superior.base.RoomName.list()}"
 						optionKey="roomName" optionValue="roomName" 
 						value="${cleaningJobCommandInstance?.roomName3}"
-						noSelection="${['null':'Pick a Room']}"/>
+						noSelection="${['Pick a Room':'Pick a Room']}"/>
 			</div>
 		</td>
 		<td>
@@ -114,7 +114,7 @@
 				<g:select name="roomName4" from="${com.superior.base.RoomName.list()}"
 						optionKey="roomName" optionValue="roomName" 
 						value="${cleaningJobCommandInstance?.roomName4}"
-						noSelection="${['null':'Pick a Room']}"/>
+						noSelection="${['Pick a Room':'Pick a Room']}"/>
 			</div>
 		</td>
 		<td>
@@ -147,7 +147,7 @@
 				<g:select name="roomName5" from="${com.superior.base.RoomName.list()}"
 						optionKey="roomName" optionValue="roomName" 
 						value="${cleaningJobCommandInstance?.roomName5}"
-						noSelection="${['null':'Pick a Room']}"/>
+						noSelection="${['Pick a Room':'Pick a Room']}"/>
 			</div>
 		</td>
 		<td>

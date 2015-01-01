@@ -8,7 +8,7 @@
 				<g:select name="miscChargesName" from="${com.superior.base.MiscChargesName.list()}"
 				 	optionKey="miscChargesName" optionValue="miscChargesName"
 					value="${cleaningJobCommandInstance?.miscChargesName}" 
-					noSelection="${['null':'Pick Misc. Description']}"/>
+					noSelection="${['Pick Misc. Description':'Pick Misc. Description']}"/>
 			</div>
 		</td>
 		<td>

@@ -21,7 +21,7 @@
 				<g:select name="lead" from="${com.superior.base.Lead.list()}"
 						optionKey="leadName" optionValue="leadName" 
 						value="${cleaningJobCommandInstance?.lead}"
-						noSelection="${['null':'Pick a Name']}"/>
+						noSelection="${['Pick a Name':'Pick a Name']}"/>
 			</div>
 		</td>
 		<td>	
@@ -29,7 +29,7 @@
 				<g:select name="helper" from="${com.superior.base.Helper.list()}"
 						optionKey="helperName" optionValue="helperName" 
 						value="${cleaningJobCommandInstance?.helper}"
-						noSelection="${['null':'None']}"/>
+						noSelection="${['None':'None']}"/>
 			</div>
 		</td>
 		<td>
@@ -54,7 +54,7 @@
 					<g:select name="groupName" from="${com.superior.base.RoomGroup.list()}"
 						optionKey="groupName" optionValue="groupName" 
 						value="${cleaningJobCommandInstance?.groupName}"
-						noSelection="${['null':'No Special']}"
+						noSelection="${['No Special':'No Special']}"
 						onSelect="showHideRow(value)" />
 			</div>
 		</td>
@@ -89,7 +89,7 @@
 			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairDirection1', 'error')} ">
 				<g:select name="stairDirection1" from="${['Down', 'Up']}"
 					value="${stairDirection1}" 
-					noSelection="${['null':'Pick a Direction']}"/>
+					noSelection="${['Pick a Direction':'Pick a Direction']}"/>
 			</div>
 		</td>
 		<td>
@@ -108,7 +108,7 @@
 			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairDirection2', 'error')} ">
 				<g:select name="stairDirection2" from="${['Down', 'Up']}"
 					value="${stairDirection2}" 
-					noSelection="${['null':'Pick a Direction']}"/>
+					noSelection="${['Pick a Direction':'Pick a Direction']}"/>
 			</div>
 		</td>
 		<td>
@@ -127,7 +127,7 @@
 			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairDirection3', 'error')} ">
 				<g:select name="stairDirection3" from="${['Down', 'Up']}"
 					value="${stairDirection3}" 
-					noSelection="${['null':'Pick a Direction']}"/>
+					noSelection="${['Pick a Direction':'Pick a Direction']}"/>
 			</div>
 		</td>
 		<td>

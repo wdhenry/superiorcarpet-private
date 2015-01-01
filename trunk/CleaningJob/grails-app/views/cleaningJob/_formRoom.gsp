@@ -12,7 +12,7 @@
 				<g:select name="roomName" from="${com.superior.base.RoomName.list()}"
 						optionKey="roomName" optionValue="roomName" 
 						value="${cleaningJobCommandInstance?.roomName}"
-						noSelection="${['null':'Pick a Room']}"/>
+						noSelection="${['Pick a Room':'Pick a Room']}"/>
 			</div>
 		</td>
 		<td>
