@@ -26,7 +26,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:dehumidifiersInstance, action:'updat']" >
+			<g:form url="[resource:dehumidifiersInstance, action:'update']" >
 				<g:hiddenField name="version" value="${dehumidifiersInstance?.version}" />
 				<fieldset class="form">
 					<g:render template="form"/>
