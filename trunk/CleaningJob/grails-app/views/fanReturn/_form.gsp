@@ -50,7 +50,7 @@
 				<g:select name="leadIn" from="${com.superior.base.Lead.list()}"
 					optionKey="leadName" optionValue="leadName" 
 					value="${fansInstance?.leadIn}"
-					noSelection="${['null':'Pick a Name']}"/>
+					noSelection="${['Pick a Name':'Pick a Name']}"/>
 			</g:if>
 		</td>
 		<td>
@@ -61,7 +61,7 @@
 				<g:select name="helperIn" from="${com.superior.base.Helper.list()}"
 					optionKey="helperName" optionValue="helperName" 
 					value="${fansInstance?.helperIn}"
-					noSelection="${['null':'None']}"/>
+					noSelection="${['None':'None']}"/>
 			</g:if>
 		</td>
 	</tr>
