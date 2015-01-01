@@ -10,7 +10,7 @@
 				<g:select name="upholsteryName" from="${com.superior.base.UpholsteryName.list()}"
 						optionKey="upholsteryName" optionValue="upholsteryName" 
 						value="${cleaningJobCommandInstance?.upholsteryName}"
-						noSelection="${['null':'Pick Upholstery Name']}"/>
+						noSelection="${['Pick Upholstery Name':'Pick Upholstery Name']}"/>
 			</div>
 		</td>
 		<td>
