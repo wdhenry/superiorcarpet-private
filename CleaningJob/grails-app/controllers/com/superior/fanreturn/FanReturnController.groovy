@@ -14,29 +14,6 @@ class FanReturnController {
         respond Fans.list(params), model:[fanInstanceCount: Fans.count()]
     }
 
-    @Transactional
-    def save(Fans fansInstance) {
-        if (fansInstance == null) {
-            notFound()
-            return
-        }
-
-        if (fansInstance.hasErrors()) {
-            respond fansInstance.errors, view:'create'
-            return
-        }
-
-        fansInstance.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'fans.label', default: 'Fans'), fansInstance.id])
-                redirect fansInstance
-            }
-            '*' { respond fansInstance, [status: CREATED] }
-        }
-    }
-
     def edit(Fans fansInstance) {
         respond fansInstance
     }
@@ -52,35 +29,23 @@ class FanReturnController {
             respond fansInstance.errors, view:'edit'
             return
         }
+		
+		Fans f = Fans.findByIdNumber(fansInstance.id)
+		f.dateIn = fansInstance.dateIn
+		f.isIn = true
+		f.leadIn = fansInstance.leadIn
+		f.helperIn = fansInstance.helperIn
 
-        fansInstance.save flush:true
+		if (!f.save(flush:true)) {
+			fansInstance.errors.reject(
+				'Error checking in Fan',
+				['', 'class Fans'] as Object[],
+				'Error checking in Fan')
+			respond fansInstance.errors, view:'edit'
+			return
+		}
 
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Fans.label', default: 'Fans'), fansInstance.id])
-                redirect fansInstance
-            }
-            '*'{ respond fansInstance, [status: OK] }
-        }
-    }
-
-    @Transactional
-    def delete(Fans fansInstance) {
-
-        if (fansInstance == null) {
-            notFound()
-            return
-        }
-
-        fansInstance.delete flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Fans.label', default: 'Fans'), fansInstance.id])
-                redirect action:"index", method:"GET"
-            }
-            '*'{ render status: NO_CONTENT }
-        }
+		redirect action: "index", controller: "fanReturn"
     }
 
     protected void notFound() {

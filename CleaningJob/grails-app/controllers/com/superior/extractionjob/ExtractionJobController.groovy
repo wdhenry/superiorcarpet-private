@@ -245,7 +245,7 @@ class ExtractionJobController {
 					'Error saving Fan 4 record',
 					['', 'class Fans'] as Object[],
 					'Error saving Fan 4 record')
-				respond waerExtractionJobCommandInstance.errors, view:'newJob'
+				respond waterExtractionJobCommandInstance.errors, view:'newJob'
 				return
 			}
 		}
