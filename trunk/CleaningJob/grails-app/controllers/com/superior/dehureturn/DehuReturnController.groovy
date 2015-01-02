@@ -21,30 +21,7 @@ class DehuReturnController {
     def create() {
         respond new Dehumidifiers(params)
     }
-
-    @Transactional
-    def save(Dehumidifiers dehumidifiersInstance) {
-        if (dehumidifiersInstance == null) {
-            notFound()
-            return
-        }
-
-        if (dehumidifiersInstance.hasErrors()) {
-            respond dehumidifiersInstance.errors, view:'create'
-            return
-        }
-
-        dehumidifiersInstance.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'dehumidifiers.label', default: 'Dehumidifiers'), dehumidifiersInstance.id])
-                redirect dehumidifiersInstance
-            }
-            '*' { respond dehumidifiersInstance, [status: CREATED] }
-        }
-    }
-
+    
     def edit(Dehumidifiers dehumidifiersInstance) {
         respond dehumidifiersInstance
     }
@@ -61,35 +38,22 @@ class DehuReturnController {
             return
         }
 
-        if (!dehumidifiersInstance.save(flush:true)) {
+		Dehumidifiers f = Dehumidifiers.findByIdNumber(dehumidifiersInstance.id)
+		f.dateIn = dehumidifiersInstance.dateIn
+		f.isIn = true
+		f.leadIn = dehumidifiersInstance.leadIn
+		f.helperIn = dehumidifiersInstance.helperIn
+
+		if (!f.save(flush:true)) {
 			dehumidifiersInstance.errors.reject(
-				'Error saving Dehumidifier record',
+				'Error checking in Dehumidifier',
 				['', 'class Dehumidifiers'] as Object[],
-				'Error saving Dehumidifier record')
+				'Error checking in Dehumidifier')
 			respond dehumidifiersInstance.errors, view:'edit'
 			return
 		}
 		
 		redirect action: "index", controller: "dehuReturn"
-    }
-
-    @Transactional
-    def delete(Dehumidifiers dehumidifiersInstance) {
-
-        if (dehumidifiersInstance == null) {
-            notFound()
-            return
-        }
-
-        dehumidifiersInstance.delete flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Dehumidifiers.label', default: 'Dehumidifiers'), dehumidifiersInstance.id])
-                redirect action:"index", method:"GET"
-            }
-            '*'{ render status: NO_CONTENT }
-        }
     }
 
     protected void notFound() {
