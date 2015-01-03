@@ -17,6 +17,8 @@ class CleaningJobCommand {
 	Long customerId
 	String firstName
 	String lastName
+	String addressLineOne
+	String addressLineTwo
 	String groupName
 	BigDecimal groupRate
 	String comment
@@ -104,6 +106,8 @@ class CleaningJobCommand {
 		customerId(blank:false)
 		firstName(nullable:true)
 		lastName(nullable:true)
+		addressLineOne(nullable:true)
+		addressLineTwo(nullable:true)
 		groupName(nullable:true)
 		groupRate(nullable:true, scale: 2, min: 0.00)
 		comment(nullable:true)
