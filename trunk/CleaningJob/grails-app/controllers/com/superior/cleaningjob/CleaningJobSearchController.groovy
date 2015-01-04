@@ -61,8 +61,7 @@ class CleaningJobSearchController {
 			
 			respond carpetCareJobInstance, view:'details', model:[cleaningJobCommandInstance: cleaningJobCommandInstance] 
 		} else if (jobList.size() > 0) {
-			respond jobList, view:'summary', model:[jobs: jobList,
-												carpetCareJobInstanceCount: jobList.size()]
+			respond jobList, view:'summary', model:[jobs: jobList, carpetCareJobInstanceCount: jobList.size()]
 			return
 		} else {
 			CustomerSearchCommand customerSearchCommandInstance = new CustomerSearchCommand();
