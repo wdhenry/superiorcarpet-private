@@ -19,7 +19,7 @@ class Fans {
 	static transients = [ 'displayValue' ]
 	
 	public String getDisplayValue() {
-			return "$idNumber, $model, $serialNumber"
+			return "$idNumber - $model - $serialNumber"
 	}
 	
     static constraints = {

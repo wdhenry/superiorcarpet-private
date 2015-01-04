@@ -13,15 +13,19 @@ class ExtractionJobCommand {
 	String date_month
 	String lead
 	String helper
+	Date startTime
 	String startHour
 	String startMinute
 	String startAmPm
+	Date endTime
 	String endHour
 	String endMinute
 	String endAmPm
 	Long customerId
 	String firstName
 	String lastName
+	String addressLineOne
+	String addressLineTwo
 	String fanId1
 	String fanId2
 	String fanId3
@@ -35,15 +39,19 @@ class ExtractionJobCommand {
 		date(blank:false)
 		lead(blank:false)
 		helper(nullable:true)
+		startTime(nullable:true)
 		startHour(blank:false)
 		startMinute(blank:false)
 		startAmPm(blank:false)
+		endTime(nullable:true)
 		endHour(blank:false)
 		endMinute(blank:false)
 		endAmPm(blank:false)
 		customerId(blank:false)
 		firstName(nullable:true)
 		lastName(nullable:true)
+		addressLineOne(nullable:true)
+		addressLineTwo(nullable:true)
 		fanId1(nullable:true)
 		fanId2(nullable:true)
 		fanId3(nullable:true)
