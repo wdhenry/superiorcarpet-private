@@ -1,4 +1,4 @@
-<%@ page import="com.superior.cleaningjob.CleaningJobCommand" %>
+<%@ page import="com.superior.cleaningjob.CleaningJobCommand"%>
 
 <table>
 	<tr>
@@ -12,29 +12,35 @@
 	</tr>
 	<tr>
 		<td>
-			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'date', 'error')} required">
-				<g:datePicker name="date" precision="day"  value="${cleaningJobCommandInstance?.date}"  />
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'date', 'error')} required">
+				<g:datePicker name="date" precision="day"
+					value="${cleaningJobCommandInstance?.date}" />
 			</div>
 		</td>
 		<td>
-			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'lead', 'error')} required">
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'lead', 'error')} required">
 				<g:select name="lead" from="${com.superior.base.Lead.list()}"
-						optionKey="leadName" optionValue="leadName" 
-						value="${cleaningJobCommandInstance?.lead}"
-						noSelection="${['Pick a Name':'Pick a Name']}"/>
-			</div>
-		</td>
-		<td>	
-			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'helper', 'error')} ">
-				<g:select name="helper" from="${com.superior.base.Helper.list()}"
-						optionKey="helperName" optionValue="helperName" 
-						value="${cleaningJobCommandInstance?.helper}"
-						noSelection="${['None':'None']}"/>
+					optionKey="leadName" optionValue="leadName"
+					value="${cleaningJobCommandInstance?.lead}"
+					noSelection="${['Pick a Name':'Pick a Name']}" />
 			</div>
 		</td>
 		<td>
-			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'customerId', 'error')} required">
-				<g:field name="customerId" type="hidden" value="${cleaningJobCommandInstance.customerId}" required=""/>
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'helper', 'error')} ">
+				<g:select name="helper" from="${com.superior.base.Helper.list()}"
+					optionKey="helperName" optionValue="helperName"
+					value="${cleaningJobCommandInstance?.helper}"
+					noSelection="${['None':'None']}" />
+			</div>
+		</td>
+		<td>
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'customerId', 'error')} required">
+				<g:field name="customerId" type="hidden"
+					value="${cleaningJobCommandInstance.customerId}" required="" />
 			</div>
 		</td>
 	</tr>
@@ -49,18 +55,22 @@
 		<th>Special Rate</th>
 	</tr>
 	<tr>
-		<td>		
-			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'groupName', 'error')} ">
-					<g:select name="groupName" from="${com.superior.base.RoomGroup.list()}"
-						optionKey="groupName" optionValue="groupName" 
-						value="${cleaningJobCommandInstance?.groupName}"
-						noSelection="${['No Special':'No Special']}"
-						onSelect="showHideRow(value)" />
+		<td>
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'groupName', 'error')} ">
+				<g:select name="groupName"
+					from="${com.superior.base.RoomGroup.list()}" optionKey="groupName"
+					optionValue="groupName"
+					value="${cleaningJobCommandInstance?.groupName}"
+					noSelection="${['No Special':'No Special']}"
+					onSelect="showHideRow(value)" />
 			</div>
 		</td>
-		<td>	
-			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'groupRate', 'error')} ">
-				<g:field name="groupRate" type="number" step="any" value="${fieldValue(bean: cleaningJobCommandInstance, field: 'groupRate')} "/>
+		<td>
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'groupRate', 'error')} ">
+				<g:field name="groupRate" type="number" step="any"
+					value="${fieldValue(bean: cleaningJobCommandInstance, field: 'groupRate')} " />
 			</div>
 		</td>
 	</tr>
@@ -86,58 +96,70 @@
 	</tr>
 	<tr>
 		<td>
-			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairDirection1', 'error')} ">
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairDirection1', 'error')} ">
 				<g:select name="stairDirection1" from="${['Down', 'Up']}"
-					value="${stairDirection1}" 
-					noSelection="${['Pick a Direction':'Pick a Direction']}"/>
+					value="${stairDirection1}"
+					noSelection="${['Pick a Direction':'Pick a Direction']}" />
 			</div>
 		</td>
 		<td>
-			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairCount1', 'error')} ">
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairCount1', 'error')} ">
 				<g:field name="stairCount1" type="number" value="${stairCount1}" />
 			</div>
 		</td>
 		<td>
-			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairCharge1', 'error')} ">
-				<g:field name="stairCharge1" type="number" step="any" value="${stairCharge1}" />
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairCharge1', 'error')} ">
+				<g:field name="stairCharge1" type="number" step="any"
+					value="${stairCharge1}" />
 			</div>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairDirection2', 'error')} ">
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairDirection2', 'error')} ">
 				<g:select name="stairDirection2" from="${['Down', 'Up']}"
-					value="${stairDirection2}" 
-					noSelection="${['Pick a Direction':'Pick a Direction']}"/>
+					value="${stairDirection2}"
+					noSelection="${['Pick a Direction':'Pick a Direction']}" />
 			</div>
 		</td>
 		<td>
-			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairCount2', 'error')} ">
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairCount2', 'error')} ">
 				<g:field name="stairCount2" type="number" value="${stairCount2}" />
 			</div>
 		</td>
 		<td>
-			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairCharge2', 'error')} ">
-				<g:field name="stairCharge2" type="number" step="any" value="${stairCharge2}" />
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairCharge2', 'error')} ">
+				<g:field name="stairCharge2" type="number" step="any"
+					value="${stairCharge2}" />
 			</div>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairDirection3', 'error')} ">
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairDirection3', 'error')} ">
 				<g:select name="stairDirection3" from="${['Down', 'Up']}"
-					value="${stairDirection3}" 
-					noSelection="${['Pick a Direction':'Pick a Direction']}"/>
+					value="${stairDirection3}"
+					noSelection="${['Pick a Direction':'Pick a Direction']}" />
 			</div>
 		</td>
 		<td>
-			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairCount3', 'error')} ">
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairCount3', 'error')} ">
 				<g:field name="stairCount3" type="number" value="${stairCount3}" />
 			</div>
 		</td>
 		<td>
-			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairCharge3', 'error')} ">
-				<g:field name="stairCharge3" type="number" step="any" value="${stairCharge3}" />
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairCharge3', 'error')} ">
+				<g:field name="stairCharge3" type="number" step="any"
+					value="${stairCharge3}" />
 			</div>
 		</td>
 	</tr>
@@ -173,8 +195,10 @@
 	</tr>
 	<tr>
 		<td>
-			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'comment', 'error')} required">
-				<g:textArea name="comment" value="${cleaningJobCommandInstance.comment}" />
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'comment', 'error')} required">
+				<g:textArea name="comment"
+					value="${cleaningJobCommandInstance.comment}" />
 			</div>
 		</td>
 	</tr>

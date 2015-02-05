@@ -16,14 +16,14 @@
 		<div id="create-job" class="content scaffold-create" role="main">
 			<h1><g:message code="default.create.label" args="[entityName]" /> for Customer: ${fieldValue(bean: cleaningJobCommandInstance, field: "firstName")} ${fieldValue(bean: cleaningJobCommandInstance, field: "lastName")}</h1>
 			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
+				<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<g:hasErrors bean="${cleaningJobCommandInstance}">
-			<ul class="errors" role="alert">
-				<g:eachError bean="${cleaningJobCommandInstance}" var="error">
-				<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-				</g:eachError>
-			</ul>
+				<ul class="errors" role="alert">
+					<g:eachError bean="${cleaningJobCommandInstance}" var="error">
+						<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
+					</g:eachError>
+				</ul>
 			</g:hasErrors>
 		
 			<g:form url="[controller:'cleaningJob', action:'saveJob']" >
@@ -35,5 +35,6 @@
 				</fieldset>
 			</g:form>
 		</div>
+		<g:javascript src="cleaningJob/newJob.js"/> 
 	</body>
 </html>
