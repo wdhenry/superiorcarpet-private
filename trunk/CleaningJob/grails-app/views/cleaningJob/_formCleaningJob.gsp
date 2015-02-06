@@ -59,11 +59,11 @@
 			<div
 				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'groupName', 'error')} ">
 				<g:select name="groupName"
-					from="${com.superior.base.RoomGroup.list()}" optionKey="groupName"
-					optionValue="groupName"
+					from="${com.superior.base.RoomGroup.list()}" 
+					optionKey="groupName"
+					optionValue="groupName" 
 					value="${cleaningJobCommandInstance?.groupName}"
-					noSelection="${['No Special':'No Special']}"
-					onSelect="showHideRow(value)" />
+					noSelection="${['No Special':'No Special']}"/>
 			</div>
 		</td>
 		<td>
