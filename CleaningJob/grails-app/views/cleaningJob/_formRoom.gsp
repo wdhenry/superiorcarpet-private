@@ -39,7 +39,6 @@
 		</td>
 		<td>
 			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'moveFurnitureCharge', 'error')} ">
-				<g:checkBox name="moveFurnitureCheck" value="${moveFurnitureCheck}" />
 				<g:field name="moveFurnitureCharge" type="number" step="any" value="${moveFurnitureCharge} "/>
 			</div>
 		</td>

@@ -49,8 +49,6 @@
 			<td>
 				<div
 					class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'moveFurnitureCharge1', 'error')} ">
-					<g:checkBox name="moveFurnitureCheck1"
-						value="${moveFurnitureCheck1}" />
 					<g:field name="moveFurnitureCharge1" type="number" step="any"
 						value="${moveFurnitureCharge1} " />
 				</div>
@@ -94,8 +92,6 @@
 			<td>
 				<div
 					class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'moveFurnitureCharge2', 'error')} ">
-					<g:checkBox name="moveFurnitureCheck2"
-						value="${moveFurnitureCheck2}" />
 					<g:field name="moveFurnitureCharge2" type="number" step="any"
 						value="${moveFurnitureCharge2} " />
 				</div>
@@ -138,8 +134,6 @@
 			<td>
 				<div
 					class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'moveFurnitureCharge3', 'error')} ">
-					<g:checkBox name="moveFurnitureCheck3"
-						value="${moveFurnitureCheck3}" />
 					<g:field name="moveFurnitureCharge3" type="number" step="any"
 						value="${moveFurnitureCharge3} " />
 				</div>
@@ -182,8 +176,6 @@
 			<td>
 				<div
 					class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'moveFurnitureCharge4', 'error')} ">
-					<g:checkBox name="moveFurnitureCheck4"
-						value="${moveFurnitureCheck4}" />
 					<g:field name="moveFurnitureCharge4" type="number" step="any"
 						value="${moveFurnitureCharge4} " />
 				</div>
@@ -226,8 +218,6 @@
 			<td>
 				<div
 					class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'moveFurnitureCharge5', 'error')} ">
-					<g:checkBox name="moveFurnitureCheck5"
-						value="${moveFurnitureCheck5}" />
 					<g:field name="moveFurnitureCharge5" type="number" step="any"
 						value="${moveFurnitureCharge5} " />
 				</div>

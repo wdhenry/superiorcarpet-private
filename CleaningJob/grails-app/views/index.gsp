@@ -114,6 +114,7 @@
 				<ol>
 					<li class="controller"><a href="/CleaningJob/lead/index">Lead Names</a></li>
 					<li class="controller"><a href="/CleaningJob/helper/index">Helper Names</a></li>
+					<li class="controller"><a href="/CleaningJob/fans/index">Rates</a></li>
 					<li class="controller"><a href="/CleaningJob/roomGroup/index">Room Groups</a></li>
 					<li class="controller"><a href="/CleaningJob/roomName/index">Room Names</a></li>
 					<li class="controller"><a href="/CleaningJob/upholsteryName/index">Upholstery Names</a></li>

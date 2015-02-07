@@ -6,6 +6,7 @@ import com.superior.base.Fans
 import com.superior.base.Helper
 import com.superior.base.Lead
 import com.superior.base.MiscChargesName
+import com.superior.base.Rates
 import com.superior.base.RoomGroup
 import com.superior.base.RoomName
 import com.superior.base.UpholsteryName
@@ -25,6 +26,16 @@ class BootStrap {
 		if (!Lead.count()) {
 			new Lead(leadName: "Brandon Henry").save(failOnError: true)
 			new Lead(leadName: "Mike Petithory").save(failOnError: true)
+		}
+		
+		if (!Rates.count()) {
+			new Rates(rateName: "CarpetCleaning", groupRate:10.00).save(failOnError: true)
+			new Rates(rateName: "CarpetPreVac", groupRate:1.00).save(failOnError: true)
+			new Rates(rateName: "CarpetProtector", groupRate:2.00).save(failOnError: true)
+			new Rates(rateName: "StairCleaning", groupRate:2.00).save(failOnError: true)
+			new Rates(rateName: "SurfaceCleaning", groupRate:6.00).save(failOnError: true)
+			new Rates(rateName: "SurfaceEtched", groupRate:1.50).save(failOnError: true)
+			new Rates(rateName: "SurfaceSealedWaxed", groupRate:5.75).save(failOnError: true)
 		}
 		
 		if (!RoomGroup.count()) {
@@ -48,11 +59,11 @@ class BootStrap {
 		}
 		
 		if (!UpholsteryName.count()) {
-			new UpholsteryName(upholsteryName: "Chair", upholsteryCharge: 0.00).save(failOnError: true)
-			new UpholsteryName(upholsteryName: "Couch", upholsteryCharge: 0.00).save(failOnError: true)
-			new UpholsteryName(upholsteryName: "Ottoman", upholsteryCharge: 0.00).save(failOnError: true)
-			new UpholsteryName(upholsteryName: "Recliner", upholsteryCharge: 0.00).save(failOnError: true)
-			new UpholsteryName(upholsteryName: "Sectional", upholsteryCharge: 0.00).save(failOnError: true)
+			new UpholsteryName(upholsteryName: "Chair", upholsteryCharge: 5.00, upholsteryProtectCharge: 6.00).save(failOnError: true)
+			new UpholsteryName(upholsteryName: "Couch", upholsteryCharge: 10.00, upholsteryProtectCharge: 11.00).save(failOnError: true)
+			new UpholsteryName(upholsteryName: "Ottoman", upholsteryCharge: 7.00, upholsteryProtectCharge: 8.00).save(failOnError: true)
+			new UpholsteryName(upholsteryName: "Recliner", upholsteryCharge: 15.00, upholsteryProtectCharge: 16.00).save(failOnError: true)
+			new UpholsteryName(upholsteryName: "Sectional", upholsteryCharge: 20.00, upholsteryProtectCharge: 21.00).save(failOnError: true)
 		}
 		
 		if (!MiscChargesName.count()) {
