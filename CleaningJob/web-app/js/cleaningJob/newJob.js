@@ -33,16 +33,20 @@
 
 		// Load the rate only when the user updated it (event is defined)...
 		if (event) {
-			jQuery.ajax({
-				type : 'POST',
-				url : '/CleaningJob/roomGroup/show/' + selectedIndex + '.json',
-				success : function(data, textStatus) {
-					$("#groupRate").val(data.groupCharge);
-				},
-				error : function(XMLHttpRequest, textStatus, errorThrown) {
-					console.error(errorThrown);
-				}
-			});
+			if (selectedIndex > 0) {
+				jQuery.ajax({
+					type : 'POST',
+					url : '/CleaningJob/roomGroup/show/' + selectedIndex + '.json',
+					success : function(data, textStatus) {
+						$("#groupRate").val(data.groupCharge);
+					},
+					error : function(XMLHttpRequest, textStatus, errorThrown) {
+						console.error(errorThrown);
+					}
+				});
+			} else {
+				$("#groupRate").val("");
+			}
 		}
 	}
 
