@@ -29,21 +29,21 @@ class BootStrap {
 		}
 		
 		if (!Rates.count()) {
-			new Rates(rateName: "CarpetCleaning", groupRate:10.00).save(failOnError: true)
-			new Rates(rateName: "CarpetPreVac", groupRate:1.00).save(failOnError: true)
-			new Rates(rateName: "CarpetProtector", groupRate:2.00).save(failOnError: true)
-			new Rates(rateName: "StairCleaning", groupRate:2.00).save(failOnError: true)
-			new Rates(rateName: "SurfaceCleaning", groupRate:6.00).save(failOnError: true)
-			new Rates(rateName: "SurfaceEtched", groupRate:1.50).save(failOnError: true)
-			new Rates(rateName: "SurfaceSealedWaxed", groupRate:5.75).save(failOnError: true)
+			new Rates(rateName: "CarpetCleaning", rateCharge:10.00).save(failOnError: true)
+			new Rates(rateName: "CarpetPreVac", rateCharge:1.00).save(failOnError: true)
+			new Rates(rateName: "CarpetProtector", rateCharge:2.00).save(failOnError: true)
+			new Rates(rateName: "StairCleaning", rateCharge:2.00).save(failOnError: true)
+			new Rates(rateName: "SurfaceCleaning", rateCharge:6.00).save(failOnError: true)
+			new Rates(rateName: "SurfaceEtched", rateCharge:1.50).save(failOnError: true)
+			new Rates(rateName: "SurfaceSealedWaxed", rateCharge:5.75).save(failOnError: true)
 		}
 		
 		if (!RoomGroup.count()) {
-			new RoomGroup(groupName: "1 Room Special", groupRate:29.95).save(failOnError: true)
-			new RoomGroup(groupName: "2 Room Special", groupRate:39.95).save(failOnError: true)
-			new RoomGroup(groupName: "3 Room Special", groupRate:49.95).save(failOnError: true)
-			new RoomGroup(groupName: "4 Room Special", groupRate:59.95).save(failOnError: true)
-			new RoomGroup(groupName: "5 Room Special", groupRate:69.95).save(failOnError: true)
+			new RoomGroup(groupName: "1 Room Special", groupCharge:29.95).save(failOnError: true)
+			new RoomGroup(groupName: "2 Room Special", groupCharge:39.95).save(failOnError: true)
+			new RoomGroup(groupName: "3 Room Special", groupCharge:49.95).save(failOnError: true)
+			new RoomGroup(groupName: "4 Room Special", groupCharge:59.95).save(failOnError: true)
+			new RoomGroup(groupName: "5 Room Special", groupCharge:69.95).save(failOnError: true)
 		}
 		
 		if (!RoomName.count()) {
@@ -59,11 +59,11 @@ class BootStrap {
 		}
 		
 		if (!UpholsteryName.count()) {
-			new UpholsteryName(upholsteryName: "Chair", upholsteryCharge: 5.00, upholsteryProtectCharge: 6.00).save(failOnError: true)
-			new UpholsteryName(upholsteryName: "Couch", upholsteryCharge: 10.00, upholsteryProtectCharge: 11.00).save(failOnError: true)
-			new UpholsteryName(upholsteryName: "Ottoman", upholsteryCharge: 7.00, upholsteryProtectCharge: 8.00).save(failOnError: true)
-			new UpholsteryName(upholsteryName: "Recliner", upholsteryCharge: 15.00, upholsteryProtectCharge: 16.00).save(failOnError: true)
-			new UpholsteryName(upholsteryName: "Sectional", upholsteryCharge: 20.00, upholsteryProtectCharge: 21.00).save(failOnError: true)
+			new UpholsteryName(upholsteryName: "Chair", upholsteryCharge: 5.00, upholsteryProtect: 6.00).save(failOnError: true)
+			new UpholsteryName(upholsteryName: "Couch", upholsteryCharge: 10.00, upholsteryProtect: 11.00).save(failOnError: true)
+			new UpholsteryName(upholsteryName: "Ottoman", upholsteryCharge: 7.00, upholsteryProtect: 8.00).save(failOnError: true)
+			new UpholsteryName(upholsteryName: "Recliner", upholsteryCharge: 15.00, upholsteryProtect: 16.00).save(failOnError: true)
+			new UpholsteryName(upholsteryName: "Sectional", upholsteryCharge: 20.00, upholsteryProtect: 21.00).save(failOnError: true)
 		}
 		
 		if (!MiscChargesName.count()) {
