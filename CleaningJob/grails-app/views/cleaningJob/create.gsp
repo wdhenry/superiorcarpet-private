@@ -38,17 +38,5 @@
 				</fieldset>
 			</g:form>
 		</div>
-		
-<%--		<r:script>--%>
-<%--			$(function showHideRow (groupValue) {--%>
-<%--			display groupValue--%>
-<%--				if (groupValue == "1 Room Group") {--%>
-<%--					var elm = document.getElementById('room1') --%>
-<%--					elm.style.display = ""--%>
-<%--					var elm = document.getElementById('room2') --%>
-<%--					elm.style.display = "none"--%>
-<%--				}--%>
-<%--			})--%>
-<%--		</r:script>	--%>
 	</body>
 </html>
