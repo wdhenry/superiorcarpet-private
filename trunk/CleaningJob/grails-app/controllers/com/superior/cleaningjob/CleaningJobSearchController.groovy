@@ -92,55 +92,136 @@ class CleaningJobSearchController {
 		def roomList = new ArrayList()
 		roomList = Room.findAllByJobId(carpetCareJobInstance.id)
 
-		def count = 1
+		def groupCount = 1
 		for (room in roomList) {
 			if (room.getInGroup()) {
-				if (count == 1) {
+				if (groupCount == 1) {
 					cleaningJobCommandInstance.setRoomName1(room.getRoomName())
 					cleaningJobCommandInstance.setSquareFootage1(room.getSquareFootage())
 					cleaningJobCommandInstance.setPreVacCharge1(room.getPreVacCharge())
 					cleaningJobCommandInstance.setProtectorCharge1(room.getProtectorCharge())
 					cleaningJobCommandInstance.setMoveFurnitureCharge1(room.getMoveFurnitureCharge())
-				} else if (count == 2) {
+				} else if (groupCount == 2) {
 					cleaningJobCommandInstance.setRoomName2(room.getRoomName())
 					cleaningJobCommandInstance.setSquareFootage2(room.getSquareFootage())
 					cleaningJobCommandInstance.setPreVacCharge2(room.getPreVacCharge())
 					cleaningJobCommandInstance.setProtectorCharge2(room.getProtectorCharge())
 					cleaningJobCommandInstance.setMoveFurnitureCharge2(room.getMoveFurnitureCharge())
-				} else if (count == 3) {
+				} else if (groupCount == 3) {
 					cleaningJobCommandInstance.setRoomName3(room.getRoomName())
 					cleaningJobCommandInstance.setSquareFootage3(room.getSquareFootage())
 					cleaningJobCommandInstance.setPreVacCharge3(room.getPreVacCharge())
 					cleaningJobCommandInstance.setProtectorCharge3(room.getProtectorCharge())
 					cleaningJobCommandInstance.setMoveFurnitureCharge3(room.getMoveFurnitureCharge())
-				} else if (count == 4) {
+				} else if (groupCount == 4) {
 					cleaningJobCommandInstance.setRoomName4(room.getRoomName())
 					cleaningJobCommandInstance.setSquareFootage4(room.getSquareFootage())
 					cleaningJobCommandInstance.setPreVacCharge4(room.getPreVacCharge())
 					cleaningJobCommandInstance.setProtectorCharge4(room.getProtectorCharge())
 					cleaningJobCommandInstance.setMoveFurnitureCharge4(room.getMoveFurnitureCharge())
-				} else if (count == 5) {
+				} else if (groupCount == 5) {
 					cleaningJobCommandInstance.setRoomName5(room.getRoomName())
 					cleaningJobCommandInstance.setSquareFootage5(room.getSquareFootage())
 					cleaningJobCommandInstance.setPreVacCharge5(room.getPreVacCharge())
 					cleaningJobCommandInstance.setProtectorCharge5(room.getProtectorCharge())
 					cleaningJobCommandInstance.setMoveFurnitureCharge5(room.getMoveFurnitureCharge())
 				}
-				count = count + 1
+				groupCount = groupCount + 1
 			} else {
-				if (!room.getHardSurface()) {
-					cleaningJobCommandInstance.setRoomName(room.getRoomName())
-					cleaningJobCommandInstance.setSquareFootage(room.getSquareFootage())
-					cleaningJobCommandInstance.setRoomCharge(room.getRoomCharge())
-					cleaningJobCommandInstance.setPreVacCharge(room.getPreVacCharge())
-					cleaningJobCommandInstance.setProtectorCharge(room.getProtectorCharge())
-					cleaningJobCommandInstance.setMoveFurnitureCharge(room.getMoveFurnitureCharge())
-				} else {
+				if (room.getHardSurface()) {
 					cleaningJobCommandInstance.setHsRoomName(room.getRoomName())
 					cleaningJobCommandInstance.setHsSquareFootage(room.getSquareFootage())
 					cleaningJobCommandInstance.setHsRoomCharge(room.getRoomCharge())
 					cleaningJobCommandInstance.setHsEtchedCharge(room.getEtchedCharge())
 					cleaningJobCommandInstance.setHsSealedWaxedCharge(room.getSealWaxCharge())
+				} else {
+					def roomCount = 1
+					if (roomCount == 1) {
+						cleaningJobCommandInstance.setRoomName001(room.getRoomName())
+						cleaningJobCommandInstance.setSquareFootage001(room.getSquareFootage())
+						cleaningJobCommandInstance.setRoomCharge001(room.getRoomCharge())
+						cleaningJobCommandInstance.setPreVacCharge001(room.getPreVacCharge())
+						cleaningJobCommandInstance.setProtectorCharge001(room.getProtectorCharge())
+						cleaningJobCommandInstance.setMoveFurnitureCharge001(room.getMoveFurnitureCharge())
+					} else if (roomCount == 2) {
+						cleaningJobCommandInstance.setRoomName002(room.getRoomName())
+						cleaningJobCommandInstance.setSquareFootage002(room.getSquareFootage())
+						cleaningJobCommandInstance.setRoomCharge002(room.getRoomCharge())
+						cleaningJobCommandInstance.setPreVacCharge002(room.getPreVacCharge())
+						cleaningJobCommandInstance.setProtectorCharge002(room.getProtectorCharge())
+						cleaningJobCommandInstance.setMoveFurnitureCharge002(room.getMoveFurnitureCharge())
+					} else if (roomCount == 3) {
+						cleaningJobCommandInstance.setRoomName003(room.getRoomName())
+						cleaningJobCommandInstance.setSquareFootage003(room.getSquareFootage())
+						cleaningJobCommandInstance.setRoomCharge003(room.getRoomCharge())
+						cleaningJobCommandInstance.setPreVacCharge003(room.getPreVacCharge())
+						cleaningJobCommandInstance.setProtectorCharge003(room.getProtectorCharge())
+						cleaningJobCommandInstance.setMoveFurnitureCharge003(room.getMoveFurnitureCharge())
+					} else if (roomCount == 4) {
+						cleaningJobCommandInstance.setRoomName004(room.getRoomName())
+						cleaningJobCommandInstance.setSquareFootage004(room.getSquareFootage())
+						cleaningJobCommandInstance.setRoomCharge004(room.getRoomCharge())
+						cleaningJobCommandInstance.setPreVacCharge004(room.getPreVacCharge())
+						cleaningJobCommandInstance.setProtectorCharge004(room.getProtectorCharge())
+						cleaningJobCommandInstance.setMoveFurnitureCharge004(room.getMoveFurnitureCharge())
+					} else if (roomCount == 5) {
+						cleaningJobCommandInstance.setRoomName005(room.getRoomName())
+						cleaningJobCommandInstance.setSquareFootage005(room.getSquareFootage())
+						cleaningJobCommandInstance.setRoomCharge005(room.getRoomCharge())
+						cleaningJobCommandInstance.setPreVacCharge005(room.getPreVacCharge())
+						cleaningJobCommandInstance.setProtectorCharge005(room.getProtectorCharge())
+						cleaningJobCommandInstance.setMoveFurnitureCharge005(room.getMoveFurnitureCharge())
+					} else if (roomCount == 6) {
+						cleaningJobCommandInstance.setRoomName006(room.getRoomName())
+						cleaningJobCommandInstance.setSquareFootage006(room.getSquareFootage())
+						cleaningJobCommandInstance.setRoomCharge006(room.getRoomCharge())
+						cleaningJobCommandInstance.setPreVacCharge006(room.getPreVacCharge())
+						cleaningJobCommandInstance.setProtectorCharge006(room.getProtectorCharge())
+						cleaningJobCommandInstance.setMoveFurnitureCharge006(room.getMoveFurnitureCharge())
+					} else if (roomCount == 7) {
+						cleaningJobCommandInstance.setRoomName007(room.getRoomName())
+						cleaningJobCommandInstance.setSquareFootage007(room.getSquareFootage())
+						cleaningJobCommandInstance.setRoomCharge007(room.getRoomCharge())
+						cleaningJobCommandInstance.setPreVacCharge007(room.getPreVacCharge())
+						cleaningJobCommandInstance.setProtectorCharge007(room.getProtectorCharge())
+						cleaningJobCommandInstance.setMoveFurnitureCharge007(room.getMoveFurnitureCharge())
+					} else if (roomCount == 8) {
+						cleaningJobCommandInstance.setRoomName008(room.getRoomName())
+						cleaningJobCommandInstance.setSquareFootage008(room.getSquareFootage())
+						cleaningJobCommandInstance.setRoomCharge008(room.getRoomCharge())
+						cleaningJobCommandInstance.setPreVacCharge008(room.getPreVacCharge())
+						cleaningJobCommandInstance.setProtectorCharge008(room.getProtectorCharge())
+						cleaningJobCommandInstance.setMoveFurnitureCharge008(room.getMoveFurnitureCharge())
+					} else if (roomCount == 9) {
+						cleaningJobCommandInstance.setRoomName009(room.getRoomName())
+						cleaningJobCommandInstance.setSquareFootage009(room.getSquareFootage())
+						cleaningJobCommandInstance.setRoomCharge009(room.getRoomCharge())
+						cleaningJobCommandInstance.setPreVacCharge009(room.getPreVacCharge())
+						cleaningJobCommandInstance.setProtectorCharge009(room.getProtectorCharge())
+						cleaningJobCommandInstance.setMoveFurnitureCharge009(room.getMoveFurnitureCharge())
+					} else if (roomCount == 10) {
+						cleaningJobCommandInstance.setRoomName010(room.getRoomName())
+						cleaningJobCommandInstance.setSquareFootage010(room.getSquareFootage())
+						cleaningJobCommandInstance.setRoomCharge010(room.getRoomCharge())
+						cleaningJobCommandInstance.setPreVacCharge010(room.getPreVacCharge())
+						cleaningJobCommandInstance.setProtectorCharge010(room.getProtectorCharge())
+						cleaningJobCommandInstance.setMoveFurnitureCharge010(room.getMoveFurnitureCharge())
+					} else if (roomCount == 11) {
+						cleaningJobCommandInstance.setRoomName011(room.getRoomName())
+						cleaningJobCommandInstance.setSquareFootage011(room.getSquareFootage())
+						cleaningJobCommandInstance.setRoomCharge011(room.getRoomCharge())
+						cleaningJobCommandInstance.setPreVacCharge011(room.getPreVacCharge())
+						cleaningJobCommandInstance.setProtectorCharge011(room.getProtectorCharge())
+						cleaningJobCommandInstance.setMoveFurnitureCharge011(room.getMoveFurnitureCharge())
+					} else if (roomCount == 12) {
+						cleaningJobCommandInstance.setRoomName012(room.getRoomName())
+						cleaningJobCommandInstance.setSquareFootage012(room.getSquareFootage())
+						cleaningJobCommandInstance.setRoomCharge012(room.getRoomCharge())
+						cleaningJobCommandInstance.setPreVacCharge012(room.getPreVacCharge())
+						cleaningJobCommandInstance.setProtectorCharge012(room.getProtectorCharge())
+						cleaningJobCommandInstance.setMoveFurnitureCharge012(room.getMoveFurnitureCharge())
+					}
+					roomCount = roomCount + 1
 				}
 			}
 		}
@@ -148,22 +229,22 @@ class CleaningJobSearchController {
 		def stairList = new ArrayList()
 		stairList = Stair.findAllByJobId(carpetCareJobInstance.id)
 
-		count = 1
+		def stairCount = 1
 		for (stair in stairList) {
-			if (count == 1) {
+			if (stairCount == 1) {
 				cleaningJobCommandInstance.setStairDirection1(stair.getStairDirection())
 				cleaningJobCommandInstance.setStairCount1(stair.getStairCount())
 				cleaningJobCommandInstance.setStairCharge1(stair.getStairCharge())
-			} else if (count == 2) {
+			} else if (stairCount == 2) {
 				cleaningJobCommandInstance.setStairDirection2(stair.getStairDirection())
 				cleaningJobCommandInstance.setStairCount2(stair.getStairCount())
 				cleaningJobCommandInstance.setStairCharge2(stair.getStairCharge())
-			} else if (count == 3) {
+			} else if (stairCount == 3) {
 				cleaningJobCommandInstance.setStairDirection3(stair.getStairDirection())
 				cleaningJobCommandInstance.setStairCount3(stair.getStairCount())
 				cleaningJobCommandInstance.setStairCharge3(stair.getStairCharge())
 			}
-			count = count + 1
+			stairCount = stairCount + 1
 		}
 
 		Upholstery upholsteryInstance = Upholstery.findByJobId(carpetCareJobInstance.id)

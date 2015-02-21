@@ -48,7 +48,7 @@
 	<g:render template="formGroupRooms"></g:render>
 </g:if>
 
-<g:if test="${cleaningJobCommandInstance.roomName != null}">
+<g:if test="${cleaningJobCommandInstance.roomName001 != null}">
 	<table>
 		<tr>
 			<th colspan="6" class="sectionhead">Additional Room Section</th>

@@ -80,10 +80,20 @@
 
 <table>
 	<tr>
-		<th colspan="6" class="sectionhead">Additional Room Section</th>
+		<th colspan="7" class="sectionhead">Additional Room Section</th>
 	</tr>
-	<g:render template="formRoom"></g:render>
+	<tr id="room00">
+		<td colspan="7">  
+			<div>
+				<g:message code="cleaningJob.numberRooms.label" default="Select Number of Additional Rooms" />
+				<g:select name="roomCount" 
+					from="${['01','02','03','04','05','06','07','08','09','10','11','12']}"
+					noSelection="${['00':'00']}"/>
+			</div>
+		</td>
+	</tr>
 </table>
+<g:render template="formAdditionalRooms"></g:render>
 
 <table>
 	<tr>

@@ -17,8 +17,8 @@
 				<div
 					class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomName1', 'error')} ">
 					<g:select name="roomName1"
-						from="${com.superior.base.RoomName.list()}" optionKey="roomName"
-						optionValue="roomName"
+						from="${com.superior.base.RoomName.list()}" 
+						optionKey="roomName" optionValue="roomName"
 						value="${cleaningJobCommandInstance?.roomName1}"
 						noSelection="${['Pick a Room':'Pick a Room']}" />
 				</div>
