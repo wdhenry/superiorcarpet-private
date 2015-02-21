@@ -65,13 +65,13 @@ class CleaningJobController {
 		}
 		
 		if ((cleaningJobCommandInstance.groupName == "No Special") &&
-			(cleaningJobCommandInstance.roomName == "Pick a Room") &&
+			(cleaningJobCommandInstance.visible001 != "Y") &&
 			(cleaningJobCommandInstance.hsRoomName == "Pick a Room") &&
 			(cleaningJobCommandInstance.miscChargesName == "Pick Misc. Description") &&
 			(cleaningJobCommandInstance.stairDirection1 == "Pick a Direction") &&
 			(cleaningJobCommandInstance.stairDirection2 == "Pick a Direction") &&
 			(cleaningJobCommandInstance.stairDirection3 == "Pick a Direction") &&
-			(cleaningJobCommandInstance.stairDirection3 == "Pick Upholstery Name")) {
+			(cleaningJobCommandInstance.upholsteryName == "Pick Upholstery Name")) {
 			cleaningJobCommandInstance.errors.rejectValue('', 'Must fill in at least one section for the job   ')
 		}
 		
@@ -151,12 +151,134 @@ class CleaningJobController {
 			(cleaningJobCommandInstance.squareFootage5 == null)) {
 			cleaningJobCommandInstance.errors.rejectValue('squareFootage5', 'Must enter Square Footage of the Fifth Room   ')
 		}
+		
+		//Additional Rooms
+		if ((cleaningJobCommandInstance.visible001 == "Y") &&
+			(cleaningJobCommandInstance.roomName001 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('roomName001', 'Must enter Square Footage of the First Room   ')
+		}
 			
+		if ((cleaningJobCommandInstance.visible001 == "Y") &&
+			(cleaningJobCommandInstance.squareFootage001 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('squareFootage001', 'Must enter Square Footage of the First Room   ')
+		}
+		
+		if ((cleaningJobCommandInstance.visible002 == "Y") &&
+			(cleaningJobCommandInstance.roomName002 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('roomName002', 'Must enter Square Footage of the Second Room   ')
+		}
+			
+		if ((cleaningJobCommandInstance.visible002 == "Y") &&
+			(cleaningJobCommandInstance.squareFootage002 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('squareFootage002', 'Must enter Square Footage of the Second Room   ')
+		}
+				
+		if ((cleaningJobCommandInstance.visible003 == "Y") &&
+			(cleaningJobCommandInstance.roomName003 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('roomName003', 'Must enter Square Footage of the Third Room   ')
+		}
+			
+		if ((cleaningJobCommandInstance.visible003 == "Y") &&
+			(cleaningJobCommandInstance.squareFootage003 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('squareFootage003', 'Must enter Square Footage of the Third Room   ')
+		}
+					
+		if ((cleaningJobCommandInstance.visible004 == "Y") &&
+			(cleaningJobCommandInstance.roomName004 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('roomName004', 'Must enter Square Footage of the Fourth Room   ')
+		}
+			
+		if ((cleaningJobCommandInstance.visible004 == "Y") &&
+			(cleaningJobCommandInstance.squareFootage004 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('squareFootage004', 'Must enter Square Footage of the Fourth Room   ')
+		}
+						
+		if ((cleaningJobCommandInstance.visible005 == "Y") &&
+			(cleaningJobCommandInstance.roomName005 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('roomName005', 'Must enter Square Footage of the Fifth Room   ')
+		}
+			
+		if ((cleaningJobCommandInstance.visible005 == "Y") &&
+			(cleaningJobCommandInstance.squareFootage005 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('squareFootage005', 'Must enter Square Footage of the Fifth Room   ')
+		}
+							
+		if ((cleaningJobCommandInstance.visible006 == "Y") &&
+			(cleaningJobCommandInstance.roomName006 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('roomName006', 'Must enter Square Footage of the Sixth Room   ')
+		}
+			
+		if ((cleaningJobCommandInstance.visible006 == "Y") &&
+			(cleaningJobCommandInstance.squareFootage006 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('squareFootage006', 'Must enter Square Footage of the Sixth Room   ')
+		}
+								
+		if ((cleaningJobCommandInstance.visible007 == "Y") &&
+			(cleaningJobCommandInstance.roomName007 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('roomName007', 'Must enter Square Footage of the Seventh Room   ')
+		}
+			
+		if ((cleaningJobCommandInstance.visible007 == "Y") &&
+			(cleaningJobCommandInstance.squareFootage007 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('squareFootage007', 'Must enter Square Footage of the Seventh Room   ')
+		}
+									
+		if ((cleaningJobCommandInstance.visible008 == "Y") &&
+			(cleaningJobCommandInstance.roomName008 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('roomName008', 'Must enter Square Footage of the Eighth Room   ')
+		}
+			
+		if ((cleaningJobCommandInstance.visible008 == "Y") &&
+			(cleaningJobCommandInstance.squareFootage008 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('squareFootage008', 'Must enter Square Footage of the Eighth Room   ')
+		}
+										
+		if ((cleaningJobCommandInstance.visible009 == "Y") &&
+			(cleaningJobCommandInstance.roomName009 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('roomName009', 'Must enter Square Footage of the Ninth Room   ')
+		}
+			
+		if ((cleaningJobCommandInstance.visible009 == "Y") &&
+			(cleaningJobCommandInstance.squareFootage009 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('squareFootage009', 'Must enter Square Footage of the Ninth Room   ')
+		}
+											
+		if ((cleaningJobCommandInstance.visible010 == "Y") &&
+			(cleaningJobCommandInstance.roomName010 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('roomName010', 'Must enter Square Footage of the Tenth Room   ')
+		}
+			
+		if ((cleaningJobCommandInstance.visible010 == "Y") &&
+			(cleaningJobCommandInstance.squareFootage010 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('squareFootage010', 'Must enter Square Footage of the Tenth Room   ')
+		}
+												
+		if ((cleaningJobCommandInstance.visible011 == "Y") &&
+			(cleaningJobCommandInstance.roomName011 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('roomName011', 'Must enter Square Footage of the Eleventh Room   ')
+		}
+			
+		if ((cleaningJobCommandInstance.visible011 == "Y") &&
+			(cleaningJobCommandInstance.squareFootage011 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('squareFootage011', 'Must enter Square Footage of the Eleventh Room   ')
+		}
+													
+		if ((cleaningJobCommandInstance.visible012 == "Y") &&
+			(cleaningJobCommandInstance.roomName012 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('roomName012', 'Must enter Square Footage of the Twelfth Room   ')
+		}
+			
+		if ((cleaningJobCommandInstance.visible012 == "Y") &&
+			(cleaningJobCommandInstance.squareFootage012 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('squareFootage012', 'Must enter Square Footage of the Twelfth Room   ')
+		}
+														
 		if (cleaningJobCommandInstance.hasErrors()) {
 			respond cleaningJobCommandInstance.errors, view:'newJob'
 			return
 		}
 		
+		//Save Records
 		def carpetCareJobInstance = new CarpetCareJob(date: cleaningJobCommandInstance.date,
 														lead: cleaningJobCommandInstance.lead,
 														helper: cleaningJobCommandInstance.helper,
@@ -297,30 +419,294 @@ class CleaningJobController {
 		}
 		
 		//Additional Rooms
-		if (cleaningJobCommandInstance.roomName != "Pick a Room") {
-			def roomInstanceA = new Room(jobId: carpetCareJob.id,
+		if (cleaningJobCommandInstance.visible001 == "Y") {
+			def roomInstance001 = new Room(jobId: carpetCareJob.id,
 				inGroup: false,
 				hardSurface: false,
-				roomName: cleaningJobCommandInstance.roomName,
-				squareFootage: cleaningJobCommandInstance.squareFootage,
-				roomCharge: cleaningJobCommandInstance.roomCharge,
-				preVacCharge: cleaningJobCommandInstance.preVacCharge,
-				protectorCharge: cleaningJobCommandInstance.protectorCharge,
-				moveFurnitureCharge: cleaningJobCommandInstance.moveFurnitureCharge,
+				roomName: cleaningJobCommandInstance.roomName001,
+				squareFootage: cleaningJobCommandInstance.squareFootage001,
+				roomCharge: cleaningJobCommandInstance.roomCharge001,
+				preVacCharge: cleaningJobCommandInstance.preVacCharge001,
+				protectorCharge: cleaningJobCommandInstance.protectorCharge001,
+				moveFurnitureCharge: cleaningJobCommandInstance.moveFurnitureCharge001,
 				etchedCharge: 0.00,
 				sealWaxCharge: 0.00)
 	
-			if(!roomInstanceA.save(flush:true)) {
+			if(!roomInstance001.save(flush:true)) {
 				carpetCareJobInstance.delete()
 				cleaningJobCommandInstance.errors.reject(
-					'Error saving first Additional Room record',
+					'Error saving First Additional Room record',
 					['', 'class Room'] as Object[],
-					'Error saving first Additional Room record')
+					'Error saving First Additional Room record')
 				respond cleaningJobCommandInstance.errors, view:'newJob'
 				return
 			}
 		}
-			
+		
+		if (cleaningJobCommandInstance.visible002 == "Y") {
+			def roomInstance002 = new Room(jobId: carpetCareJob.id,
+				inGroup: false,
+				hardSurface: false,
+				roomName: cleaningJobCommandInstance.roomName002,
+				squareFootage: cleaningJobCommandInstance.squareFootage002,
+				roomCharge: cleaningJobCommandInstance.roomCharge002,
+				preVacCharge: cleaningJobCommandInstance.preVacCharge002,
+				protectorCharge: cleaningJobCommandInstance.protectorCharge002,
+				moveFurnitureCharge: cleaningJobCommandInstance.moveFurnitureCharge002,
+				etchedCharge: 0.00,
+				sealWaxCharge: 0.00)
+	
+			if(!roomInstance002.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Second Additional Room record',
+					['', 'class Room'] as Object[],
+					'Error saving Second Additional Room record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.visible003 == "Y") {
+			def roomInstance003 = new Room(jobId: carpetCareJob.id,
+				inGroup: false,
+				hardSurface: false,
+				roomName: cleaningJobCommandInstance.roomName003,
+				squareFootage: cleaningJobCommandInstance.squareFootage003,
+				roomCharge: cleaningJobCommandInstance.roomCharge003,
+				preVacCharge: cleaningJobCommandInstance.preVacCharge003,
+				protectorCharge: cleaningJobCommandInstance.protectorCharge003,
+				moveFurnitureCharge: cleaningJobCommandInstance.moveFurnitureCharge003,
+				etchedCharge: 0.00,
+				sealWaxCharge: 0.00)
+	
+			if(!roomInstance003.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Third Additional Room record',
+					['', 'class Room'] as Object[],
+					'Error saving Third Additional Room record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.visible004 == "Y") {
+			def roomInstance004 = new Room(jobId: carpetCareJob.id,
+				inGroup: false,
+				hardSurface: false,
+				roomName: cleaningJobCommandInstance.roomName004,
+				squareFootage: cleaningJobCommandInstance.squareFootage004,
+				roomCharge: cleaningJobCommandInstance.roomCharge004,
+				preVacCharge: cleaningJobCommandInstance.preVacCharge004,
+				protectorCharge: cleaningJobCommandInstance.protectorCharge004,
+				moveFurnitureCharge: cleaningJobCommandInstance.moveFurnitureCharge004,
+				etchedCharge: 0.00,
+				sealWaxCharge: 0.00)
+	
+			if(!roomInstance004.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Fourth Additional Room record',
+					['', 'class Room'] as Object[],
+					'Error saving Fourth Additional Room record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.visible005 == "Y") {
+			def roomInstance005 = new Room(jobId: carpetCareJob.id,
+				inGroup: false,
+				hardSurface: false,
+				roomName: cleaningJobCommandInstance.roomName005,
+				squareFootage: cleaningJobCommandInstance.squareFootage005,
+				roomCharge: cleaningJobCommandInstance.roomCharge005,
+				preVacCharge: cleaningJobCommandInstance.preVacCharge005,
+				protectorCharge: cleaningJobCommandInstance.protectorCharge005,
+				moveFurnitureCharge: cleaningJobCommandInstance.moveFurnitureCharge005,
+				etchedCharge: 0.00,
+				sealWaxCharge: 0.00)
+	
+			if(!roomInstance005.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Fifth Additional Room record',
+					['', 'class Room'] as Object[],
+					'Error saving Fifth Additional Room record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.visible006 == "Y") {
+			def roomInstance006 = new Room(jobId: carpetCareJob.id,
+				inGroup: false,
+				hardSurface: false,
+				roomName: cleaningJobCommandInstance.roomName006,
+				squareFootage: cleaningJobCommandInstance.squareFootage006,
+				roomCharge: cleaningJobCommandInstance.roomCharge006,
+				preVacCharge: cleaningJobCommandInstance.preVacCharge006,
+				protectorCharge: cleaningJobCommandInstance.protectorCharge006,
+				moveFurnitureCharge: cleaningJobCommandInstance.moveFurnitureCharge006,
+				etchedCharge: 0.00,
+				sealWaxCharge: 0.00)
+	
+			if(!roomInstance006.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Sixth Additional Room record',
+					['', 'class Room'] as Object[],
+					'Error saving Sixth Additional Room record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.visible007 == "Y") {
+			def roomInstance007 = new Room(jobId: carpetCareJob.id,
+				inGroup: false,
+				hardSurface: false,
+				roomName: cleaningJobCommandInstance.roomName007,
+				squareFootage: cleaningJobCommandInstance.squareFootage007,
+				roomCharge: cleaningJobCommandInstance.roomCharge007,
+				preVacCharge: cleaningJobCommandInstance.preVacCharge007,
+				protectorCharge: cleaningJobCommandInstance.protectorCharge007,
+				moveFurnitureCharge: cleaningJobCommandInstance.moveFurnitureCharge007,
+				etchedCharge: 0.00,
+				sealWaxCharge: 0.00)
+	
+			if(!roomInstance007.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Seventh Additional Room record',
+					['', 'class Room'] as Object[],
+					'Error saving Seventh Additional Room record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.visible008 == "Y") {
+			def roomInstance008 = new Room(jobId: carpetCareJob.id,
+				inGroup: false,
+				hardSurface: false,
+				roomName: cleaningJobCommandInstance.roomName008,
+				squareFootage: cleaningJobCommandInstance.squareFootage008,
+				roomCharge: cleaningJobCommandInstance.roomCharge008,
+				preVacCharge: cleaningJobCommandInstance.preVacCharge008,
+				protectorCharge: cleaningJobCommandInstance.protectorCharge008,
+				moveFurnitureCharge: cleaningJobCommandInstance.moveFurnitureCharge008,
+				etchedCharge: 0.00,
+				sealWaxCharge: 0.00)
+	
+			if(!roomInstance008.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Eighth Additional Room record',
+					['', 'class Room'] as Object[],
+					'Error saving Eighth Additional Room record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.visible009 == "Y") {
+			def roomInstance009 = new Room(jobId: carpetCareJob.id,
+				inGroup: false,
+				hardSurface: false,
+				roomName: cleaningJobCommandInstance.roomName009,
+				squareFootage: cleaningJobCommandInstance.squareFootage009,
+				roomCharge: cleaningJobCommandInstance.roomCharge009,
+				preVacCharge: cleaningJobCommandInstance.preVacCharge009,
+				protectorCharge: cleaningJobCommandInstance.protectorCharge009,
+				moveFurnitureCharge: cleaningJobCommandInstance.moveFurnitureCharge009,
+				etchedCharge: 0.00,
+				sealWaxCharge: 0.00)
+	
+			if(!roomInstance009.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Ninth Additional Room record',
+					['', 'class Room'] as Object[],
+					'Error saving Ninth Additional Room record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.visible010 == "Y") {
+			def roomInstance010 = new Room(jobId: carpetCareJob.id,
+				inGroup: false,
+				hardSurface: false,
+				roomName: cleaningJobCommandInstance.roomName010,
+				squareFootage: cleaningJobCommandInstance.squareFootage010,
+				roomCharge: cleaningJobCommandInstance.roomCharge010,
+				preVacCharge: cleaningJobCommandInstance.preVacCharge010,
+				protectorCharge: cleaningJobCommandInstance.protectorCharge010,
+				moveFurnitureCharge: cleaningJobCommandInstance.moveFurnitureCharge010,
+				etchedCharge: 0.00,
+				sealWaxCharge: 0.00)
+	
+			if(!roomInstance010.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Tenth Additional Room record',
+					['', 'class Room'] as Object[],
+					'Error saving Tenth Additional Room record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.visible011 == "Y") {
+			def roomInstance011 = new Room(jobId: carpetCareJob.id,
+				inGroup: false,
+				hardSurface: false,
+				roomName: cleaningJobCommandInstance.roomName011,
+				squareFootage: cleaningJobCommandInstance.squareFootage011,
+				roomCharge: cleaningJobCommandInstance.roomCharge011,
+				preVacCharge: cleaningJobCommandInstance.preVacCharge011,
+				protectorCharge: cleaningJobCommandInstance.protectorCharge011,
+				moveFurnitureCharge: cleaningJobCommandInstance.moveFurnitureCharge011,
+				etchedCharge: 0.00,
+				sealWaxCharge: 0.00)
+	
+			if(!roomInstance011.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Eleventh Additional Room record',
+					['', 'class Room'] as Object[],
+					'Error saving Eleventh Additional Room record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.visible012 == "Y") {
+			def roomInstance012 = new Room(jobId: carpetCareJob.id,
+				inGroup: false,
+				hardSurface: false,
+				roomName: cleaningJobCommandInstance.roomName012,
+				squareFootage: cleaningJobCommandInstance.squareFootage012,
+				roomCharge: cleaningJobCommandInstance.roomCharge012,
+				preVacCharge: cleaningJobCommandInstance.preVacCharge012,
+				protectorCharge: cleaningJobCommandInstance.protectorCharge012,
+				moveFurnitureCharge: cleaningJobCommandInstance.moveFurnitureCharge012,
+				etchedCharge: 0.00,
+				sealWaxCharge: 0.00)
+	
+			if(!roomInstance012.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Twelfth Additional Room record',
+					['', 'class Room'] as Object[],
+					'Error saving Twelfth Additional Room record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
 		//Stairs
 		if (cleaningJobCommandInstance.stairDirection1 != "Pick a Direction") {
 			def stairInstance1 = new Stair(jobId: carpetCareJob.id,
