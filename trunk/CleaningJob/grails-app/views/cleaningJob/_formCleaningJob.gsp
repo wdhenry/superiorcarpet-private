@@ -184,7 +184,17 @@
 
 <table>
 	<tr>
-		<th colspan="4" class="sectionhead">Upholstery Section</th>
+		<th colspan="5" class="sectionhead">Upholstery Section</th>
+	</tr>
+	<tr id="upholstery0">
+		<td colspan="5">  
+			<div>
+				<g:message code="cleaningJob.numberUpholstery.label" default="Select Number of Upholstery Items" />
+				<g:select name="upholsteryCount" 
+					from="${['01','02','03','04','05','06']}"
+					noSelection="${['00':'00']}"/>
+			</div>
+		</td>
 	</tr>
 	<g:render template="formUpholstery"></g:render>
 </table>

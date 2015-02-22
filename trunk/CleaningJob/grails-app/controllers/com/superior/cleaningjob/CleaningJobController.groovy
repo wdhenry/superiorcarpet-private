@@ -45,7 +45,6 @@ class CleaningJobController {
 	}
 	
 	def newJob(Customer customerInstance) {
-//		def rooms = []
 		CleaningJobCommand cleaningJobCommandInstance = new CleaningJobCommand(customerId: customerInstance.id, 
 															firstName: customerInstance.firstName, 
 															lastName: customerInstance.lastName)
@@ -71,7 +70,7 @@ class CleaningJobController {
 			(cleaningJobCommandInstance.stairDirection1 == "Pick a Direction") &&
 			(cleaningJobCommandInstance.stairDirection2 == "Pick a Direction") &&
 			(cleaningJobCommandInstance.stairDirection3 == "Pick a Direction") &&
-			(cleaningJobCommandInstance.upholsteryName == "Pick Upholstery Name")) {
+			(cleaningJobCommandInstance.uVisible1 != "Y")) {
 			cleaningJobCommandInstance.errors.rejectValue('', 'Must fill in at least one section for the job   ')
 		}
 		
@@ -782,19 +781,109 @@ class CleaningJobController {
 		}
 		
 		//Upholstery
-		if (cleaningJobCommandInstance.upholsteryName != "Pick Upholstery Name") {
-			def upholsteryInstanceA = new Upholstery(jobId: carpetCareJob.id,
-				upholsteryName: cleaningJobCommandInstance.upholsteryName,
-				upholsteryCount: cleaningJobCommandInstance.upholsteryCount,
-				upholsteryCharge: cleaningJobCommandInstance.upholsteryCharge,
-				upholsteryProtectorCharge: cleaningJobCommandInstance.upholsteryProtectorCharge)
+		if (cleaningJobCommandInstance.uVisible1 == "Y") {
+			def upholsteryInstance1 = new Upholstery(jobId: carpetCareJob.id,
+				upholsteryName: cleaningJobCommandInstance.upholsteryName1,
+				upholsteryCount: cleaningJobCommandInstance.upholsteryCount1,
+				upholsteryCharge: cleaningJobCommandInstance.upholsteryCharge1,
+				upholsteryProtectorCharge: cleaningJobCommandInstance.upholsteryProtectorCharge1)
 	
-			if(!upholsteryInstanceA.save(flush:true)) {
+			if(!upholsteryInstance1.save(flush:true)) {
 				carpetCareJobInstance.delete()
 				cleaningJobCommandInstance.errors.reject(
-					'Error saving first Upholstery record',
+					'Error saving First Upholstery record',
 					['', 'class Upholstery'] as Object[],
-					'Error saving first Upholstery record')
+					'Error saving First Upholstery record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.uVisible2 == "Y") {
+			def upholsteryInstance2 = new Upholstery(jobId: carpetCareJob.id,
+				upholsteryName: cleaningJobCommandInstance.upholsteryName2,
+				upholsteryCount: cleaningJobCommandInstance.upholsteryCount2,
+				upholsteryCharge: cleaningJobCommandInstance.upholsteryCharge2,
+				upholsteryProtectorCharge: cleaningJobCommandInstance.upholsteryProtectorCharge2)
+	
+			if(!upholsteryInstance2.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Second Upholstery record',
+					['', 'class Upholstery'] as Object[],
+					'Error saving Second Upholstery record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.uVisible3 == "Y") {
+			def upholsteryInstance3 = new Upholstery(jobId: carpetCareJob.id,
+				upholsteryName: cleaningJobCommandInstance.upholsteryName3,
+				upholsteryCount: cleaningJobCommandInstance.upholsteryCount3,
+				upholsteryCharge: cleaningJobCommandInstance.upholsteryCharge3,
+				upholsteryProtectorCharge: cleaningJobCommandInstance.upholsteryProtectorCharge3)
+	
+			if(!upholsteryInstance3.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Third Upholstery record',
+					['', 'class Upholstery'] as Object[],
+					'Error saving Third Upholstery record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.uVisible4 == "Y") {
+			def upholsteryInstance4 = new Upholstery(jobId: carpetCareJob.id,
+				upholsteryName: cleaningJobCommandInstance.upholsteryName4,
+				upholsteryCount: cleaningJobCommandInstance.upholsteryCount4,
+				upholsteryCharge: cleaningJobCommandInstance.upholsteryCharge4,
+				upholsteryProtectorCharge: cleaningJobCommandInstance.upholsteryProtectorCharge4)
+	
+			if(!upholsteryInstance4.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Fourth Upholstery record',
+					['', 'class Upholstery'] as Object[],
+					'Error saving Fourth Upholstery record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.uVisible5 == "Y") {
+			def upholsteryInstance5 = new Upholstery(jobId: carpetCareJob.id,
+				upholsteryName: cleaningJobCommandInstance.upholsteryName5,
+				upholsteryCount: cleaningJobCommandInstance.upholsteryCount5,
+				upholsteryCharge: cleaningJobCommandInstance.upholsteryCharge5,
+				upholsteryProtectorCharge: cleaningJobCommandInstance.upholsteryProtectorCharge5)
+	
+			if(!upholsteryInstance5.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Fifth Upholstery record',
+					['', 'class Upholstery'] as Object[],
+					'Error saving Fifth Upholstery record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.uVisible6 == "Y") {
+			def upholsteryInstance6 = new Upholstery(jobId: carpetCareJob.id,
+				upholsteryName: cleaningJobCommandInstance.upholsteryName6,
+				upholsteryCount: cleaningJobCommandInstance.upholsteryCount6,
+				upholsteryCharge: cleaningJobCommandInstance.upholsteryCharge6,
+				upholsteryProtectorCharge: cleaningJobCommandInstance.upholsteryProtectorCharge6)
+	
+			if(!upholsteryInstance6.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Sixth Upholstery record',
+					['', 'class Upholstery'] as Object[],
+					'Error saving Sixth Upholstery record')
 				respond cleaningJobCommandInstance.errors, view:'newJob'
 				return
 			}

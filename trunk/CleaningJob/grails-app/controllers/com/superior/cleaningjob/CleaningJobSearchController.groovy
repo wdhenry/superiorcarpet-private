@@ -247,14 +247,45 @@ class CleaningJobSearchController {
 			stairCount = stairCount + 1
 		}
 
-		Upholstery upholsteryInstance = Upholstery.findByJobId(carpetCareJobInstance.id)
-		if (upholsteryInstance != null) {
-			cleaningJobCommandInstance.setUpholsteryName(upholsteryInstance.getUpholsteryName())
-			cleaningJobCommandInstance.setUpholsteryCount(upholsteryInstance.getUpholsteryCount())
-			cleaningJobCommandInstance.setUpholsteryCharge(upholsteryInstance.getUpholsteryCharge())
-			cleaningJobCommandInstance.setUpholsteryProtectorCharge(upholsteryInstance.getUpholsteryProtectorCharge())
+		def upholsteryList = new ArrayList()
+		upholsteryList = Upholstery.findByJobId(carpetCareJobInstance.id)
+		
+		def upholsteryCount = 1
+		for (upholstery in upholsteryList) {
+			if (upholsteryCount == 1) {
+				cleaningJobCommandInstance.setUpholsteryName1(upholstery.getUpholsteryName())
+				cleaningJobCommandInstance.setUpholsteryCount1(upholstery.getUpholsteryCount())
+				cleaningJobCommandInstance.setUpholsteryCharge1(upholstery.getUpholsteryCharge())
+				cleaningJobCommandInstance.setUpholsteryProtectorCharge1(upholstery.getUpholsteryProtectorCharge())
+			} else if (upholsteryCount == 2) {
+				cleaningJobCommandInstance.setUpholsteryName2(upholstery.getUpholsteryName())
+				cleaningJobCommandInstance.setUpholsteryCount2(upholstery.getUpholsteryCount())
+				cleaningJobCommandInstance.setUpholsteryCharge2(upholstery.getUpholsteryCharge())
+				cleaningJobCommandInstance.setUpholsteryProtectorCharge2(upholstery.getUpholsteryProtectorCharge())
+			} else if (upholsteryCount == 3) {
+				cleaningJobCommandInstance.setUpholsteryName3(upholstery.getUpholsteryName())
+				cleaningJobCommandInstance.setUpholsteryCount3(upholstery.getUpholsteryCount())
+				cleaningJobCommandInstance.setUpholsteryCharge3(upholstery.getUpholsteryCharge())
+				cleaningJobCommandInstance.setUpholsteryProtectorCharge3(upholstery.getUpholsteryProtectorCharge())
+			} else if (upholsteryCount == 4) {
+				cleaningJobCommandInstance.setUpholsteryName4(upholstery.getUpholsteryName())
+				cleaningJobCommandInstance.setUpholsteryCount4(upholstery.getUpholsteryCount())
+				cleaningJobCommandInstance.setUpholsteryCharge4(upholstery.getUpholsteryCharge())
+				cleaningJobCommandInstance.setUpholsteryProtectorCharge4(upholstery.getUpholsteryProtectorCharge())
+			} else if (upholsteryCount == 5) {
+				cleaningJobCommandInstance.setUpholsteryName5(upholstery.getUpholsteryName())
+				cleaningJobCommandInstance.setUpholsteryCount5(upholstery.getUpholsteryCount())
+				cleaningJobCommandInstance.setUpholsteryCharge5(upholstery.getUpholsteryCharge())
+				cleaningJobCommandInstance.setUpholsteryProtectorCharge5(upholstery.getUpholsteryProtectorCharge())
+			} else if (upholsteryCount == 6) {
+				cleaningJobCommandInstance.setUpholsteryName6(upholstery.getUpholsteryName())
+				cleaningJobCommandInstance.setUpholsteryCount6(upholstery.getUpholsteryCount())
+				cleaningJobCommandInstance.setUpholsteryCharge6(upholstery.getUpholsteryCharge())
+				cleaningJobCommandInstance.setUpholsteryProtectorCharge6(upholstery.getUpholsteryProtectorCharge())
+			}
+			upholsteryCount = upholsteryCount + 1
 		}
-
+		
 		MiscCharges miscChargesInstance = MiscCharges.findByJobId(carpetCareJobInstance.id)
 		if (miscChargesInstance != null) {
 			cleaningJobCommandInstance.setMiscChargesName(miscChargesInstance.getMiscDescription())
