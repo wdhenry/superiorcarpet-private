@@ -191,11 +191,42 @@ class CleaningJobCommand {
 	String _hsSealedWaxedCheck
 	BigDecimal hsSealedWaxedCharge
 	
-	String upholsteryName
-	BigDecimal upholsteryCount
-	BigDecimal upholsteryCharge
-	String _upholsteryProtectorCheck
-	BigDecimal upholsteryProtectorCharge
+	String upholsteryName1
+	BigDecimal upholsteryCount1
+	BigDecimal upholsteryCharge1
+	String _upholsteryProtectorCheck1
+	BigDecimal upholsteryProtectorCharge1
+	String uVisible1
+	String upholsteryName2
+	BigDecimal upholsteryCount2
+	BigDecimal upholsteryCharge2
+	String _upholsteryProtectorCheck2
+	BigDecimal upholsteryProtectorCharge2
+	String uVisible2
+	String upholsteryName3
+	BigDecimal upholsteryCount3
+	BigDecimal upholsteryCharge3
+	String _upholsteryProtectorCheck3
+	BigDecimal upholsteryProtectorCharge3
+	String uVisible3
+	String upholsteryName4
+	BigDecimal upholsteryCount4
+	BigDecimal upholsteryCharge4
+	String _upholsteryProtectorCheck4
+	BigDecimal upholsteryProtectorCharge4
+	String uVisible4
+	String upholsteryName5
+	BigDecimal upholsteryCount5
+	BigDecimal upholsteryCharge5
+	String _upholsteryProtectorCheck5
+	BigDecimal upholsteryProtectorCharge5
+	String uVisible5
+	String upholsteryName6
+	BigDecimal upholsteryCount6
+	BigDecimal upholsteryCharge6
+	String _upholsteryProtectorCheck6
+	BigDecimal upholsteryProtectorCharge6
+	String uVisible6
 	
 	String miscChargesName
 	BigDecimal miscCharge
@@ -376,11 +407,42 @@ class CleaningJobCommand {
 		hsEtchedCharge(nullable:true, scale: 2, min: 0.00)
 		_hsSealedWaxedCheck(nullable:true)
 		hsSealedWaxedCharge(nullable:true, scale: 2, min: 0.00)
-		upholsteryName(nullable:true)
-		upholsteryCount(nullable:true, scale: 0, min: 0.0)
-		upholsteryCharge(nullable:true, scale: 2, min: 0.00)
-		_upholsteryProtectorCheck(nullable:true)
-		upholsteryProtectorCharge(nullable:true, scale: 2, min: 0.00)
+		upholsteryName1(nullable:true)
+		upholsteryCount1(nullable:true, scale: 0, min: 0.0)
+		upholsteryCharge1(nullable:true, scale: 2, min: 0.00)
+		_upholsteryProtectorCheck1(nullable:true)
+		upholsteryProtectorCharge1(nullable:true, scale: 2, min: 0.00)
+		uVisible1(nullable:true)
+		upholsteryName2(nullable:true)
+		upholsteryCount2(nullable:true, scale: 0, min: 0.0)
+		upholsteryCharge2(nullable:true, scale: 2, min: 0.00)
+		_upholsteryProtectorCheck2(nullable:true)
+		upholsteryProtectorCharge2(nullable:true, scale: 2, min: 0.00)
+		uVisible2(nullable:true)
+		upholsteryName3(nullable:true)
+		upholsteryCount3(nullable:true, scale: 0, min: 0.0)
+		upholsteryCharge3(nullable:true, scale: 2, min: 0.00)
+		_upholsteryProtectorCheck3(nullable:true)
+		upholsteryProtectorCharge3(nullable:true, scale: 2, min: 0.00)
+		uVisible3(nullable:true)
+		upholsteryName4(nullable:true)
+		upholsteryCount4(nullable:true, scale: 0, min: 0.0)
+		upholsteryCharge4(nullable:true, scale: 2, min: 0.00)
+		_upholsteryProtectorCheck4(nullable:true)
+		upholsteryProtectorCharge4(nullable:true, scale: 2, min: 0.00)
+		uVisible4(nullable:true)
+		upholsteryName5(nullable:true)
+		upholsteryCount5(nullable:true, scale: 0, min: 0.0)
+		upholsteryCharge5(nullable:true, scale: 2, min: 0.00)
+		_upholsteryProtectorCheck5(nullable:true)
+		upholsteryProtectorCharge5(nullable:true, scale: 2, min: 0.00)
+		uVisible5(nullable:true)
+		upholsteryName6(nullable:true)
+		upholsteryCount6(nullable:true, scale: 0, min: 0.0)
+		upholsteryCharge6(nullable:true, scale: 2, min: 0.00)
+		_upholsteryProtectorCheck6(nullable:true)
+		upholsteryProtectorCharge6(nullable:true, scale: 2, min: 0.00)
+		uVisible6(nullable:true)
 		miscChargesName(nullable:true)
 		miscCharge(nullable:true, scale: 2, min: 0.00)
 	}

@@ -104,7 +104,7 @@
 	</table>
 </g:if>
 
-<g:if test="${cleaningJobCommandInstance.upholsteryName != null}">
+<g:if test="${cleaningJobCommandInstance.upholsteryName1 != null}">
 	<table>
 		<tr>
 			<th colspan="4" class="sectionhead">Upholstery Section</th>
