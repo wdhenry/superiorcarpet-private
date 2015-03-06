@@ -2,7 +2,7 @@
 	<tr>
 		<th colspan="6" class="sectionhead">Hard Surface Room Section</th>
 	</tr>
-	<tr id="hsRoom0">
+	<tr>
 		<td colspan="6">  
 			<div>
 				<g:message code="cleaningJob.numberHsRooms.label" default="Select Number of Hard Surface Rooms" />
@@ -25,6 +25,9 @@
 		</tr>
 	</thead>
 	<tbody>
+		<tr id="hsRoom0">
+			<td colspan="6">No hard surface rooms selected</td>
+		</tr>
 		<tr id="hsRoom1">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'hsRoomName1', 'error')} ">

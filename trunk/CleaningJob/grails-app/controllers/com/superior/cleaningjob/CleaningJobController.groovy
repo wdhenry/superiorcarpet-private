@@ -703,12 +703,12 @@ class CleaningJobController {
 		}
 		
 		//Miscellaneous Charges
-		if (cleaningJobCommandInstance.miscChargesName != "Pick Misc. Description") {
-			def miscChargesInstanceA = new MiscCharges(jobId: carpetCareJob.id,
-				miscDescription: cleaningJobCommandInstance.miscChargesName,
-				miscCharge: cleaningJobCommandInstance.miscCharge)
+		if (cleaningJobCommandInstance.miscVisible1 != "Y") {
+			def miscChargesInstance1 = new MiscCharges(jobId: carpetCareJob.id,
+				miscDescription: cleaningJobCommandInstance.miscChargesName1,
+				miscCharge: cleaningJobCommandInstance.miscCharge1)
 	
-			if(!miscChargesInstanceA.save(flush:true)) {
+			if(!miscChargesInstance1.save(flush:true)) {
 				carpetCareJobInstance.delete()
 				cleaningJobCommandInstance.errors.reject(
 					'Error saving first Miscellaneous Charge record',
@@ -719,6 +719,37 @@ class CleaningJobController {
 			}
 		}
 		
+		if (cleaningJobCommandInstance.miscVisible2 != "Y") {
+			def miscChargesInstance2 = new MiscCharges(jobId: carpetCareJob.id,
+				miscDescription: cleaningJobCommandInstance.miscChargesName2,
+				miscCharge: cleaningJobCommandInstance.miscCharge2)
+	
+			if(!miscChargesInstance2.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving second Miscellaneous Charge record',
+					['', 'class MiscCharges'] as Object[],
+					'Error saving first Miscellaneous Charge record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.miscVisible3 != "Y") {
+			def miscChargesInstance3 = new MiscCharges(jobId: carpetCareJob.id,
+				miscDescription: cleaningJobCommandInstance.miscChargesName3,
+				miscCharge: cleaningJobCommandInstance.miscCharge3)
+	
+			if(!miscChargesInstance3.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving third Miscellaneous Charge record',
+					['', 'class MiscCharges'] as Object[],
+					'Error saving third Miscellaneous Charge record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
 		redirect action: "index", controller: "cleaningJob"
 
 	}
@@ -731,7 +762,7 @@ class CleaningJobController {
 		if ((cleaningJobCommandInstance.groupName == "No Special") &&
 		(cleaningJobCommandInstance.visible001 != "Y") &&
 		(cleaningJobCommandInstance.hsVisible1 != "Y") &&
-		(cleaningJobCommandInstance.miscChargesName == "Pick Misc. Description") &&
+		(cleaningJobCommandInstance.miscVisible1 != "Y") &&
 		(cleaningJobCommandInstance.stairDirection1 == "Pick a Direction") &&
 		(cleaningJobCommandInstance.stairDirection2 == "Pick a Direction") &&
 		(cleaningJobCommandInstance.stairDirection3 == "Pick a Direction") &&
@@ -819,7 +850,7 @@ class CleaningJobController {
 		//Additional Rooms
 		if ((cleaningJobCommandInstance.visible001 == "Y") &&
 		(cleaningJobCommandInstance.roomName001 == null)) {
-			cleaningJobCommandInstance.errors.rejectValue('roomName001', 'Must enter Square Footage of the First Room   ')
+			cleaningJobCommandInstance.errors.rejectValue('roomName001', 'Must enter Room Name of the First Room   ')
 		}
 
 		if ((cleaningJobCommandInstance.visible001 == "Y") &&
@@ -829,7 +860,7 @@ class CleaningJobController {
 
 		if ((cleaningJobCommandInstance.visible002 == "Y") &&
 		(cleaningJobCommandInstance.roomName002 == null)) {
-			cleaningJobCommandInstance.errors.rejectValue('roomName002', 'Must enter Square Footage of the Second Room   ')
+			cleaningJobCommandInstance.errors.rejectValue('roomName002', 'Must enter Room Name of the Second Room   ')
 		}
 
 		if ((cleaningJobCommandInstance.visible002 == "Y") &&
@@ -839,7 +870,7 @@ class CleaningJobController {
 
 		if ((cleaningJobCommandInstance.visible003 == "Y") &&
 		(cleaningJobCommandInstance.roomName003 == null)) {
-			cleaningJobCommandInstance.errors.rejectValue('roomName003', 'Must enter Square Footage of the Third Room   ')
+			cleaningJobCommandInstance.errors.rejectValue('roomName003', 'Must enter Room Name of the Third Room   ')
 		}
 
 		if ((cleaningJobCommandInstance.visible003 == "Y") &&
@@ -849,7 +880,7 @@ class CleaningJobController {
 
 		if ((cleaningJobCommandInstance.visible004 == "Y") &&
 		(cleaningJobCommandInstance.roomName004 == null)) {
-			cleaningJobCommandInstance.errors.rejectValue('roomName004', 'Must enter Square Footage of the Fourth Room   ')
+			cleaningJobCommandInstance.errors.rejectValue('roomName004', 'Must enter Room Name of the Fourth Room   ')
 		}
 
 		if ((cleaningJobCommandInstance.visible004 == "Y") &&
@@ -859,7 +890,7 @@ class CleaningJobController {
 
 		if ((cleaningJobCommandInstance.visible005 == "Y") &&
 		(cleaningJobCommandInstance.roomName005 == null)) {
-			cleaningJobCommandInstance.errors.rejectValue('roomName005', 'Must enter Square Footage of the Fifth Room   ')
+			cleaningJobCommandInstance.errors.rejectValue('roomName005', 'Must enter Room Name of the Fifth Room   ')
 		}
 
 		if ((cleaningJobCommandInstance.visible005 == "Y") &&
@@ -869,7 +900,7 @@ class CleaningJobController {
 
 		if ((cleaningJobCommandInstance.visible006 == "Y") &&
 		(cleaningJobCommandInstance.roomName006 == null)) {
-			cleaningJobCommandInstance.errors.rejectValue('roomName006', 'Must enter Square Footage of the Sixth Room   ')
+			cleaningJobCommandInstance.errors.rejectValue('roomName006', 'Must enter Room Name of the Sixth Room   ')
 		}
 
 		if ((cleaningJobCommandInstance.visible006 == "Y") &&
@@ -879,7 +910,7 @@ class CleaningJobController {
 
 		if ((cleaningJobCommandInstance.visible007 == "Y") &&
 		(cleaningJobCommandInstance.roomName007 == null)) {
-			cleaningJobCommandInstance.errors.rejectValue('roomName007', 'Must enter Square Footage of the Seventh Room   ')
+			cleaningJobCommandInstance.errors.rejectValue('roomName007', 'Must enter Room Name of the Seventh Room   ')
 		}
 
 		if ((cleaningJobCommandInstance.visible007 == "Y") &&
@@ -889,12 +920,73 @@ class CleaningJobController {
 
 		if ((cleaningJobCommandInstance.visible008 == "Y") &&
 		(cleaningJobCommandInstance.roomName008 == null)) {
-			cleaningJobCommandInstance.errors.rejectValue('roomName008', 'Must enter Square Footage of the Eighth Room   ')
+			cleaningJobCommandInstance.errors.rejectValue('roomName008', 'Must enter Room Name of the Eighth Room   ')
 		}
 
 		if ((cleaningJobCommandInstance.visible008 == "Y") &&
 		(cleaningJobCommandInstance.squareFootage008 == null)) {
 			cleaningJobCommandInstance.errors.rejectValue('squareFootage008', 'Must enter Square Footage of the Eighth Room   ')
+		}
+		
+		//Hard Surface Rooms
+		if ((cleaningJobCommandInstance.hsVisible1 == "Y") &&
+		(cleaningJobCommandInstance.hsRoomName1 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('hsRoomName1', 'Must enter Room Name of the First Hard Surface Room   ')
+		}
+
+		if ((cleaningJobCommandInstance.hsVisible1 == "Y") &&
+		(cleaningJobCommandInstance.hsSquareFootage1 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('hsSquareFootage1', 'Must enter Square Footage of the First Hard Surface Room   ')
+		}
+
+		if ((cleaningJobCommandInstance.hsVisible2 == "Y") &&
+		(cleaningJobCommandInstance.hsRoomName2 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('hsRoomName2', 'Must enter Room Name of the Second Hard Surface Room   ')
+		}
+
+		if ((cleaningJobCommandInstance.hsVisible2 == "Y") &&
+		(cleaningJobCommandInstance.hsSquareFootage2 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('hsSquareFootage2', 'Must enter Square Footage of the Second Hard Surface Room   ')
+		}
+		
+		if ((cleaningJobCommandInstance.hsVisible3 == "Y") &&
+			(cleaningJobCommandInstance.hsRoomName3 == null)) {
+				cleaningJobCommandInstance.errors.rejectValue('hsRoomName3', 'Must enter Room Name of the Third Hard Surface Room   ')
+		}
+	
+		if ((cleaningJobCommandInstance.hsVisible3 == "Y") &&
+		(cleaningJobCommandInstance.hsSquareFootage3 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('hsSquareFootage3', 'Must enter Square Footage of the Third Hard Surface Room   ')
+		}
+		
+		if ((cleaningJobCommandInstance.hsVisible4 == "Y") &&
+			(cleaningJobCommandInstance.hsRoomName4 == null)) {
+				cleaningJobCommandInstance.errors.rejectValue('hsRoomName4', 'Must enter Room Name of the Fourth Hard Surface Room   ')
+		}
+		
+		if ((cleaningJobCommandInstance.hsVisible4 == "Y") &&
+		(cleaningJobCommandInstance.hsSquareFootage4 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('hsSquareFootage4', 'Must enter Square Footage of the Fourth Hard Surface Room   ')
+		}
+		
+		if ((cleaningJobCommandInstance.hsVisible5 == "Y") &&
+			(cleaningJobCommandInstance.hsRoomName5 == null)) {
+				cleaningJobCommandInstance.errors.rejectValue('hsRoomName5', 'Must enter Room Name of the Fifth Hard Surface Room   ')
+		}
+			
+		if ((cleaningJobCommandInstance.hsVisible5 == "Y") &&
+		(cleaningJobCommandInstance.hsSquareFootage5 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('hsSquareFootage5', 'Must enter Square Footage of the Fifth Hard Surface Room   ')
+		}
+		
+		if ((cleaningJobCommandInstance.hsVisible6 == "Y") &&
+			(cleaningJobCommandInstance.hsRoomName6 == null)) {
+				cleaningJobCommandInstance.errors.rejectValue('hsRoomName6', 'Must enter Room Name of the Sixth Hard Surface Room   ')
+		}
+				
+		if ((cleaningJobCommandInstance.hsVisible6 == "Y") &&
+		(cleaningJobCommandInstance.hsSquareFootage6 == null)) {
+			cleaningJobCommandInstance.errors.rejectValue('hsSquareFootage6', 'Must enter Square Footage of the Sixth Hard Surface Room   ')
 		}
 	}
 
