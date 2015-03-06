@@ -9,8 +9,12 @@
 		// bind the change event to the changeGroupName function
 		$("#groupName").on("change", changeGroupName);
 
+		// bind the change event to the changeRoomCount function
+		$("#roomCount").on("change", changeRoomCount);
+
 		// invoke to initialize the table rows based on the current selectedIndex
 		changeGroupName(undefined);
+		changeRoomCount(undefined);
 	}
 
 	function changeGroupName(event) {
@@ -48,6 +52,26 @@
 				$("#groupRate").val("");
 			}
 		}
+	}
+
+	function changeRoomCount(event) {
+		var roomCountElement = $("#roomCount")[0];
+
+		// First, hide all the rows
+		$("#additionalRoomTable tbody tr[id^='room']").hide();
+
+		// Next, show the rows based on the selected index of the roomCount...
+		var selectedIndex = roomCountElement.selectedIndex;
+		$("#roomCount > option").each(function() {
+			// This will make sure the first row shows when 00 is selected, but stay hidden if not...
+		    if ( (this.index === selectedIndex) || (this.index > 0 && this.index < selectedIndex) ) {
+		    	$("#additionalRoomTable #room" + this.value).show();
+		    	$("#visible0" + this.value).val("Y");
+		    } else {
+		    	$("#visible0" + this.value).val("");
+		    }
+		});
+		
 	}
 
 })();

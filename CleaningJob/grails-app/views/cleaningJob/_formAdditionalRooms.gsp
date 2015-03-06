@@ -11,6 +11,9 @@
 		</tr>
 	</thead>
 	<tbody>
+		<tr id="room00">
+			<td colspan="7">No additional rooms selected</td>
+		</tr>
 		<tr id="room01">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomName001', 'error')} ">
