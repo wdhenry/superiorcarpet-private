@@ -1,3 +1,18 @@
+<table>
+	<tr>
+		<th colspan="7" class="sectionhead">Additional Room Section</th>
+	</tr>
+	<tr>
+		<td colspan="7">  
+			<div>
+				<g:message code="cleaningJob.numberRooms.label" default="Select Number of Additional Rooms" />
+				<g:select name="roomCount" 
+					from="${['01','02','03','04','05','06','07','08']}"
+					noSelection="${['00':'00']}"/>
+			</div>
+		</td>
+	</tr>
+</table>
 <table id="additionalRoomTable">
 	<thead>
 		<tr>
@@ -412,206 +427,6 @@
 						value="${visible008} "/>
 				</div>
 			</td>
-		</tr>
-		
-		<tr id="room09">
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomName009', 'error')} ">
-					<g:select name="roomName009" 
-						from="${com.superior.base.RoomName.list()}"
-						optionKey="roomName" optionValue="roomName" 
-						value="${cleaningJobCommandInstance?.roomName009}"
-						noSelection="${['Pick a Room':'Pick a Room']}"/>
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'squareFootage009', 'error')} ">
-					<g:field name="squareFootage009" type="number" step="any" 
-						value="${squareFootage009}" />
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomCharge009', 'error')} ">
-					<g:field name="roomCharge009" type="number" step="any" 
-						value="${roomCharge009}" />
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'preVacCharge009', 'error')} ">
-					<g:checkBox name="preVacCheck009" value="${preVacCheck009}" />
-					<g:field name="preVacCharge009" type="number" step="any" 
-					value="${preVacCharge009}" />
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'protectorCharge009', 'error')} ">
-					<g:checkBox name="protectorCheck009" value="${protectorCheck009}" />
-					<g:field name="protectorCharge009" type="number" step="any" 
-						value="${protectorCharge009}" />
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'moveFurnitureCharge009', 'error')} ">
-					<g:field name="moveFurnitureCharge009" type="number" step="any" 
-						value="${moveFurnitureCharge009} "/>
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'visible009', 'error')} ">
-					<g:field name="visible009" type="hidden"  
-						value="${visible009} "/>
-				</div>
-			</td>
-		</tr>
-		
-		<tr id="room10">
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomName010', 'error')} ">
-					<g:select name="roomName010" 
-						from="${com.superior.base.RoomName.list()}"
-						optionKey="roomName" optionValue="roomName" 
-						value="${cleaningJobCommandInstance?.roomName010}"
-						noSelection="${['Pick a Room':'Pick a Room']}"/>
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'squareFootage010', 'error')} ">
-					<g:field name="squareFootage010" type="number" step="any" 
-						value="${squareFootage010}" />
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomCharge010', 'error')} ">
-					<g:field name="roomCharge010" type="number" step="any" 
-						value="${roomCharge010}" />
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'preVacCharge010', 'error')} ">
-					<g:checkBox name="preVacCheck010" value="${preVacCheck010}" />
-					<g:field name="preVacCharge010" type="number" step="any" 
-					value="${preVacCharge010}" />
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'protectorCharge010', 'error')} ">
-					<g:checkBox name="protectorCheck010" value="${protectorCheck010}" />
-					<g:field name="protectorCharge010" type="number" step="any" 
-						value="${protectorCharge010}" />
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'moveFurnitureCharge010', 'error')} ">
-					<g:field name="moveFurnitureCharge010" type="number" step="any" 
-						value="${moveFurnitureCharge010} "/>
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'visible010', 'error')} ">
-					<g:field name="visible010" type="hidden"  
-						value="${visible010} "/>
-				</div>
-			</td>
-		</tr>
-		
-		<tr id="room11">
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomName011', 'error')} ">
-					<g:select name="roomName011" 
-						from="${com.superior.base.RoomName.list()}"
-						optionKey="roomName" optionValue="roomName" 
-						value="${cleaningJobCommandInstance?.roomName011}"
-						noSelection="${['Pick a Room':'Pick a Room']}"/>
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'squareFootage011', 'error')} ">
-					<g:field name="squareFootage011" type="number" step="any" 
-						value="${squareFootage011}" />
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomCharge011', 'error')} ">
-					<g:field name="roomCharge011" type="number" step="any" 
-						value="${roomCharge011}" />
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'preVacCharge011', 'error')} ">
-					<g:checkBox name="preVacCheck011" value="${preVacCheck011}" />
-					<g:field name="preVacCharge011" type="number" step="any" 
-					value="${preVacCharge011}" />
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'protectorCharge011', 'error')} ">
-					<g:checkBox name="protectorCheck011" value="${protectorCheck011}" />
-					<g:field name="protectorCharge011" type="number" step="any" 
-						value="${protectorCharge011}" />
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'moveFurnitureCharge011', 'error')} ">
-					<g:field name="moveFurnitureCharge011" type="number" step="any" 
-						value="${moveFurnitureCharge011} "/>
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'visible011', 'error')} ">
-					<g:field name="visible011" type="hidden"  
-						value="${visible011} "/>
-				</div>
-			</td>
-		</tr>
-		
-		<tr id="room12">
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomName012', 'error')} ">
-					<g:select name="roomName012" 
-						from="${com.superior.base.RoomName.list()}"
-						optionKey="roomName" optionValue="roomName" 
-						value="${cleaningJobCommandInstance?.roomName012}"
-						noSelection="${['Pick a Room':'Pick a Room']}"/>
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'squareFootage012', 'error')} ">
-					<g:field name="squareFootage012" type="number" step="any" 
-						value="${squareFootage012}" />
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomCharge012', 'error')} ">
-					<g:field name="roomCharge012" type="number" step="any" 
-						value="${roomCharge012}" />
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'preVacCharge012', 'error')} ">
-					<g:checkBox name="preVacCheck012" value="${preVacCheck012}" />
-					<g:field name="preVacCharge012" type="number" step="any" 
-					value="${preVacCharge012}" />
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'protectorCharge012', 'error')} ">
-					<g:checkBox name="protectorCheck012" value="${protectorCheck012}" />
-					<g:field name="protectorCharge012" type="number" step="any" 
-						value="${protectorCharge012}" />
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'moveFurnitureCharge012', 'error')} ">
-					<g:field name="moveFurnitureCharge012" type="number" step="any" 
-						value="${moveFurnitureCharge012} "/>
-				</div>
-			</td>
-			<td>
-				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'visible012', 'error')} ">
-					<g:field name="visible012" type="hidden"  
-						value="${visible012} "/>
-				</div>
-			</td>
-		</tr>
+		</tr>		
 	</tbody>
 </table>

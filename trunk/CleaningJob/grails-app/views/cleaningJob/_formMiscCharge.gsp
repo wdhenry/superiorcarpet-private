@@ -1,3 +1,8 @@
+<table>
+	<tr>
+		<th colspan="2" class="sectionhead">Miscellaneous Charge Section</th>
+	</tr>
+</table>
 	<tr>
 		<th>Miscellaneous Description</th>
 		<th>Charge</th>
