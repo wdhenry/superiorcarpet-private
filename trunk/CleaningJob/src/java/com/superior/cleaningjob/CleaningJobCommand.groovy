@@ -132,46 +132,6 @@ class CleaningJobCommand {
 	String _moveFurnitureCheck008
 	BigDecimal moveFurnitureCharge008
 	String visible008
-	String roomName009
-	BigDecimal squareFootage009
-	BigDecimal roomCharge009
-	String _preVacCheck009
-	BigDecimal preVacCharge009
-	String _protectorCheck009
-	BigDecimal protectorCharge009
-	String _moveFurnitureCheck009
-	BigDecimal moveFurnitureCharge009
-	String visible009
-	String roomName010
-	BigDecimal squareFootage010
-	BigDecimal roomCharge010
-	String _preVacCheck010
-	BigDecimal preVacCharge010
-	String _protectorCheck010
-	BigDecimal protectorCharge010
-	String _moveFurnitureCheck010
-	BigDecimal moveFurnitureCharge010
-	String visible010
-	String roomName011
-	BigDecimal squareFootage011
-	BigDecimal roomCharge011
-	String _preVacCheck011
-	BigDecimal preVacCharge011
-	String _protectorCheck011
-	BigDecimal protectorCharge011
-	String _moveFurnitureCheck011
-	BigDecimal moveFurnitureCharge011
-	String visible011
-	String roomName012
-	BigDecimal squareFootage012
-	BigDecimal roomCharge012
-	String _preVacCheck012
-	BigDecimal preVacCharge012
-	String _protectorCheck012
-	BigDecimal protectorCharge012
-	String _moveFurnitureCheck012
-	BigDecimal moveFurnitureCharge012
-	String visible012
 	
 	String stairDirection1
 	BigDecimal stairCount1
@@ -183,13 +143,54 @@ class CleaningJobCommand {
 	BigDecimal stairCount3
 	BigDecimal stairCharge3
 	
-	String hsRoomName
-	BigDecimal hsSquareFootage
-	BigDecimal hsRoomCharge
-	String _hsEtchedCheck
-	BigDecimal hsEtchedCharge
-	String _hsSealedWaxedCheck
-	BigDecimal hsSealedWaxedCharge
+	String hsRoomName1
+	BigDecimal hsSquareFootage1
+	BigDecimal hsRoomCharge1
+	String _hsEtchedCheck1
+	BigDecimal hsEtchedCharge1
+	String _hsSealedWaxedCheck1
+	BigDecimal hsSealedWaxedCharge1
+	String hsVisible1
+	String hsRoomName2
+	BigDecimal hsSquareFootage2
+	BigDecimal hsRoomCharge2
+	String _hsEtchedCheck2
+	BigDecimal hsEtchedCharge2
+	String _hsSealedWaxedCheck2
+	BigDecimal hsSealedWaxedCharge2
+	String hsVisible2
+	String hsRoomName3
+	BigDecimal hsSquareFootage3
+	BigDecimal hsRoomCharge3
+	String _hsEtchedCheck3
+	BigDecimal hsEtchedCharge3
+	String _hsSealedWaxedCheck3
+	BigDecimal hsSealedWaxedCharge3
+	String hsVisible3
+	String hsRoomName4
+	BigDecimal hsSquareFootage4
+	BigDecimal hsRoomCharge4
+	String _hsEtchedCheck4
+	BigDecimal hsEtchedCharge4
+	String _hsSealedWaxedCheck4
+	BigDecimal hsSealedWaxedCharge4
+	String hsVisible4
+	String hsRoomName5
+	BigDecimal hsSquareFootage5
+	BigDecimal hsRoomCharge5
+	String _hsEtchedCheck5
+	BigDecimal hsEtchedCharge5
+	String _hsSealedWaxedCheck5
+	BigDecimal hsSealedWaxedCharge5
+	String hsVisible5
+	String hsRoomName6
+	BigDecimal hsSquareFootage6
+	BigDecimal hsRoomCharge6
+	String _hsEtchedCheck6
+	BigDecimal hsEtchedCharge6
+	String _hsSealedWaxedCheck6
+	BigDecimal hsSealedWaxedCharge6
+	String hsVisible6
 	
 	String upholsteryName1
 	BigDecimal upholsteryCount1
@@ -351,46 +352,6 @@ class CleaningJobCommand {
 		_moveFurnitureCheck008(nullable:true)
 		moveFurnitureCharge008(nullable:true, scale: 2, min: 0.00)
 		visible008(nullable:true)
-		roomName009(nullable:true)
-		roomCharge009(nullable:true, scale: 2, min: 0.00)
-		squareFootage009(nullable:true, scale: 1, min: 0.0)
-		_preVacCheck009(nullable:true)
-		preVacCharge009(nullable:true, scale: 2, min: 0.00)
-		_protectorCheck009(nullable:true)
-		protectorCharge009(nullable:true, scale: 2, min: 0.00)
-		_moveFurnitureCheck009(nullable:true)
-		moveFurnitureCharge009(nullable:true, scale: 2, min: 0.00)
-		visible009(nullable:true)
-		roomName010(nullable:true)
-		roomCharge010(nullable:true, scale: 2, min: 0.00)
-		squareFootage010(nullable:true, scale: 1, min: 0.0)
-		_preVacCheck010(nullable:true)
-		preVacCharge010(nullable:true, scale: 2, min: 0.00)
-		_protectorCheck010(nullable:true)
-		protectorCharge010(nullable:true, scale: 2, min: 0.00)
-		_moveFurnitureCheck010(nullable:true)
-		moveFurnitureCharge010(nullable:true, scale: 2, min: 0.00)
-		visible010(nullable:true)
-		roomName011(nullable:true)
-		roomCharge011(nullable:true, scale: 2, min: 0.00)
-		squareFootage011(nullable:true, scale: 1, min: 0.0)
-		_preVacCheck011(nullable:true)
-		preVacCharge011(nullable:true, scale: 2, min: 0.00)
-		_protectorCheck011(nullable:true)
-		protectorCharge011(nullable:true, scale: 2, min: 0.00)
-		_moveFurnitureCheck011(nullable:true)
-		moveFurnitureCharge011(nullable:true, scale: 2, min: 0.00)
-		visible011(nullable:true)
-		roomName012(nullable:true)
-		roomCharge012(nullable:true, scale: 2, min: 0.00)
-		squareFootage012(nullable:true, scale: 1, min: 0.0)
-		_preVacCheck012(nullable:true)
-		preVacCharge012(nullable:true, scale: 2, min: 0.00)
-		_protectorCheck012(nullable:true)
-		protectorCharge012(nullable:true, scale: 2, min: 0.00)
-		_moveFurnitureCheck012(nullable:true)
-		moveFurnitureCharge012(nullable:true, scale: 2, min: 0.00)
-		visible012(nullable:true)
 		stairDirection1(nullable:true)
 		stairCount1(nullable:true, scale: 0, min: 0.0)
 		stairCharge1(nullable:true, scale: 2, min: 0.00)
@@ -400,13 +361,54 @@ class CleaningJobCommand {
 		stairDirection3(nullable:true)
 		stairCount3(nullable:true, scale: 0, min: 0.0)
 		stairCharge3(nullable:true, scale: 2, min: 0.00)
-		hsRoomName(nullable:true)
-		hsRoomCharge(nullable:true, scale: 2, min: 0.00)
-		hsSquareFootage(nullable:true, scale: 1, min: 0.0)
-		_hsEtchedCheck(nullable:true)
-		hsEtchedCharge(nullable:true, scale: 2, min: 0.00)
-		_hsSealedWaxedCheck(nullable:true)
-		hsSealedWaxedCharge(nullable:true, scale: 2, min: 0.00)
+		hsRoomName1(nullable:true)
+		hsRoomCharge1(nullable:true, scale: 2, min: 0.00)
+		hsSquareFootage1(nullable:true, scale: 1, min: 0.0)
+		_hsEtchedCheck1(nullable:true)
+		hsEtchedCharge1(nullable:true, scale: 2, min: 0.00)
+		_hsSealedWaxedCheck1(nullable:true)
+		hsSealedWaxedCharge1(nullable:true, scale: 2, min: 0.00)
+		hsVisible1(nullable:true)
+		hsRoomName2(nullable:true)
+		hsRoomCharge2(nullable:true, scale: 2, min: 0.00)
+		hsSquareFootage2(nullable:true, scale: 1, min: 0.0)
+		_hsEtchedCheck2(nullable:true)
+		hsEtchedCharge2(nullable:true, scale: 2, min: 0.00)
+		_hsSealedWaxedCheck2(nullable:true)
+		hsSealedWaxedCharge2(nullable:true, scale: 2, min: 0.00)
+		hsVisible2(nullable:true)
+		hsRoomName3(nullable:true)
+		hsRoomCharge3(nullable:true, scale: 2, min: 0.00)
+		hsSquareFootage3(nullable:true, scale: 1, min: 0.0)
+		_hsEtchedCheck3(nullable:true)
+		hsEtchedCharge3(nullable:true, scale: 2, min: 0.00)
+		_hsSealedWaxedCheck3(nullable:true)
+		hsSealedWaxedCharge3(nullable:true, scale: 2, min: 0.00)
+		hsVisible3(nullable:true)
+		hsRoomName4(nullable:true)
+		hsRoomCharge4(nullable:true, scale: 2, min: 0.00)
+		hsSquareFootage4(nullable:true, scale: 1, min: 0.0)
+		_hsEtchedCheck4(nullable:true)
+		hsEtchedCharge4(nullable:true, scale: 2, min: 0.00)
+		_hsSealedWaxedCheck4(nullable:true)
+		hsSealedWaxedCharge4(nullable:true, scale: 2, min: 0.00)
+		hsVisible4(nullable:true)
+		hsRoomName5(nullable:true)
+		hsRoomCharge5(nullable:true, scale: 2, min: 0.00)
+		hsSquareFootage5(nullable:true, scale: 1, min: 0.0)
+		_hsEtchedCheck5(nullable:true)
+		hsEtchedCharge5(nullable:true, scale: 2, min: 0.00)
+		_hsSealedWaxedCheck5(nullable:true)
+		hsSealedWaxedCharge5(nullable:true, scale: 2, min: 0.00)
+		hsVisible5(nullable:true)
+		hsRoomName6(nullable:true)
+		hsRoomCharge6(nullable:true, scale: 2, min: 0.00)
+		hsSquareFootage6(nullable:true, scale: 1, min: 0.0)
+		_hsEtchedCheck6(nullable:true)
+		hsEtchedCharge6(nullable:true, scale: 2, min: 0.00)
+		_hsSealedWaxedCheck6(nullable:true)
+		hsSealedWaxedCharge6(nullable:true, scale: 2, min: 0.00)
+		hsVisible6(nullable:true)
 		upholsteryName1(nullable:true)
 		upholsteryCount1(nullable:true, scale: 0, min: 0.0)
 		upholsteryCharge1(nullable:true, scale: 2, min: 0.00)
