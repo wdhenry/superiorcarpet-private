@@ -1,5 +1,7 @@
 (function(undefined) {
 	"use strict";
+	
+	var CarpetPreVacRate;
 
 	$(document).ready(function() {
 		init();
@@ -10,6 +12,10 @@
 		$("#groupName").on("change", changeGroupName);
 		$("#roomCount").on("change", changeRoomCount);
 		$("#upholsteryCount").on("change", changeUpholsteryCount);
+		$("input[id^='preVacCheck']").on("change", changePreVacCheck);
+		
+		// prefetch meta data for calculations...
+		CarpetPreVacRate = getRateByName("CarpetPreVac");
 
 		// invoke to initialize the table rows based on the current selectedIndex
 		changeGroupName(undefined);
@@ -93,5 +99,35 @@
 		});
 		
 	}
-
+	
+	function changePreVacCheck(event) {
+		// get the preVacCheck element that was changed...
+		var preVacCheck = $(event.currentTarget);
+		// get the preVacCharge element...
+		var preVacCharge = preVacCheck.siblings("input[id^='preVacCharge']");
+		// set the rate charge accordingly...
+		if (preVacCheck.is(':checked') === true){
+			preVacCharge.val(CarpetPreVacRate.rateCharge.toFixed(2));
+		} else {
+			preVacCharge.val("");
+		}
+	}
+	
+	function getRateByName(rateName){
+		var result = "";
+		jQuery.ajax({
+			type : 'POST',
+			url : '/CleaningJob/rates/findByRateName.json',
+			data : { rateName : rateName},
+			async : false,
+			success : function(data, textStatus) {
+				result = data;
+			},
+			error : function(XMLHttpRequest, textStatus, errorThrown) {
+				console.error(errorThrown);
+			}
+		});
+		return result;
+	}
+	
 })();

@@ -26,7 +26,7 @@
 			</td>
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'squareFootage001', 'error')} ">
-					<g:field name="squareFootage" type="number" step="any" 
+					<g:field name="squareFootage001" type="number" step="any" 
 						value="${squareFootage001}" />
 				</div>
 			</td>
@@ -76,7 +76,7 @@
 			</td>
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'squareFootage002', 'error')} ">
-					<g:field name="squareFootage" type="number" step="any" 
+					<g:field name="squareFootage002" type="number" step="any" 
 						value="${squareFootage002}" />
 				</div>
 			</td>
@@ -126,7 +126,7 @@
 			</td>
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'squareFootage003', 'error')} ">
-					<g:field name="squareFootage" type="number" step="any" 
+					<g:field name="squareFootage003" type="number" step="any" 
 						value="${squareFootage003}" />
 				</div>
 			</td>
@@ -176,7 +176,7 @@
 			</td>
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'squareFootage004', 'error')} ">
-					<g:field name="squareFootage" type="number" step="any" 
+					<g:field name="squareFootage004" type="number" step="any" 
 						value="${squareFootage004}" />
 				</div>
 			</td>
@@ -226,7 +226,7 @@
 			</td>
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'squareFootage005', 'error')} ">
-					<g:field name="squareFootage" type="number" step="any" 
+					<g:field name="squareFootage005" type="number" step="any" 
 						value="${squareFootage005}" />
 				</div>
 			</td>
@@ -276,7 +276,7 @@
 			</td>
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'squareFootage006', 'error')} ">
-					<g:field name="squareFootage" type="number" step="any" 
+					<g:field name="squareFootage006" type="number" step="any" 
 						value="${squareFootage006}" />
 				</div>
 			</td>
@@ -326,7 +326,7 @@
 			</td>
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'squareFootage007', 'error')} ">
-					<g:field name="squareFootage" type="number" step="any" 
+					<g:field name="squareFootage007" type="number" step="any" 
 						value="${squareFootage007}" />
 				</div>
 			</td>
@@ -376,7 +376,7 @@
 			</td>
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'squareFootage008', 'error')} ">
-					<g:field name="squareFootage" type="number" step="any" 
+					<g:field name="squareFootage008" type="number" step="any" 
 						value="${squareFootage008}" />
 				</div>
 			</td>
@@ -426,7 +426,7 @@
 			</td>
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'squareFootage009', 'error')} ">
-					<g:field name="squareFootage" type="number" step="any" 
+					<g:field name="squareFootage009" type="number" step="any" 
 						value="${squareFootage009}" />
 				</div>
 			</td>
@@ -476,7 +476,7 @@
 			</td>
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'squareFootage010', 'error')} ">
-					<g:field name="squareFootage" type="number" step="any" 
+					<g:field name="squareFootage010" type="number" step="any" 
 						value="${squareFootage010}" />
 				</div>
 			</td>
@@ -526,7 +526,7 @@
 			</td>
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'squareFootage011', 'error')} ">
-					<g:field name="squareFootage" type="number" step="any" 
+					<g:field name="squareFootage011" type="number" step="any" 
 						value="${squareFootage011}" />
 				</div>
 			</td>
@@ -576,7 +576,7 @@
 			</td>
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'squareFootage012', 'error')} ">
-					<g:field name="squareFootage" type="number" step="any" 
+					<g:field name="squareFootage012" type="number" step="any" 
 						value="${squareFootage012}" />
 				</div>
 			</td>
