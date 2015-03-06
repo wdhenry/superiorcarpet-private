@@ -19,6 +19,10 @@ class RatesController {
         respond ratesInstance
     }
 
+    def findByRateName(String rateName) {
+        respond Rates.findByRateName(rateName)
+    }
+
     def create() {
         respond new Rates(params)
     }
