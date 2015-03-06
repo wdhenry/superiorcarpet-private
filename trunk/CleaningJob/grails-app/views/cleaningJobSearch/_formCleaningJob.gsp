@@ -95,7 +95,7 @@
 	</table>
 </g:if>
 
-<g:if test="${cleaningJobCommandInstance.hsRoomName != null}">
+<g:if test="${cleaningJobCommandInstance.hsRoomName1 != null}">
 	<table>
 		<tr>
 			<th colspan="5" class="sectionhead">Hard Surface Room Section</th>
