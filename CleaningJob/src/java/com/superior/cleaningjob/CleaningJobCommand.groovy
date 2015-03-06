@@ -229,8 +229,15 @@ class CleaningJobCommand {
 	BigDecimal upholsteryProtectorCharge6
 	String uVisible6
 	
-	String miscChargesName
-	BigDecimal miscCharge
+	String miscChargesName1
+	BigDecimal miscCharge1
+	String miscVisible1
+	String miscChargesName2
+	BigDecimal miscCharge2
+	String miscVisible2
+	String miscChargesName3
+	BigDecimal miscCharge3
+	String miscVisible3
 	
 	static constraints = {
 		date(blank:false)
@@ -445,8 +452,16 @@ class CleaningJobCommand {
 		_upholsteryProtectorCheck6(nullable:true)
 		upholsteryProtectorCharge6(nullable:true, scale: 2, min: 0.00)
 		uVisible6(nullable:true)
-		miscChargesName(nullable:true)
-		miscCharge(nullable:true, scale: 2, min: 0.00)
+		miscChargesName1(nullable:true)
+		miscCharge1(nullable:true, scale: 2, min: 0.00)
+		miscVisible1(nullable:true)
+		miscChargesName2(nullable:true)
+		miscCharge2(nullable:true, scale: 2, min: 0.00)
+		miscVisible2(nullable:true)
+		miscChargesName3(nullable:true)
+		miscCharge3(nullable:true, scale: 2, min: 0.00)
+		miscVisible3(nullable:true)
+		
 	}
 	
 	String toString() {
