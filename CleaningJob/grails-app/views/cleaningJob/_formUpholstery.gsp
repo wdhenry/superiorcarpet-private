@@ -9,6 +9,9 @@
 		</tr>
 	</thead>
 	<tbody>
+		<tr id="upholstery0">
+			<td colspan="5">No upholstery selected</td>
+		</tr>
 		<tr id="upholstery1">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'upholsteryName1', 'error')} ">

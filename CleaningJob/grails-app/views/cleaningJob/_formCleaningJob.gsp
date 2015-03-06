@@ -82,7 +82,7 @@
 	<tr>
 		<th colspan="7" class="sectionhead">Additional Room Section</th>
 	</tr>
-	<tr id="room00">
+	<tr>
 		<td colspan="7">  
 			<div>
 				<g:message code="cleaningJob.numberRooms.label" default="Select Number of Additional Rooms" />
