@@ -1,3 +1,32 @@
+<table>
+	<tr>
+		<th colspan="2" class="sectionhead">Carpet Care Section</th>
+	</tr>
+	<tr>
+		<th>Special</th>
+		<th>Special Rate</th>
+	</tr>
+	<tr>
+		<td>
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'groupName', 'error')} ">
+				<g:select name="groupName"
+					from="${com.superior.base.RoomGroup.list()}" 
+					optionKey="groupName"
+					optionValue="groupName" 
+					value="${cleaningJobCommandInstance?.groupName}"
+					noSelection="${['No Special':'No Special']}"/>
+			</div>
+		</td>
+		<td>
+			<div
+				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'groupRate', 'error')} ">
+				<g:field name="groupRate" type="number" step="any"
+					value="${fieldValue(bean: cleaningJobCommandInstance, field: 'groupRate')} " />
+			</div>
+		</td>
+	</tr>
+</table>
 <table id="groupRoomTable">
 	<thead>
 		<tr>
