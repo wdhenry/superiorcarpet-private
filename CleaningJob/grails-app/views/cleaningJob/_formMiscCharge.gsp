@@ -13,7 +13,7 @@
 		</td>
 	</tr>
 </table>
-<table id="MiscellaneousChargeTable">
+<table id="miscellaneousChargeTable">
 	<thead>
 		<tr>
 			<th>Miscellaneous Description</th>
@@ -22,10 +22,10 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr id="misc0">
+		<tr id="misc00">
 			<td colspan="3">No miscellaneous charges selected</td>
 		</tr>
-		<tr id="misc1">
+		<tr id="misc01">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscChargesName1', 'error')} ">
 					<g:select name="miscChargesName1" 
@@ -48,7 +48,7 @@
 				</div>
 			</td>
 		</tr>
-		<tr id="misc2">
+		<tr id="misc02">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscChargesName2', 'error')} ">
 					<g:select name="miscChargesName2" 
@@ -71,7 +71,7 @@
 				</div>
 			</td>
 		</tr>
-		<tr id="misc3">
+		<tr id="misc03">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscChargesName3', 'error')} ">
 					<g:select name="miscChargesName3" 
