@@ -17,13 +17,12 @@
     $("input[id^='preVacCharge']").on("change", changePreVacCharge);
     $("input[id^='protectorCheck']").on("change", changeProtectorCheck);
     $("input[id^='protectorCharge']").on("change", changeProtectorCharge);
-    $("input[id^='moveFurnitureCharge']").on("change",
-            changeMoveFurnitureCharge);
+    $("input[id^='moveFurnitureCharge']").on("change", changeMoveFurnitureCharge);
 
     // prefetch rates for calculations...
-    CarpetCleaningRate = getRateByName("CarpetCleaning");
-    CarpetPreVacRate = getRateByName("CarpetPreVac");
-    CarpetProtectorRate = getRateByName("CarpetProtector");
+    CarpetCleaningRate = RateService.getRateByName("CarpetCleaning");
+    CarpetPreVacRate = RateService.getRateByName("CarpetPreVac");
+    CarpetProtectorRate = RateService.getRateByName("CarpetProtector");
 
     // invoke the change handlers for some of the controls above in order
     // to initialize the table rows based on the current selectedIndex...
@@ -38,18 +37,16 @@
 
     // Next, show the rows based on the selected index of the roomCount...
     var selectedIndex = roomCountElement.selectedIndex;
-    $("#roomCount > option").each(
-            function() {
-              // This will make sure the first row shows when 00 is
-              // selected, but stay hidden if not...
-              if ((this.index === selectedIndex)
-                      || ((this.index > 0) && (this.index < selectedIndex))) {
-                $("#additionalRoomTable #room" + this.value).show();
-                $("#visible0" + this.value).val("Y");
-              } else {
-                $("#visible0" + this.value).val("");
-              }
-            });
+    $("#roomCount > option").each(function() {
+      // This will make sure the first row shows when 00 is
+      // selected, but stay hidden if not...
+      if ((this.index === selectedIndex) || ((this.index > 0) && (this.index < selectedIndex))) {
+        $("#additionalRoomTable #room" + this.value).show();
+        $("#visible0" + this.value).val("Y");
+      } else {
+        $("#visible0" + this.value).val("");
+      }
+    });
 
   }
 
@@ -126,33 +123,16 @@
       var moveFurnitureChargeNum = parseFloat(moveFurnitureCharge.val()) || 0;
 
       // calculate the room charge...
-      var cleaningCharge = (cleaningRateChargeNum * squareFootageNum)
-              + (preVacChargeNum * squareFootageNum)
-              + (protectorChargeNum * squareFootageNum)
+      var cleaningCharge = (cleaningRateChargeNum * squareFootageNum) //
+              + (preVacChargeNum * squareFootageNum) //
+              + (protectorChargeNum * squareFootageNum) //
               + (moveFurnitureChargeNum);
 
-      var roomCharge = $("#roomCharge" + suffix);
-      roomCharge.val(cleaningCharge.toFixed(2));
-    }
-  }
+      $("#roomCharge" + suffix).val(cleaningCharge.toFixed(2));
 
-  function getRateByName(rateName) {
-    var result = "";
-    $.ajax({
-      type: 'POST',
-      url: '/CleaningJob/rates/findByRateName.json',
-      data: {
-        rateName: rateName
-      },
-      async: false,
-      success: function(data, textStatus) {
-        result = data;
-      },
-      error: function(XMLHttpRequest, textStatus, errorThrown) {
-        console.error(errorThrown);
-      }
-    });
-    return result;
+    } else {
+      $("#roomCharge" + suffix).val("");
+    }
   }
 
 })();
