@@ -1,3 +1,12 @@
+	<tr>
+		<th>Special</th>
+		<th>Special Rate</th>
+	</tr>
+	<tr>
+		<td><g:fieldValue bean="${cleaningJobCommandInstance}" field="groupName"/></td>
+		<td><g:formatNumber number="${cleaningJobCommandInstance.groupRate}" 
+				type="currency" maxFractionDigits="2" currencyCode="USD" /></td>
+	</tr>
 <table>
 	<tr>
 		<th>Group Room Name</th>

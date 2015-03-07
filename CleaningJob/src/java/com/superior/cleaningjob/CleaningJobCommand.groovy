@@ -136,12 +136,15 @@ class CleaningJobCommand {
 	String stairDirection1
 	BigDecimal stairCount1
 	BigDecimal stairCharge1
+	String stairVisible1
 	String stairDirection2
 	BigDecimal stairCount2
 	BigDecimal stairCharge2
+	String stairVisible2
 	String stairDirection3
 	BigDecimal stairCount3
 	BigDecimal stairCharge3
+	String stairVisible3
 	
 	String hsRoomName1
 	BigDecimal hsSquareFootage1

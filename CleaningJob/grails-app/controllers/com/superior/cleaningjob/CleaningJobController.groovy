@@ -400,7 +400,7 @@ class CleaningJobController {
 		}
 		
 		//Stairs
-		if (cleaningJobCommandInstance.stairDirection1 != "Pick a Direction") {
+		if (cleaningJobCommandInstance.stairVisible1 == "Y") {
 			def stairInstance1 = new Stair(jobId: carpetCareJob.id,
 				stairDirection: cleaningJobCommandInstance.stairDirection1,
 				stairCount: cleaningJobCommandInstance.stairCount1,
@@ -408,15 +408,15 @@ class CleaningJobController {
 	
 			if (!stairInstance1.save(flush:true)) {
 				cleaningJobCommandInstance.errors.reject(
-					'Error saving first Stair record',
+					'Error saving First Stair record',
 					['', 'class Stair'] as Object[],
-					'Error saving first Stair record')
+					'Error saving First Stair record')
 				respond cleaningJobCommandInstance.errors, view:'newJob'
 				return
 			}
 		}
 			
-		if (cleaningJobCommandInstance.stairDirection2 != "Pick a Direction") {
+		if (cleaningJobCommandInstance.stairVisible2 == "Y") {
 			def stairInstance2 = new Stair(jobId: carpetCareJob.id,
 				stairDirection: cleaningJobCommandInstance.stairDirection2,
 				stairCount: cleaningJobCommandInstance.stairCount2,
@@ -424,15 +424,15 @@ class CleaningJobController {
 	
 			if (!stairInstance2.save(flush:true)) {
 				cleaningJobCommandInstance.errors.reject(
-					'Error saving second Stair record',
+					'Error saving Second Stair record',
 					['', 'class Stair'] as Object[],
-					'Error saving second Stair record')
+					'Error saving Second Stair record')
 				respond cleaningJobCommandInstance.errors, view:'newJob'
 				return
 			}
 		}
 			
-		if (cleaningJobCommandInstance.stairDirection3 != "Pick a Direction") {
+		if (cleaningJobCommandInstance.stairVisible3 == "Y") {
 			def stairInstance3 = new Stair(jobId: carpetCareJob.id,
 				stairDirection: cleaningJobCommandInstance.stairDirection3,
 				stairCount: cleaningJobCommandInstance.stairCount3,
@@ -440,9 +440,9 @@ class CleaningJobController {
 	
 			if (!stairInstance3.save(flush:true)) {
 				cleaningJobCommandInstance.errors.reject(
-					'Error saving third Stair record',
+					'Error saving Third Stair record',
 					['', 'class Stair'] as Object[],
-					'Error saving thir Stair record')
+					'Error saving third Stair record')
 				respond cleaningJobCommandInstance.errors, view:'newJob'
 				return
 			}
@@ -465,9 +465,9 @@ class CleaningJobController {
 			if(!hsRoomInstance1.save(flush:true)) {
 				carpetCareJobInstance.delete()
 				cleaningJobCommandInstance.errors.reject(
-					'Error saving first Hard Surface Room record',
+					'Error saving First Hard Surface Room record',
 					['', 'class Room'] as Object[],
-					'Error saving first Hard Surface Room record')
+					'Error saving First Hard Surface Room record')
 				respond cleaningJobCommandInstance.errors, view:'newJob'
 				return
 			}
@@ -489,9 +489,9 @@ class CleaningJobController {
 			if(!hsRoomInstance2.save(flush:true)) {
 				carpetCareJobInstance.delete()
 				cleaningJobCommandInstance.errors.reject(
-					'Error saving first Hard Surface Room record',
+					'Error saving Second Hard Surface Room record',
 					['', 'class Room'] as Object[],
-					'Error saving first Hard Surface Room record')
+					'Error saving Second Hard Surface Room record')
 				respond cleaningJobCommandInstance.errors, view:'newJob'
 				return
 			}
@@ -513,9 +513,9 @@ class CleaningJobController {
 			if(!hsRoomInstance3.save(flush:true)) {
 				carpetCareJobInstance.delete()
 				cleaningJobCommandInstance.errors.reject(
-					'Error saving first Hard Surface Room record',
+					'Error saving Third Hard Surface Room record',
 					['', 'class Room'] as Object[],
-					'Error saving first Hard Surface Room record')
+					'Error saving Third Hard Surface Room record')
 				respond cleaningJobCommandInstance.errors, view:'newJob'
 				return
 			}
@@ -537,9 +537,9 @@ class CleaningJobController {
 			if(!hsRoomInstance4.save(flush:true)) {
 				carpetCareJobInstance.delete()
 				cleaningJobCommandInstance.errors.reject(
-					'Error saving first Hard Surface Room record',
+					'Error saving Fourth Hard Surface Room record',
 					['', 'class Room'] as Object[],
-					'Error saving first Hard Surface Room record')
+					'Error saving Fourth Hard Surface Room record')
 				respond cleaningJobCommandInstance.errors, view:'newJob'
 				return
 			}
@@ -561,9 +561,9 @@ class CleaningJobController {
 			if(!hsRoomInstance5.save(flush:true)) {
 				carpetCareJobInstance.delete()
 				cleaningJobCommandInstance.errors.reject(
-					'Error saving first Hard Surface Room record',
+					'Error saving Fifth Hard Surface Room record',
 					['', 'class Room'] as Object[],
-					'Error saving first Hard Surface Room record')
+					'Error saving Fifth Hard Surface Room record')
 				respond cleaningJobCommandInstance.errors, view:'newJob'
 				return
 			}
@@ -585,9 +585,9 @@ class CleaningJobController {
 			if(!hsRoomInstance6.save(flush:true)) {
 				carpetCareJobInstance.delete()
 				cleaningJobCommandInstance.errors.reject(
-					'Error saving first Hard Surface Room record',
+					'Error saving Sixth Hard Surface Room record',
 					['', 'class Room'] as Object[],
-					'Error saving first Hard Surface Room record')
+					'Error saving Sixth Hard Surface Room record')
 				respond cleaningJobCommandInstance.errors, view:'newJob'
 				return
 			}
@@ -703,7 +703,7 @@ class CleaningJobController {
 		}
 		
 		//Miscellaneous Charges
-		if (cleaningJobCommandInstance.miscVisible1 != "Y") {
+		if (cleaningJobCommandInstance.miscVisible1 == "Y") {
 			def miscChargesInstance1 = new MiscCharges(jobId: carpetCareJob.id,
 				miscDescription: cleaningJobCommandInstance.miscChargesName1,
 				miscCharge: cleaningJobCommandInstance.miscCharge1)
@@ -711,15 +711,15 @@ class CleaningJobController {
 			if(!miscChargesInstance1.save(flush:true)) {
 				carpetCareJobInstance.delete()
 				cleaningJobCommandInstance.errors.reject(
-					'Error saving first Miscellaneous Charge record',
+					'Error saving First Miscellaneous Charge record',
 					['', 'class MiscCharges'] as Object[],
-					'Error saving first Miscellaneous Charge record')
+					'Error saving First Miscellaneous Charge record')
 				respond cleaningJobCommandInstance.errors, view:'newJob'
 				return
 			}
 		}
 		
-		if (cleaningJobCommandInstance.miscVisible2 != "Y") {
+		if (cleaningJobCommandInstance.miscVisible2 == "Y") {
 			def miscChargesInstance2 = new MiscCharges(jobId: carpetCareJob.id,
 				miscDescription: cleaningJobCommandInstance.miscChargesName2,
 				miscCharge: cleaningJobCommandInstance.miscCharge2)
@@ -727,15 +727,15 @@ class CleaningJobController {
 			if(!miscChargesInstance2.save(flush:true)) {
 				carpetCareJobInstance.delete()
 				cleaningJobCommandInstance.errors.reject(
-					'Error saving second Miscellaneous Charge record',
+					'Error saving Second Miscellaneous Charge record',
 					['', 'class MiscCharges'] as Object[],
-					'Error saving first Miscellaneous Charge record')
+					'Error saving Second Miscellaneous Charge record')
 				respond cleaningJobCommandInstance.errors, view:'newJob'
 				return
 			}
 		}
 		
-		if (cleaningJobCommandInstance.miscVisible3 != "Y") {
+		if (cleaningJobCommandInstance.miscVisible3 == "Y") {
 			def miscChargesInstance3 = new MiscCharges(jobId: carpetCareJob.id,
 				miscDescription: cleaningJobCommandInstance.miscChargesName3,
 				miscCharge: cleaningJobCommandInstance.miscCharge3)
@@ -743,9 +743,9 @@ class CleaningJobController {
 			if(!miscChargesInstance3.save(flush:true)) {
 				carpetCareJobInstance.delete()
 				cleaningJobCommandInstance.errors.reject(
-					'Error saving third Miscellaneous Charge record',
+					'Error saving Third Miscellaneous Charge record',
 					['', 'class MiscCharges'] as Object[],
-					'Error saving third Miscellaneous Charge record')
+					'Error saving Third Miscellaneous Charge record')
 				respond cleaningJobCommandInstance.errors, view:'newJob'
 				return
 			}
@@ -763,9 +763,7 @@ class CleaningJobController {
 		(cleaningJobCommandInstance.visible001 != "Y") &&
 		(cleaningJobCommandInstance.hsVisible1 != "Y") &&
 		(cleaningJobCommandInstance.miscVisible1 != "Y") &&
-		(cleaningJobCommandInstance.stairDirection1 == "Pick a Direction") &&
-		(cleaningJobCommandInstance.stairDirection2 == "Pick a Direction") &&
-		(cleaningJobCommandInstance.stairDirection3 == "Pick a Direction") &&
+		(cleaningJobCommandInstance.stairVisible1 != "Y") &&
 		(cleaningJobCommandInstance.uVisible1 != "Y")) {
 			cleaningJobCommandInstance.errors.rejectValue('', 'Must fill in at least one section for the job   ')
 		}
@@ -987,6 +985,36 @@ class CleaningJobController {
 		if ((cleaningJobCommandInstance.hsVisible6 == "Y") &&
 		(cleaningJobCommandInstance.hsSquareFootage6 == null)) {
 			cleaningJobCommandInstance.errors.rejectValue('hsSquareFootage6', 'Must enter Square Footage of the Sixth Hard Surface Room   ')
+		}
+		
+		if ((cleaningJobCommandInstance.stairVisible1 == "Y") &&
+			(cleaningJobCommandInstance.stairDirection1 == null)) {
+				cleaningJobCommandInstance.errors.rejectValue('stairDirection1', 'Must enter a Stair Direction of the First Stair Set   ')
+		}
+			
+		if ((cleaningJobCommandInstance.stairVisible1 == "Y") &&
+			(cleaningJobCommandInstance.stairCount1 == null)) {
+				cleaningJobCommandInstance.errors.rejectValue('stairCount1', 'Must enter a Stair Count of the First Stair Set   ')
+		}
+		
+		if ((cleaningJobCommandInstance.stairVisible2 == "Y") &&
+			(cleaningJobCommandInstance.stairDirection2 == null)) {
+				cleaningJobCommandInstance.errors.rejectValue('stairDirection2', 'Must enter a Stair Direction of the Second Stair Set   ')
+		}
+		
+		if ((cleaningJobCommandInstance.stairVisible2 == "Y") &&
+			(cleaningJobCommandInstance.stairCount2 == null)) {
+				cleaningJobCommandInstance.errors.rejectValue('stairCount2', 'Must enter a Stair Count of the Second Stair Set   ')
+		}
+			
+		if ((cleaningJobCommandInstance.stairVisible3 == "Y") &&
+			(cleaningJobCommandInstance.stairDirection3 == null)) {
+				cleaningJobCommandInstance.errors.rejectValue('stairDirection3', 'Must enter a Stair Direction of the Third Stair Set   ')
+		}
+			
+		if ((cleaningJobCommandInstance.stairVisible3 == "Y") &&
+			(cleaningJobCommandInstance.stairCount3 == null)) {
+				cleaningJobCommandInstance.errors.rejectValue('stairCount3', 'Must enter a Stair Count of the Third Stair Set   ')
 		}
 	}
 

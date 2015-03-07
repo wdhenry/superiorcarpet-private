@@ -94,7 +94,7 @@ class CleaningJobSearchController {
 
 		def groupCount = 1
 		for (room in roomList) {
-			if (room.inGroup()) {
+			if (room.isInGroup()) {
 				if (groupCount == 1) {
 					cleaningJobCommandInstance.setRoomName1(room.getRoomName())
 					cleaningJobCommandInstance.setSquareFootage1(room.getSquareFootage())
