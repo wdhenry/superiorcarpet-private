@@ -41,5 +41,6 @@
 		<g:javascript src="cleaningJob/stairs.js"/>
 		<g:javascript src="cleaningJob/hardSurfaceRoom.js"/>
 		<g:javascript src="cleaningJob/upholstery.js"/>
+		<g:javascript src="cleaningJob/miscCharge.js"/>
 	</body>
 </html>
