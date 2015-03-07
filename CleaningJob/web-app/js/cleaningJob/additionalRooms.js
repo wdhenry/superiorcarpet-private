@@ -1,7 +1,4 @@
-(/**
- * @param undefined
- */
-function(undefined) {
+(function(undefined) {
   "use strict";
 
   var CarpetCleaningRate;
@@ -14,14 +11,14 @@ function(undefined) {
 
   function init() {
     // bind the change event to their respective handlers...
-    $("#groupName").on("change", changeGroupName);
     $("#roomCount").on("change", changeRoomCount);
-    $("#upholsteryCount").on("change", changeUpholsteryCount);
     $("input[id^='squareFootage']").on("change", changeSquareFootage);
     $("input[id^='preVacCheck']").on("change", changePreVacCheck);
     $("input[id^='preVacCharge']").on("change", changePreVacCharge);
     $("input[id^='protectorCheck']").on("change", changeProtectorCheck);
     $("input[id^='protectorCharge']").on("change", changeProtectorCharge);
+    $("input[id^='moveFurnitureCharge']").on("change",
+            changeMoveFurnitureCharge);
 
     // prefetch rates for calculations...
     CarpetCleaningRate = getRateByName("CarpetCleaning");
@@ -30,52 +27,7 @@ function(undefined) {
 
     // invoke the change handlers for some of the controls above in order
     // to initialize the table rows based on the current selectedIndex...
-    changeGroupName(undefined);
     changeRoomCount(undefined);
-    changeUpholsteryCount(undefined);
-  }
-
-  function changeGroupName(event) {
-    var groupNameElement = $("#groupName")[0];
-
-    // First, hide all the rows
-    $("#groupRoomTable tbody tr[id^='room']").hide();
-
-    // Next, show the rows based on the selected index of the groupName...
-    var selectedIndex = groupNameElement.selectedIndex;
-    switch (selectedIndex) {
-    case 5:
-      $("#groupRoomTable #room5").show();
-    case 4:
-      $("#groupRoomTable #room4").show();
-    case 3:
-      $("#groupRoomTable #room3").show();
-    case 2:
-      $("#groupRoomTable #room2").show();
-    case 1:
-      $("#groupRoomTable #room1").show();
-      break;
-    default:
-      $("#groupRoomTable #room0").show();
-    }
-
-    // Load the rate only when the user updated it (event is defined)...
-    if (event) {
-      if (selectedIndex > 0) {
-        $.ajax({
-          type: 'POST',
-          url: '/CleaningJob/roomGroup/show/' + selectedIndex + '.json',
-          success: function(data, textStatus) {
-            $("#groupRate").val(data.groupCharge);
-          },
-          error: function(XMLHttpRequest, textStatus, errorThrown) {
-            console.error(errorThrown);
-          }
-        });
-      } else {
-        $("#groupRate").val("");
-      }
-    }
   }
 
   function changeRoomCount(event) {
@@ -99,28 +51,6 @@ function(undefined) {
               }
             });
 
-  }
-
-  function changeUpholsteryCount(event) {
-    var upholsteryCountElement = $("#upholsteryCount")[0];
-
-    // First, hide all the rows
-    $("#upholsteryTable tbody tr[id^='upholstery']").hide();
-
-    // Next, show the rows based on the selected index of the roomCount...
-    var selectedIndex = upholsteryCountElement.selectedIndex;
-    $("#upholsteryCount > option").each(
-            function() {
-              // This will make sure the first row shows when 00 is
-              // selected, but stay hidden if not...
-              if ((this.index === selectedIndex)
-                      || ((this.index > 0) && (this.index < selectedIndex))) {
-                $("#upholsteryTable #upholstery" + this.index).show();
-                $("#uVisible" + this.index).val("Y");
-              } else {
-                $("#uVisible" + this.index).val("");
-              }
-            });
   }
 
   function changeSquareFootage(event) {
@@ -172,6 +102,11 @@ function(undefined) {
     calculateAdditionalRoomCleaningCharge(suffix);
   }
 
+  function changeMoveFurnitureCharge(event) {
+    var suffix = getControlNameSuffix(event.currentTarget.name);
+    calculateAdditionalRoomCleaningCharge(suffix);
+  }
+
   function calculateAdditionalRoomCleaningCharge(suffix) {
 
     // only perform the calculation if the square footage is provided...
@@ -181,35 +116,24 @@ function(undefined) {
       // get the field inputs...
       var preVacCharge = $("#preVacCharge" + suffix);
       var protectorCharge = $("#protectorCharge" + suffix);
+      var moveFurnitureCharge = $("#moveFurnitureCharge" + suffix);
 
       // convert the input values into numerics...
       var squareFootageNum = parseFloat(squareFootage.val());
+      var cleaningRateChargeNum = parseFloat(CarpetCleaningRate.rateCharge) || 0;
       var preVacChargeNum = parseFloat(preVacCharge.val()) || 0;
       var protectorChargeNum = parseFloat(protectorCharge.val()) || 0;
-      var cleaningRateChargeNum = parseFloat(CarpetCleaningRate.rateCharge) || 0;
+      var moveFurnitureChargeNum = parseFloat(moveFurnitureCharge.val()) || 0;
 
       // calculate the room charge...
       var cleaningCharge = (cleaningRateChargeNum * squareFootageNum)
               + (preVacChargeNum * squareFootageNum)
-              + (protectorChargeNum * squareFootageNum);
+              + (protectorChargeNum * squareFootageNum)
+              + (moveFurnitureChargeNum);
 
       var roomCharge = $("#roomCharge" + suffix);
-      roomCharge.val(cleaningCharge.toFixed(2)).change();
+      roomCharge.val(cleaningCharge.toFixed(2));
     }
-  }
-
-  function isEmpty(value) {
-    return (value === undefined) || (value === null) || (value === "");
-  }
-
-  function isNotEmpty(value) {
-    return !isEmpty(value);
-  }
-
-  function getControlNameSuffix(controlName) {
-    // replace all leading non-digits characters with an empty string...
-    var suffix = controlName.replace(/^\D+/g, '');
-    return suffix;
   }
 
   function getRateByName(rateName) {
