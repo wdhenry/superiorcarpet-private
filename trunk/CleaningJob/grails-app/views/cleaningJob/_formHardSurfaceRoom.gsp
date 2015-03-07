@@ -25,10 +25,10 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr id="hsRoom0">
+		<tr id="hsRoom00">
 			<td colspan="6">No hard surface rooms selected</td>
 		</tr>
-		<tr id="hsRoom1">
+		<tr id="hsRoom01">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'hsRoomName1', 'error')} ">
 					<g:select name="hsRoomName1" from="${com.superior.base.RoomName.list()}"
@@ -70,7 +70,7 @@
 				</div>
 			</td>
 		</tr>
-		<tr id="hsRoom2">
+		<tr id="hsRoom02">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'hsRoomName2', 'error')} ">
 					<g:select name="hsRoomName2" from="${com.superior.base.RoomName.list()}"
@@ -112,7 +112,7 @@
 				</div>
 			</td>
 		</tr>
-		<tr id="hsRoom3">
+		<tr id="hsRoom03">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'hsRoomName3', 'error')} ">
 					<g:select name="hsRoomName3" from="${com.superior.base.RoomName.list()}"
@@ -154,7 +154,7 @@
 				</div>
 			</td>
 		</tr>
-		<tr id="hsRoom4">
+		<tr id="hsRoom04">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'hsRoomName4', 'error')} ">
 					<g:select name="hsRoomName4" from="${com.superior.base.RoomName.list()}"
@@ -196,7 +196,7 @@
 				</div>
 			</td>
 		</tr>
-		<tr id="hsRoom5">
+		<tr id="hsRoom05">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'hsRoomName5', 'error')} ">
 					<g:select name="hsRoomName5" from="${com.superior.base.RoomName.list()}"
@@ -238,7 +238,7 @@
 				</div>
 			</td>
 		</tr>
-		<tr id="hsRoom6">
+		<tr id="hsRoom06">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'hsRoomName6', 'error')} ">
 					<g:select name="hsRoomName6" from="${com.superior.base.RoomName.list()}"
