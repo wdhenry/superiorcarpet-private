@@ -23,10 +23,10 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr id="stair0">
+		<tr id="stair00">
 			<td colspan="7">No set of stairs selected</td>
 		</tr>
-		<tr id="stair1">
+		<tr id="stair01">
 			<td>
 				<div
 					class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairDirection1', 'error')} ">
@@ -55,7 +55,7 @@
 				</div>
 			</td>
 		</tr>
-		<tr id="stair2">
+		<tr id="stair02">
 			<td>
 				<div
 					class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairDirection2', 'error')} ">
@@ -84,7 +84,7 @@
 				</div>
 			</td>
 		</tr>
-		<tr id="stair3">
+		<tr id="stair03">
 			<td>
 				<div
 					class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairDirection3', 'error')} ">
