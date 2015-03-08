@@ -2,7 +2,7 @@
 
 <table>
 	<tr>
-		<th colspan="4" class="sectionhead">Job Detail Section</th>
+		<th colspan="4" class="sectionhead">Extraction Job Detail Section</th>
 	</tr>
 	<tr>
 		<th>First Name</th>
@@ -45,29 +45,69 @@
 				<tr>
 					<th class="sectionhead">Fans Left</th>
 				</tr>
-				<g:if test="${extractionJobCommandInstance.fanId1 == null}">
+				<g:if test="${extractionJobCommandInstance.fanId01 == null}">
 					<tr>
 						<td>NONE</td>
 					</tr>
 				</g:if>
-				<g:if test="${extractionJobCommandInstance.fanId1 != null}">
+				<g:if test="${extractionJobCommandInstance.fanId01 != null}">
 					<tr>
-						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="fanId1"/></td>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="fanId01"/></td>
 					</tr>
 				</g:if>
-				<g:if test="${extractionJobCommandInstance.fanId2 != null}">
+				<g:if test="${extractionJobCommandInstance.fanId02 != null}">
 					<tr>
-						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="fanId2"/></td>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="fanId02"/></td>
 					</tr>
 				</g:if>
-				<g:if test="${extractionJobCommandInstance.fanId3 != null}">
+				<g:if test="${extractionJobCommandInstance.fanId03 != null}">
 					<tr>
-						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="fanId3"/></td>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="fanId03"/></td>
 					</tr>
 				</g:if>
-				<g:if test="${extractionJobCommandInstance.fanId4 != null}">
+				<g:if test="${extractionJobCommandInstance.fanId04 != null}">
 					<tr>
-						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="fanId4"/></td>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="fanId04"/></td>
+					</tr>
+				</g:if>
+				<g:if test="${extractionJobCommandInstance.fanId05 != null}">
+					<tr>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="fanId05"/></td>
+					</tr>
+				</g:if>
+				<g:if test="${extractionJobCommandInstance.fanId06 != null}">
+					<tr>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="fanId06"/></td>
+					</tr>
+				</g:if>
+				<g:if test="${extractionJobCommandInstance.fanId07 != null}">
+					<tr>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="fanId07"/></td>
+					</tr>
+				</g:if>
+				<g:if test="${extractionJobCommandInstance.fanId08 != null}">
+					<tr>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="fanId08"/></td>
+					</tr>
+				</g:if>
+				<g:if test="${extractionJobCommandInstance.fanId09 != null}">
+					<tr>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="fanId09"/></td>
+					</tr>
+				</g:if>
+				<g:if test="${extractionJobCommandInstance.fanId10 != null}">
+					<tr>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="fanId10"/></td>
+					</tr>
+				</g:if>
+				<g:if test="${extractionJobCommandInstance.fanId11 != null}">
+					<tr>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="fanId11"/></td>
+					</tr>
+				</g:if>
+				<g:if test="${extractionJobCommandInstance.fanId12 != null}">
+					<tr>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="fanId12"/></td>
 					</tr>
 				</g:if>
 			</table>
@@ -83,29 +123,69 @@
 				<tr>
 					<th class="sectionhead">Dehumidifiers Left</th>
 				</tr>
-				<g:if test="${extractionJobCommandInstance.dehuId1 == null}">
+				<g:if test="${extractionJobCommandInstance.dehuId01 == null}">
 					<tr>
 						<td>NONE</td>
 					</tr>
 				</g:if>
-				<g:if test="${extractionJobCommandInstance.dehuId1 != null}">
+				<g:if test="${extractionJobCommandInstance.dehuId01 != null}">
 					<tr>
-						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="dehuId1"/></td>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="dehuId01"/></td>
 					</tr>
 				</g:if>
-				<g:if test="${extractionJobCommandInstance.dehuId1 != null}">
+				<g:if test="${extractionJobCommandInstance.dehuId02 != null}">
 					<tr>
-						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="dehuId2"/></td>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="dehuId02"/></td>
 					</tr>
 				</g:if>
-				<g:if test="${extractionJobCommandInstance.dehuId1 != null}">
+				<g:if test="${extractionJobCommandInstance.dehuId03 != null}">
 					<tr>
-						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="dehuId3"/></td>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="dehuId03"/></td>
 					</tr>
 				</g:if>
-				<g:if test="${extractionJobCommandInstance.dehuId1 != null}">
+				<g:if test="${extractionJobCommandInstance.dehuId04 != null}">
 					<tr>
-						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="dehuId4"/></td>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="dehuId04"/></td>
+					</tr>
+				</g:if>
+				<g:if test="${extractionJobCommandInstance.dehuId05 != null}">
+					<tr>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="dehuId05"/></td>
+					</tr>
+				</g:if>
+				<g:if test="${extractionJobCommandInstance.dehuId06 != null}">
+					<tr>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="dehuId06"/></td>
+					</tr>
+				</g:if>
+				<g:if test="${extractionJobCommandInstance.dehuId07 != null}">
+					<tr>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="dehuId07"/></td>
+					</tr>
+				</g:if>
+				<g:if test="${extractionJobCommandInstance.dehuId08 != null}">
+					<tr>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="dehuId08"/></td>
+					</tr>
+				</g:if>
+				<g:if test="${extractionJobCommandInstance.dehuId09 != null}">
+					<tr>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="dehuId09"/></td>
+					</tr>
+				</g:if>
+				<g:if test="${extractionJobCommandInstance.dehuId10 != null}">
+					<tr>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="dehuId10"/></td>
+					</tr>
+				</g:if>
+				<g:if test="${extractionJobCommandInstance.dehuId11 != null}">
+					<tr>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="dehuId11"/></td>
+					</tr>
+				</g:if>
+				<g:if test="${extractionJobCommandInstance.dehuId12 != null}">
+					<tr>
+						<td><g:fieldValue bean="${extractionJobCommandInstance}" field="dehuId12"/></td>
 					</tr>
 				</g:if>
 			</table>
