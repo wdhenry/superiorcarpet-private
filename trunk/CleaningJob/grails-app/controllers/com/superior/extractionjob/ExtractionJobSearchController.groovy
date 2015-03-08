@@ -83,14 +83,30 @@ class ExtractionJobSearchController {
 												addressLineTwo: customerInstance.addressLineTwo,
 												startTime: waterExtractionJobInstance.startTime,
 												endTime: waterExtractionJobInstance.endTime,
-												fanId1: null,
-												fanId2: null,
-												fanId3: null,
-												fanId4: null,
-												dehuId1: null,
-												dehuId2: null,
-												dehuId3: null,
-												dehuId4: null)
+												fanId01: null,
+												fanId02: null,
+												fanId03: null,
+												fanId04: null,
+												fanId05: null,
+												fanId06: null,
+												fanId07: null,
+												fanId08: null,
+												fanId09: null,
+												fanId10: null,
+												fanId11: null,
+												fanId12: null,
+												dehuId01: null,
+												dehuId02: null,
+												dehuId03: null,
+												dehuId04: null,
+												dehuId05: null,
+												dehuId06: null,
+												dehuId07: null,
+												dehuId08: null,
+												dehuId09: null,
+												dehuId10: null,
+												dehuId11: null,
+												dehuId12: null)
 
 		def fanList = new ArrayList()
 		fanList = Fans.findAllByJobId(waterExtractionJobInstance.id)
@@ -98,14 +114,30 @@ class ExtractionJobSearchController {
 		def count = 1
 		for (fan in fanList) {
 			if (count == 1) {
-				extractionJobCommandInstance.setFanId1(fan.getDisplayValue())
+				extractionJobCommandInstance.setFanId01(fan.getDisplayValue())
 			} else if (count == 2) {
-				extractionJobCommandInstance.setFanId2(fan.getDisplayValue())
+				extractionJobCommandInstance.setFanId02(fan.getDisplayValue())
 			} else if (count == 3) {
-				extractionJobCommandInstance.setFanId3(fan.getDisplayValue())
+				extractionJobCommandInstance.setFanId03(fan.getDisplayValue())
 			} else if (count == 4) {
-				extractionJobCommandInstance.setFanId4(fan.getDisplayValue())
-			} 
+				extractionJobCommandInstance.setFanId04(fan.getDisplayValue())
+			} else if (count == 5) {
+				extractionJobCommandInstance.setFanId05(fan.getDisplayValue())
+			} else if (count == 6) {
+				extractionJobCommandInstance.setFanId06(fan.getDisplayValue())
+			} else if (count == 7) {
+				extractionJobCommandInstance.setFanId07(fan.getDisplayValue())
+			} else if (count == 8) {
+				extractionJobCommandInstance.setFanId08(fan.getDisplayValue())
+			} else if (count == 9) {
+				extractionJobCommandInstance.setFanId09(fan.getDisplayValue())
+			} else if (count == 10) {
+				extractionJobCommandInstance.setFanId10(fan.getDisplayValue())
+			} else if (count == 11) {
+				extractionJobCommandInstance.setFanId11(fan.getDisplayValue())
+			} else if (count == 12) {
+				extractionJobCommandInstance.setFanId12(fan.getDisplayValue())
+			}
 			count = count + 1
 		}
 		
@@ -115,13 +147,29 @@ class ExtractionJobSearchController {
 		count = 1
 		for (dehu in dehuList) {
 			if (count == 1) {
-				extractionJobCommandInstance.setDehuId1(dehu.getDisplayValue())
+				extractionJobCommandInstance.setDehuId01(dehu.getDisplayValue())
 			} else if (count == 2) {
-				extractionJobCommandInstance.setDehuId2(dehu.getDisplayValue())
+				extractionJobCommandInstance.setDehuId02(dehu.getDisplayValue())
 			} else if (count == 3) {
-				extractionJobCommandInstance.setDehuId3(dehu.getDisplayValue())
+				extractionJobCommandInstance.setDehuId03(dehu.getDisplayValue())
 			} else if (count == 4) {
-				extractionJobCommandInstance.setDehuId4(dehu.getDisplayValue())
+				extractionJobCommandInstance.setDehuId04(dehu.getDisplayValue())
+			} else if (count == 5) {
+				extractionJobCommandInstance.setDehuId05(dehu.getDisplayValue())
+			} else if (count == 6) {
+				extractionJobCommandInstance.setDehuId06(dehu.getDisplayValue())
+			} else if (count == 7) {
+				extractionJobCommandInstance.setDehuId07(dehu.getDisplayValue())
+			} else if (count == 8) {
+				extractionJobCommandInstance.setDehuId08(dehu.getDisplayValue())
+			} else if (count == 9) {
+				extractionJobCommandInstance.setDehuId09(dehu.getDisplayValue())
+			} else if (count == 10) {
+				extractionJobCommandInstance.setDehuId10(dehu.getDisplayValue())
+			} else if (count == 11) {
+				extractionJobCommandInstance.setDehuId11(dehu.getDisplayValue())
+			} else if (count == 12) {
+				extractionJobCommandInstance.setDehuId12(dehu.getDisplayValue())
 			}
 			count = count + 1
 		}
