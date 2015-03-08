@@ -56,6 +56,7 @@ class BootStrap {
 			new RoomName(roomName: "Spare Bedroom 1").save(failOnError: true)
 			new RoomName(roomName: "Spare Bedroom 2").save(failOnError: true)
 			new RoomName(roomName: "Spare Bedroom 3").save(failOnError: true)
+			new RoomName(roomName: "Hallway").save(failOnError: true)
 		}
 		
 		if (!UpholsteryName.count()) {
@@ -67,8 +68,8 @@ class BootStrap {
 		}
 		
 		if (!MiscChargesName.count()) {
-			new MiscChargesName(miscChargesName: "Heavy Soil").save(failOnError: true)
-			new MiscChargesName(miscChargesName: "Spot Removal").save(failOnError: true)
+			new MiscChargesName(miscChargesName: "Heavy Soil", miscChargeRate: 15.00).save(failOnError: true)
+			new MiscChargesName(miscChargesName: "Spot Removal", miscChargeRate: 25.00).save(failOnError: true)
 		}
 		
 		if (!Fans.count()) { 
