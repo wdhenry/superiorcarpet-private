@@ -14,10 +14,7 @@
     $("#roomCount").on("change", changeRoomCount);
     $("input[id^='squareFootage']").on("change", changeSquareFootage);
     $("input[id^='preVacCheck']").on("change", changePreVacCheck);
-    $("input[id^='preVacCharge']").on("change", changePreVacCharge);
     $("input[id^='protectorCheck']").on("change", changeProtectorCheck);
-    $("input[id^='protectorCharge']").on("change", changeProtectorCharge);
-    $("input[id^='moveFurnitureCharge']").on("change", changeMoveFurnitureCharge);
 
     // prefetch rates for calculations...
     CarpetCleaningRate = RateService.getRateByName("CarpetCleaning");
@@ -47,91 +44,89 @@
         $("#visible0" + this.value).val("");
       }
     });
-
   }
 
   function changeSquareFootage(event) {
+
     var suffix = getControlNameSuffix(event.currentTarget.name);
-    calculateAdditionalRoomCleaningCharge(suffix);
+    var squareFootage = $("#squareFootage" + suffix);
+    var roomCharge = $("#roomCharge" + suffix)
+
+    if (isNotEmpty(squareFootage.val())) {
+
+      var squareFootageNum = parseFloat(squareFootage.val());
+      var rateChargeNum = parseFloat(CarpetCleaningRate.rateCharge) || 0;
+      var roomChargeTotal = (rateChargeNum * squareFootageNum);
+
+      roomCharge.val(roomChargeTotal.toFixed(2)).change();
+
+    } else {
+      roomCharge.val("").change();
+    }
+
+    changePreVacCheck(event);
+    changeProtectorCheck(event);
   }
 
   function changePreVacCheck(event) {
 
-    // get the preVacCheck element that was changed...
-    var preVacCheck = $(event.currentTarget);
-    var suffix = getControlNameSuffix(preVacCheck[0].name);
-
-    // get the preVacCharge element...
+    var suffix = getControlNameSuffix(event.currentTarget.name);
+    var preVacCheck = $("#preVacCheck" + suffix);
     var preVacCharge = $("#preVacCharge" + suffix);
 
     // set the rate charge accordingly...
     if (preVacCheck.is(':checked') === true) {
-      preVacCharge.val(CarpetPreVacRate.rateCharge.toFixed(2)).change();
+      calculatePreVacCharge(suffix);
     } else {
       preVacCharge.val("").change();
     }
   }
 
-  function changePreVacCharge(event) {
-    var suffix = getControlNameSuffix(event.currentTarget.name);
-    calculateAdditionalRoomCleaningCharge(suffix);
+  function calculatePreVacCharge(suffix) {
+    var squareFootage = $("#squareFootage" + suffix);
+    var preVacCharge = $("#preVacCharge" + suffix);
+
+    if (isNotEmpty(squareFootage.val())) {
+
+      var squareFootageNum = parseFloat(squareFootage.val());
+      var rateChargeNum = parseFloat(CarpetPreVacRate.rateCharge);
+      var preVacChargeTotal = (rateChargeNum * squareFootageNum);
+
+      preVacCharge.val(preVacChargeTotal.toFixed(2)).change();
+
+    } else {
+      preVacCharge.val("").change();
+    }
   }
 
   function changeProtectorCheck(event) {
 
-    // get the preVacCheck element that was changed...
-    var protectorCheck = $(event.currentTarget);
-    var suffix = getControlNameSuffix(protectorCheck[0].name);
-
-    // get the preVacCharge element...
+    var suffix = getControlNameSuffix(event.currentTarget.name);
+    var protectorCheck = $("#protectorCheck" + suffix);
     var protectorCharge = $("#protectorCharge" + suffix);
 
     // set the rate charge accordingly...
     if (protectorCheck.is(':checked') === true) {
-      protectorCharge.val(CarpetProtectorRate.rateCharge.toFixed(2)).change();
+      calculateProtectorCharge(suffix);
     } else {
       protectorCharge.val("").change();
     }
   }
 
-  function changeProtectorCharge(event) {
-    var suffix = getControlNameSuffix(event.currentTarget.name);
-    calculateAdditionalRoomCleaningCharge(suffix);
-  }
-
-  function changeMoveFurnitureCharge(event) {
-    var suffix = getControlNameSuffix(event.currentTarget.name);
-    calculateAdditionalRoomCleaningCharge(suffix);
-  }
-
-  function calculateAdditionalRoomCleaningCharge(suffix) {
-
-    // only perform the calculation if the square footage is provided...
+  function calculateProtectorCharge(suffix) {
     var squareFootage = $("#squareFootage" + suffix);
+    var protectorCharge = $("#protectorCharge" + suffix);
+
     if (isNotEmpty(squareFootage.val())) {
 
-      // get the field inputs...
-      var preVacCharge = $("#preVacCharge" + suffix);
-      var protectorCharge = $("#protectorCharge" + suffix);
-      var moveFurnitureCharge = $("#moveFurnitureCharge" + suffix);
-
-      // convert the input values into numerics...
       var squareFootageNum = parseFloat(squareFootage.val());
-      var cleaningRateChargeNum = parseFloat(CarpetCleaningRate.rateCharge) || 0;
-      var preVacChargeNum = parseFloat(preVacCharge.val()) || 0;
-      var protectorChargeNum = parseFloat(protectorCharge.val()) || 0;
-      var moveFurnitureChargeNum = parseFloat(moveFurnitureCharge.val()) || 0;
+      var rateChargeNum = parseFloat(CarpetProtectorRate.rateCharge);
+      var protectorChargeTotal = (rateChargeNum * squareFootageNum);
 
-      // calculate the room charge...
-      var cleaningCharge = (cleaningRateChargeNum * squareFootageNum) //
-              + (preVacChargeNum * squareFootageNum) //
-              + (protectorChargeNum * squareFootageNum) //
-              + (moveFurnitureChargeNum);
-
-      $("#roomCharge" + suffix).val(cleaningCharge.toFixed(2));
+      protectorCharge.val(protectorChargeTotal.toFixed(2)).change();
 
     } else {
-      $("#roomCharge" + suffix).val("");
+      protectorCharge.val("").change();
     }
   }
 
