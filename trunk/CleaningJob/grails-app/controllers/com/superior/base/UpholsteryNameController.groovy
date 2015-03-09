@@ -1,104 +1,118 @@
 package com.superior.base
 
-
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class UpholsteryNameController {
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+	static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond UpholsteryName.list(params), model:[upholsteryNameInstanceCount: UpholsteryName.count()]
-    }
+	def index(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		respond UpholsteryName.list(params), model:[upholsteryNameInstanceCount: UpholsteryName.count()]
+	}
 
-    def show(UpholsteryName upholsteryNameInstance) {
-        respond upholsteryNameInstance
-    }
+	def show(UpholsteryName upholsteryNameInstance) {
+		respond upholsteryNameInstance
+	}
 
-    def create() {
-        respond new UpholsteryName(params)
-    }
+	def findByUpholsteryName(String upholsteryName) {
+		respond UpholsteryName.findByUpholsteryName(upholsteryName)
+	}
 
-    @Transactional
-    def save(UpholsteryName upholsteryNameInstance) {
-        if (upholsteryNameInstance == null) {
-            notFound()
-            return
-        }
+	def create() {
+		respond new UpholsteryName(params)
+	}
 
-        if (upholsteryNameInstance.hasErrors()) {
-            respond upholsteryNameInstance.errors, view:'create'
-            return
-        }
+	@Transactional
+	def save(UpholsteryName upholsteryNameInstance) {
+		if (upholsteryNameInstance == null) {
+			notFound()
+			return
+		}
 
-        upholsteryNameInstance.save flush:true
+		if (upholsteryNameInstance.hasErrors()) {
+			respond upholsteryNameInstance.errors, view:'create'
+			return
+		}
 
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'upholsteryName.label', default: 'UpholsteryName'), upholsteryNameInstance.id])
-                redirect upholsteryNameInstance
-            }
-            '*' { respond upholsteryNameInstance, [status: CREATED] }
-        }
-    }
+		upholsteryNameInstance.save flush:true
 
-    def edit(UpholsteryName upholsteryNameInstance) {
-        respond upholsteryNameInstance
-    }
+		request.withFormat {
+			form multipartForm {
+				flash.message = message(code: 'default.created.message', args: [
+					message(code: 'upholsteryName.label', default: 'UpholsteryName'),
+					upholsteryNameInstance.id
+				])
+				redirect upholsteryNameInstance
+			}
+			'*' { respond upholsteryNameInstance, [status: CREATED] }
+		}
+	}
 
-    @Transactional
-    def update(UpholsteryName upholsteryNameInstance) {
-        if (upholsteryNameInstance == null) {
-            notFound()
-            return
-        }
+	def edit(UpholsteryName upholsteryNameInstance) {
+		respond upholsteryNameInstance
+	}
 
-        if (upholsteryNameInstance.hasErrors()) {
-            respond upholsteryNameInstance.errors, view:'edit'
-            return
-        }
+	@Transactional
+	def update(UpholsteryName upholsteryNameInstance) {
+		if (upholsteryNameInstance == null) {
+			notFound()
+			return
+		}
 
-        upholsteryNameInstance.save flush:true
+		if (upholsteryNameInstance.hasErrors()) {
+			respond upholsteryNameInstance.errors, view:'edit'
+			return
+		}
 
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'UpholsteryName.label', default: 'UpholsteryName'), upholsteryNameInstance.id])
-                redirect upholsteryNameInstance
-            }
-            '*'{ respond upholsteryNameInstance, [status: OK] }
-        }
-    }
+		upholsteryNameInstance.save flush:true
 
-    @Transactional
-    def delete(UpholsteryName upholsteryNameInstance) {
+		request.withFormat {
+			form multipartForm {
+				flash.message = message(code: 'default.updated.message', args: [
+					message(code: 'UpholsteryName.label', default: 'UpholsteryName'),
+					upholsteryNameInstance.id
+				])
+				redirect upholsteryNameInstance
+			}
+			'*'{ respond upholsteryNameInstance, [status: OK] }
+		}
+	}
 
-        if (upholsteryNameInstance == null) {
-            notFound()
-            return
-        }
+	@Transactional
+	def delete(UpholsteryName upholsteryNameInstance) {
 
-        upholsteryNameInstance.delete flush:true
+		if (upholsteryNameInstance == null) {
+			notFound()
+			return
+		}
 
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'UpholsteryName.label', default: 'UpholsteryName'), upholsteryNameInstance.id])
-                redirect action:"index", method:"GET"
-            }
-            '*'{ render status: NO_CONTENT }
-        }
-    }
+		upholsteryNameInstance.delete flush:true
 
-    protected void notFound() {
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'upholsteryName.label', default: 'UpholsteryName'), params.id])
-                redirect action: "index", method: "GET"
-            }
-            '*'{ render status: NOT_FOUND }
-        }
-    }
+		request.withFormat {
+			form multipartForm {
+				flash.message = message(code: 'default.deleted.message', args: [
+					message(code: 'UpholsteryName.label', default: 'UpholsteryName'),
+					upholsteryNameInstance.id
+				])
+				redirect action:"index", method:"GET"
+			}
+			'*'{ render status: NO_CONTENT }
+		}
+	}
+
+	protected void notFound() {
+		request.withFormat {
+			form multipartForm {
+				flash.message = message(code: 'default.not.found.message', args: [
+					message(code: 'upholsteryName.label', default: 'UpholsteryName'),
+					params.id
+				])
+				redirect action: "index", method: "GET"
+			}
+			'*'{ render status: NOT_FOUND }
+		}
+	}
 }

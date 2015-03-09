@@ -40,7 +40,9 @@
     var miscChargesName = $(event.currentTarget);
     var suffix = getControlNameSuffix(event.currentTarget.name);
     var miscCharge = $("#miscCharge" + suffix);
+
     var miscChargesNameRate = MiscChargeNameService.getByMiscChargesName(miscChargesName.val());
+
     if (isNotEmpty(miscChargesNameRate)) {
       miscCharge.val(miscChargesNameRate.miscChargeRate.toFixed(2)).change();
     } else {

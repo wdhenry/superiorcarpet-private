@@ -5,8 +5,6 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class MiscChargesNameController {
 
-//    static scaffold = true
-
 	static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
 	def index(Integer max) {
@@ -18,9 +16,9 @@ class MiscChargesNameController {
 		respond miscChargesNameInstance
 	}
 
-    def findByMiscChargesName(String miscChargeName) {
-        respond MiscChargesName.findByMiscChargesName(miscChargeName)
-    }
+	def findByMiscChargesName(String miscChargeName) {
+		respond MiscChargesName.findByMiscChargesName(miscChargeName)
+	}
 
 
 	def create() {
