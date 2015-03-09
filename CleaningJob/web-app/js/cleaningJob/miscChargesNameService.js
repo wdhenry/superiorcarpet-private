@@ -1,13 +1,13 @@
 "use strict";
 
-var RateService = {
-  getRateByName: function(rateName) {
+var MiscChargeNameService = {
+  getByMiscChargesName: function(miscChargeName) {
     var result = null;
     $.ajax({
       type: 'POST',
-      url: '/CleaningJob/rates/findByRateName.json',
+      url: '/CleaningJob/miscChargesName/findByMiscChargesName.json',
       data: {
-        rateName: rateName
+        miscChargeName: miscChargeName
       },
       async: false,
       success: function(data, textStatus) {
