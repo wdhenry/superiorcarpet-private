@@ -27,14 +27,14 @@
   }
 
   function changeRoomCount(event) {
-    var roomCountElement = $("#roomCount")[0];
+    var roomCount = $("#roomCount");
 
     // First, hide all the rows
-    $("#additionalRoomTable tbody tr[id^='room']").hide();
+    $("#additionalRoomTable tbody tr").hide();
 
     // Next, show the rows based on the selected index of the roomCount...
-    var selectedIndex = roomCountElement.selectedIndex;
-    $("#roomCount > option").each(function() {
+    var selectedIndex = roomCount[0].selectedIndex;
+    roomCount.children("option").each(function() {
       // This will make sure the first row shows when 00 is
       // selected, but stay hidden if not...
       if ((this.index === selectedIndex) || ((this.index > 0) && (this.index < selectedIndex))) {
