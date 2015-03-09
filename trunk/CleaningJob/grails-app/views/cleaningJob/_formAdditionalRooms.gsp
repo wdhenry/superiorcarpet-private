@@ -29,7 +29,7 @@
 		<tr id="room00">
 			<td colspan="7">No additional rooms selected</td>
 		</tr>
-		<tr id="room01">
+		<tr id="room01" style="display: none;">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomName001', 'error')} ">
 					<g:select name="roomName001" 
@@ -79,7 +79,7 @@
 			</td>
 		</tr>
 		
-		<tr id="room02">
+		<tr id="room02" style="display: none;">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomName002', 'error')} ">
 					<g:select name="roomName002" 
@@ -129,7 +129,7 @@
 			</td>
 		</tr>
 		
-		<tr id="room03">
+		<tr id="room03" style="display: none;">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomName003', 'error')} ">
 					<g:select name="roomName003" 
@@ -179,7 +179,7 @@
 			</td>
 		</tr>
 		
-		<tr id="room04">
+		<tr id="room04" style="display: none;">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomName004', 'error')} ">
 					<g:select name="roomName004" 
@@ -229,7 +229,7 @@
 			</td>
 		</tr>
 		
-		<tr id="room05">
+		<tr id="room05" style="display: none;">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomName005', 'error')} ">
 					<g:select name="roomName005" 
@@ -279,7 +279,7 @@
 			</td>
 		</tr>
 		
-		<tr id="room06">
+		<tr id="room06" style="display: none;">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomName006', 'error')} ">
 					<g:select name="roomName006" 
@@ -329,7 +329,7 @@
 			</td>
 		</tr>
 		
-		<tr id="room07">
+		<tr id="room07" style="display: none;">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomName007', 'error')} ">
 					<g:select name="roomName007" 
@@ -379,7 +379,7 @@
 			</td>
 		</tr>
 		
-		<tr id="room08">
+		<tr id="room08" style="display: none;">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'roomName008', 'error')} ">
 					<g:select name="roomName008" 
