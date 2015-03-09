@@ -27,7 +27,7 @@
 		<tr id="upholstery0">
 			<td colspan="5">No upholstery selected</td>
 		</tr>
-		<tr id="upholstery1">
+		<tr id="upholstery1" style="display: none;">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'upholsteryName1', 'error')} ">
 					<g:select name="upholsteryName1" 
@@ -64,7 +64,7 @@
 				</div>
 			</td>
 		</tr>
-		<tr id="upholstery2">
+		<tr id="upholstery2" style="display: none;">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'upholsteryName2', 'error')} ">
 					<g:select name="upholsteryName2" 
@@ -101,7 +101,7 @@
 				</div>
 			</td>
 		</tr>
-		<tr id="upholstery3">
+		<tr id="upholstery3" style="display: none;">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'upholsteryName3', 'error')} ">
 					<g:select name="upholsteryName3" 
@@ -138,7 +138,7 @@
 				</div>
 			</td>
 		</tr>
-		<tr id="upholstery4">
+		<tr id="upholstery4" style="display: none;">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'upholsteryName4', 'error')} ">
 					<g:select name="upholsteryName4" 
@@ -175,7 +175,7 @@
 				</div>
 			</td>
 		</tr>
-		<tr id="upholstery5">
+		<tr id="upholstery5" style="display: none;">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'upholsteryName5', 'error')} ">
 					<g:select name="upholsteryName5" 
@@ -212,7 +212,7 @@
 				</div>
 			</td>
 		</tr>
-		<tr id="upholstery6">
+		<tr id="upholstery6" style="display: none;">
 			<td>
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'upholsteryName6', 'error')} ">
 					<g:select name="upholsteryName6" 

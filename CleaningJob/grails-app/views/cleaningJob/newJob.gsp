@@ -38,6 +38,7 @@
 		<g:javascript src="utils.js"/>
 		<g:javascript src="cleaningJob/ratesService.js"/>
 		<g:javascript src="cleaningJob/miscChargesNameService.js"/>
+		<g:javascript src="cleaningJob/upholsteryNameService.js"/>
 		<g:javascript src="cleaningJob/groupRooms.js"/>
 		<g:javascript src="cleaningJob/additionalRooms.js"/>
 		<g:javascript src="cleaningJob/stairs.js"/>
