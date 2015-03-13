@@ -49,7 +49,8 @@
 						from="${com.superior.base.RoomName.list()}" 
 						optionKey="roomName" optionValue="roomName"
 						value="${cleaningJobCommandInstance?.roomName1}"
-						noSelection="${['Pick a Room':'Pick a Room']}" />
+						noSelection="${['Pick a Room':'Pick a Room']}" 
+						class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -92,7 +93,8 @@
 						from="${com.superior.base.RoomName.list()}" optionKey="roomName"
 						optionValue="roomName"
 						value="${cleaningJobCommandInstance?.roomName2}"
-						noSelection="${['Pick a Room':'Pick a Room']}" />
+						noSelection="${['Pick a Room':'Pick a Room']}" 
+						class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -134,7 +136,8 @@
 						from="${com.superior.base.RoomName.list()}" optionKey="roomName"
 						optionValue="roomName"
 						value="${cleaningJobCommandInstance?.roomName3}"
-						noSelection="${['Pick a Room':'Pick a Room']}" />
+						noSelection="${['Pick a Room':'Pick a Room']}" 
+						class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -176,7 +179,8 @@
 						from="${com.superior.base.RoomName.list()}" optionKey="roomName"
 						optionValue="roomName"
 						value="${cleaningJobCommandInstance?.roomName4}"
-						noSelection="${['Pick a Room':'Pick a Room']}" />
+						noSelection="${['Pick a Room':'Pick a Room']}" 
+						class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -218,7 +222,8 @@
 						from="${com.superior.base.RoomName.list()}" optionKey="roomName"
 						optionValue="roomName"
 						value="${cleaningJobCommandInstance?.roomName5}"
-						noSelection="${['Pick a Room':'Pick a Room']}" />
+						noSelection="${['Pick a Room':'Pick a Room']}" 
+						class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
