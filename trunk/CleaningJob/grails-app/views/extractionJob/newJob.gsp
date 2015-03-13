@@ -35,5 +35,7 @@
 				</fieldset>
 			</g:form>
 		</div>
+		<g:javascript src="utils.js"/>
+		<g:javascript src="extractionJob/fanDehu.js"/>
 	</body>
 </html>
