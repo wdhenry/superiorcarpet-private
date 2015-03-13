@@ -10,6 +10,7 @@
     $("#upholsteryCount").on("change", changeUpholsteryCount);
     $("select[id^='upholsteryName']").on("change", changeUpholsteryName);
     $("input[id^='upholsteryCount']").on("change", changeUpholsteryCountInput);
+    $("input[id^='upholsteryProtectorCheck']").on("change", changeUpholsteryProtectorCheck);
 
     // invoke the change handlers for some of the controls above in order
     // to initialize the table rows based on the current selectedIndex...
@@ -44,6 +45,7 @@
 
     if (upholsteryName[0].selectedIndex > 0) {
       calculateUpholsteryCharge(suffix);
+      changeUpholsteryProtectorCheck(event);
     } else {
       upholsteryCharge.val("").change();
     }
@@ -52,6 +54,7 @@
   function changeUpholsteryCountInput(event) {
     var suffix = getControlNameSuffix(event.currentTarget.name);
     calculateUpholsteryCharge(suffix);
+    changeUpholsteryProtectorCheck(event);
   }
 
   function calculateUpholsteryCharge(suffix) {
@@ -73,6 +76,39 @@
       upholsteryCharge.val("");
     }
 
+  }
+
+  function changeUpholsteryProtectorCheck(event) {
+
+    var suffix = getControlNameSuffix(event.currentTarget.name);
+    var upholsteryProtectorCheck = $("#upholsteryProtectorCheck" + suffix);
+    var upholsteryProtectorCharge = $("#upholsteryProtectorCharge" + suffix);
+
+    // set the rate charge accordingly...
+    if (upholsteryProtectorCheck.is(':checked') === true) {
+      calculateUpholsteryProtectorCharge(suffix);
+    } else {
+      upholsteryProtectorCharge.val("").change();
+    }
+  }
+
+  function calculateUpholsteryProtectorCharge(suffix) {
+    var upholsteryCount = $("#upholsteryCount" + suffix);
+    var upholsteryProtectorCharge = $("#upholsteryProtectorCharge" + suffix);
+    var upholsteryName = $("#upholsteryName" + suffix);
+    var upholsteryNameData = UpholsteryNameService.getByUpholsteryName(upholsteryName.val());
+
+    if (isNotEmpty(upholsteryCount.val()) && isNotEmpty(upholsteryNameData)) {
+
+      var upholsteryCountNum = parseFloat(upholsteryCount.val());
+      var rateChargeNum = parseFloat(upholsteryNameData.upholsteryProtect);
+      var upholsteryProtectorChargeTotal = (rateChargeNum * upholsteryCountNum);
+
+      upholsteryProtectorCharge.val(upholsteryProtectorChargeTotal.toFixed(2)).change();
+
+    } else {
+      upholsteryProtectorCharge.val("").change();
+    }
   }
 
 })();
