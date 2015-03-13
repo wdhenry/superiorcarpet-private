@@ -34,7 +34,7 @@
 					<tr id="fan00">
 						<td colspan="2">No fans selected</td>
 					</tr>
-					<tr id="fan01">
+					<tr id="fan01" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'fanId01', 'error')} ">
 								<g:select name="fanId01" 
@@ -51,7 +51,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="fan02">
+					<tr id="fan02" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'fanId02', 'error')} ">
 								<g:select name="fanId02" 
@@ -68,7 +68,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="fan03">
+					<tr id="fan03" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'fanId03', 'error')} ">
 								<g:select name="fanId03" 
@@ -85,7 +85,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="fan04">
+					<tr id="fan04" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'fanId04', 'error')} ">
 								<g:select name="fanId04" 
@@ -102,7 +102,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="fan05">
+					<tr id="fan05" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'fanId05', 'error')} ">
 								<g:select name="fanId05" 
@@ -119,7 +119,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="fan06">
+					<tr id="fan06" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'fanId06', 'error')} ">
 								<g:select name="fanId06" 
@@ -136,7 +136,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="fan07">
+					<tr id="fan07" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'fanId07', 'error')} ">
 								<g:select name="fanId07" 
@@ -153,7 +153,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="fan08">
+					<tr id="fan08" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'fanId08', 'error')} ">
 								<g:select name="fanId08" 
@@ -170,7 +170,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="fan09">
+					<tr id="fan09" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'fanId09', 'error')} ">
 								<g:select name="fanId09" 
@@ -187,7 +187,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="fan10">
+					<tr id="fan10" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'fanId10', 'error')} ">
 								<g:select name="fanId10" 
@@ -204,7 +204,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="fan11">
+					<tr id="fan11" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'fanId11', 'error')} ">
 								<g:select name="fanId11" 
@@ -221,7 +221,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="fan12">
+					<tr id="fan12" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'fanId12', 'error')} ">
 								<g:select name="fanId12" 
@@ -253,7 +253,7 @@
 					<tr id="dehu00">
 						<td colspan="2">No dehumidifiers selected</td>
 					</tr>
-					<tr id="dehu01">
+					<tr id="dehu01" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'dehuId01', 'error')} ">
 								<g:select name="dehuId01" 
@@ -270,7 +270,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="dehu02">
+					<tr id="dehu02" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'dehuId02', 'error')} ">
 								<g:select name="dehuId02" 
@@ -287,7 +287,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="dehu03">
+					<tr id="dehu03" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'dehuId03', 'error')} ">
 								<g:select name="dehuId03" 
@@ -304,7 +304,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="dehu04">
+					<tr id="dehu04" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'dehuId04', 'error')} ">
 								<g:select name="dehuId04" 
@@ -321,7 +321,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="dehu05">
+					<tr id="dehu05" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'dehuId05', 'error')} ">
 								<g:select name="dehuId05" 
@@ -338,7 +338,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="dehu06">
+					<tr id="dehu06" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'dehuId06', 'error')} ">
 								<g:select name="dehuId06" 
@@ -355,7 +355,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="dehu07">
+					<tr id="dehu07" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'dehuId07', 'error')} ">
 								<g:select name="dehuId07" 
@@ -372,7 +372,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="dehu08">
+					<tr id="dehu08" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'dehuId08', 'error')} ">
 								<g:select name="dehuId08" 
@@ -389,7 +389,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="dehu09">
+					<tr id="dehu09" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'dehuId09', 'error')} ">
 								<g:select name="dehuId09" 
@@ -406,7 +406,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="dehu10">
+					<tr id="dehu10" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'dehuId10', 'error')} ">
 								<g:select name="dehuId10" 
@@ -423,7 +423,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="dehu11">
+					<tr id="dehu11" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'dehuId11', 'error')} ">
 								<g:select name="dehuId11" 
@@ -440,7 +440,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr id="dehu12">
+					<tr id="dehu12" style="display: none;">
 						<td>
 							<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'dehuId12', 'error')} ">
 								<g:select name="dehuId12" 
