@@ -13,7 +13,7 @@ class FanReturnController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Fans.list(params), model:[fanInstanceCount: Fans.count()]
+        respond Fans.findAllByIsIn(false), model:[fanInstanceCount: Fans.count()]
     }
 
     def edit(Fans fansInstance) {
