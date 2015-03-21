@@ -1,7 +1,10 @@
 package com.superior.dehureturn
 
 import static org.springframework.http.HttpStatus.*
+import com.superior.base.Customer
 import com.superior.base.Dehumidifiers
+import com.superior.base.WaterExtractionJob
+
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
@@ -26,6 +29,22 @@ class DehuReturnController {
         respond dehumidifiersInstance
     }
 
+	def showJob(Dehumidifiers dehumidifiersInstance) {
+		WaterExtractionJob w = WaterExtractionJob.findById(dehumidifiersInstance.jobId)
+		if (w == null) {
+			notFound()
+			return
+		} else {
+			Customer customerInstance = Customer.findById(w.customerId)
+			if (customerInstance == null) {
+				notFound()
+				return
+			} else {
+				respond customerInstance, view:'customer';
+			}
+		}
+	}
+	
     @Transactional
     def update(Dehumidifiers dehumidifiersInstance) {
         if (dehumidifiersInstance == null) {

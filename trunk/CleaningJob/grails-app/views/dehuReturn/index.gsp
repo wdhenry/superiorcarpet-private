@@ -55,7 +55,7 @@
 					
 						<td>${fieldValue(bean: dehumidifiersInstance, field: "model")}</td>
 					
-						<td>${fieldValue(bean: dehumidifiersInstance, field: "jobId")}</td>
+						<td><g:link action="showJob" id="${dehumidifiersInstance.id}">${fieldValue(bean: dehumidifiersInstance, field: "jobId")}</g:link></td>
 						
 						<td><g:formatDate format="MM-dd-yyyy" date="${dehumidifiersInstance?.dateOut}" /></td>
 					
