@@ -479,13 +479,15 @@ class ExtractionJobController {
 			respond extractionJobCommandInstance.errors, view:'newJob'
 			return
 		}
+			
+		def nullDate = new SimpleDateFormat("MM/dd/yyyy-h:mm:a").parse("01/01/1970-01:00:AM")
 		
-		//Fans	
+		//Fans
 		if (extractionJobCommandInstance.fanVisible01 == "Y") {
 			Fans f = Fans.findByIdNumber(extractionJobCommandInstance.fanId01)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -507,7 +509,7 @@ class ExtractionJobController {
 			Fans f = Fans.findByIdNumber(extractionJobCommandInstance.fanId02)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -529,7 +531,7 @@ class ExtractionJobController {
 			Fans f = Fans.findByIdNumber(extractionJobCommandInstance.fanId03)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -551,7 +553,7 @@ class ExtractionJobController {
 			Fans f = Fans.findByIdNumber(extractionJobCommandInstance.fanId04)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -573,7 +575,7 @@ class ExtractionJobController {
 			Fans f = Fans.findByIdNumber(extractionJobCommandInstance.fanId05)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -595,7 +597,7 @@ class ExtractionJobController {
 			Fans f = Fans.findByIdNumber(extractionJobCommandInstance.fanId06)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -617,7 +619,7 @@ class ExtractionJobController {
 			Fans f = Fans.findByIdNumber(extractionJobCommandInstance.fanId07)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -639,7 +641,7 @@ class ExtractionJobController {
 			Fans f = Fans.findByIdNumber(extractionJobCommandInstance.fanId08)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -661,7 +663,7 @@ class ExtractionJobController {
 			Fans f = Fans.findByIdNumber(extractionJobCommandInstance.fanId09)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -683,7 +685,7 @@ class ExtractionJobController {
 			Fans f = Fans.findByIdNumber(extractionJobCommandInstance.fanId10)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -705,7 +707,7 @@ class ExtractionJobController {
 			Fans f = Fans.findByIdNumber(extractionJobCommandInstance.fanId111)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -727,7 +729,7 @@ class ExtractionJobController {
 			Fans f = Fans.findByIdNumber(extractionJobCommandInstance.fanId12)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -750,7 +752,7 @@ class ExtractionJobController {
 			Dehumidifiers f = Dehumidifiers.findByIdNumber(extractionJobCommandInstance.dehuId01)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -772,7 +774,7 @@ class ExtractionJobController {
 			Dehumidifiers f = Dehumidifiers.findByIdNumber(extractionJobCommandInstance.dehuId02)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -794,7 +796,7 @@ class ExtractionJobController {
 			Dehumidifiers f = Dehumidifiers.findByIdNumber(extractionJobCommandInstance.dehuId03)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -816,7 +818,7 @@ class ExtractionJobController {
 			Dehumidifiers f = Dehumidifiers.findByIdNumber(extractionJobCommandInstance.dehuId04)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -838,7 +840,7 @@ class ExtractionJobController {
 			Dehumidifiers f = Dehumidifiers.findByIdNumber(extractionJobCommandInstance.dehuId05)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -860,7 +862,7 @@ class ExtractionJobController {
 			Dehumidifiers f = Dehumidifiers.findByIdNumber(extractionJobCommandInstance.dehuId06)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -882,7 +884,7 @@ class ExtractionJobController {
 			Dehumidifiers f = Dehumidifiers.findByIdNumber(extractionJobCommandInstance.dehuId07)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -904,7 +906,7 @@ class ExtractionJobController {
 			Dehumidifiers f = Dehumidifiers.findByIdNumber(extractionJobCommandInstance.dehuId08)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -926,7 +928,7 @@ class ExtractionJobController {
 			Dehumidifiers f = Dehumidifiers.findByIdNumber(extractionJobCommandInstance.dehuId09)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -948,7 +950,7 @@ class ExtractionJobController {
 			Dehumidifiers f = Dehumidifiers.findByIdNumber(extractionJobCommandInstance.dehuId10)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -970,7 +972,7 @@ class ExtractionJobController {
 			Dehumidifiers f = Dehumidifiers.findByIdNumber(extractionJobCommandInstance.dehuId11)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
@@ -992,7 +994,7 @@ class ExtractionJobController {
 			Dehumidifiers f = Dehumidifiers.findByIdNumber(extractionJobCommandInstance.dehuId12)
 			f.jobId = waterExtractionJob.id
 			f.dateOut = extractionJobCommandInstance.date
-			f.dateIn = null
+			f.dateIn = nullDate
 			f.isIn = false
 			f.leadOut = extractionJobCommandInstance.lead
 			f.helperOut = extractionJobCommandInstance.helper
