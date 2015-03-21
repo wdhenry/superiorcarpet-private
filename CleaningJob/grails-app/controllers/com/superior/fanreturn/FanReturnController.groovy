@@ -1,7 +1,9 @@
 package com.superior.fanreturn
 
 import static org.springframework.http.HttpStatus.*
+import com.superior.base.Customer
 import com.superior.base.Fans
+import com.superior.base.WaterExtractionJob
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
@@ -18,6 +20,22 @@ class FanReturnController {
         respond fansInstance
     }
 
+	def showJob(Fans fansInstance) {
+		WaterExtractionJob w = WaterExtractionJob.findById(fansInstance.jobId)
+		if (w == null) {
+			notFound()
+			return
+		} else {
+			Customer customerInstance = Customer.findById(w.customerId)
+			if (customerInstance == null) {
+				notFound()
+				return 
+			} else {
+				respond customerInstance, view:'customer';
+			}
+		}
+	}
+	
     @Transactional
     def update(Fans fansInstance) {
         if (fansInstance == null) {

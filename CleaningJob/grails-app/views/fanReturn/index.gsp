@@ -29,7 +29,7 @@
 					
 						<g:sortableColumn property="model" title="${message(code: 'fanreturn.model.label', default: 'Model')}" />
 					
-						<g:sortableColumn property="jobId" title="${message(code: 'fanreturn.jobId.label', default: 'Job Id')}" />
+						<g:sortableColumn property="jobId" title="${message(code: 'fanreturn.jobId.label', default: 'Where')}" />
 					
 						<g:sortableColumn property="dateOut" title="${message(code: 'fanreturn.dateOut.label', default: 'Out')}" />
 					
@@ -55,7 +55,7 @@
 					
 						<td>${fieldValue(bean: fanInstance, field: "model")}</td>
 					
-						<td>${fieldValue(bean: fanInstance, field: "jobId")}</td>
+						<td><g:link action="showJob" id="${fanInstance.id}">${fieldValue(bean: fanInstance, field: "jobId")}</g:link></td>
 					
 						<td><g:formatDate format="MM-dd-yyyy" date="${fanInstance.dateOut}" /></td>
 						
