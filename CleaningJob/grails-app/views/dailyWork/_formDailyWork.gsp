@@ -29,13 +29,15 @@
 				<g:select name="lead1" from="${com.superior.base.Lead.list()}"
 						optionKey="leadName" optionValue="leadName" 
 						value="${dailyWorkCommandInstance?.lead1}"
-						noSelection="${['Pick a Name':'Pick a Name']}"/>
+						noSelection="${['Pick a Name':'--Pick a Name--']}"
+						class="sorted-asc"/>
 			</div>
 		</td>
 		<td>	
 			<div class="fieldcontain ${hasErrors(bean: dailyWorkCommandInstance, field: 'leadHours1', 'error')} ">
 				<g:select name="leadHours1" from="${['01','02','03','04','05','06','07','08','09','10','11','12']}" 
-				value="${leadHours1}" noSelection="${['00':'00']}"/>
+				value="${leadHours1}" noSelection="${['00':'00']}"
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
@@ -44,7 +46,8 @@
 				from="${['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20',
 					'21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40',
 					'41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60']}" 
-				value="${leadMinutes1}" noSelection="${['00':'00']}" />
+				value="${leadMinutes1}" noSelection="${['00':'00']}" 
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td>	
@@ -52,7 +55,8 @@
 				<g:select name="helper1" from="${com.superior.base.Helper.list()}"
 						optionKey="helperName" optionValue="helperName" 
 						value="${dailyWorkCommandInstance?.helper1}"
-						noSelection="${['None':'None']}"/>
+						noSelection="${['None':'--None--']}"
+						class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
@@ -67,7 +71,9 @@
 				from="${['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20',
 					'21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40',
 					'41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60']}" 
-				value="${helperMinutes1}" noSelection="${['00':'00']}"/>
+				value="${helperMinutes1}" 
+				noSelection="${['00':'00']}"
+				class="sorted-asc"/>
 			</div>
 		</td>
 	</tr>
@@ -80,13 +86,15 @@
 				<g:select name="lead2" from="${com.superior.base.Lead.list()}"
 						optionKey="leadName" optionValue="leadName" 
 						value="${dailyWorkCommandInstance?.lead2}"
-						noSelection="${['Pick a Name':'Pick a Name']}"/>
+						noSelection="${['Pick a Name':'--Pick a Name--']}"
+						class="sorted-asc"/>
 			</div>
 		</td>
 		<td>	
 			<div class="fieldcontain ${hasErrors(bean: dailyWorkCommandInstance, field: 'leadHours2', 'error')} ">
 				<g:select name="leadHours2" from="${['01','02','03','04','05','06','07','08','09','10','11','12']}" 
-				value="${leadHours2}" noSelection="${['00':'00']}"/>
+				value="${leadHours2}" noSelection="${['00':'00']}"
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
@@ -103,13 +111,15 @@
 				<g:select name="helper2" from="${com.superior.base.Helper.list()}"
 						optionKey="helperName" optionValue="helperName" 
 						value="${dailyWorkCommandInstance?.helper2}"
-						noSelection="${['None':'None']}"/>
+						noSelection="${['None':'--None--']}"
+						class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
 			<div class="fieldcontain ${hasErrors(bean: dailyWorkCommandInstance, field: 'helperHours2', 'error')} ">
 				<g:select name="helperHours2" from="${['01','02','03','04','05','06','07','08','09','10','11','12']}" 
-				value="${helperHours2}" noSelection="${['00':'00']}"/>
+				value="${helperHours2}" noSelection="${['00':'00']}"
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
@@ -118,7 +128,8 @@
 				from="${['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20',
 					'21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40',
 					'41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60']}" 
-				value="${helperMinutes2}" noSelection="${['00':'00']}"/>
+				value="${helperMinutes2}" noSelection="${['00':'00']}"
+				class="sorted-asc"/>
 			</div>
 		</td>
 	</tr>
@@ -131,13 +142,15 @@
 				<g:select name="lead3" from="${com.superior.base.Lead.list()}"
 						optionKey="leadName" optionValue="leadName" 
 						value="${dailyWorkCommandInstance?.lead3}"
-						noSelection="${['Pick a Name':'Pick a Name']}"/>
+						noSelection="${['Pick a Name':'--Pick a Name--']}"
+						class="sorted-asc"/>
 			</div>
 		</td>
 		<td>	
 			<div class="fieldcontain ${hasErrors(bean: dailyWorkCommandInstance, field: 'leadHours3', 'error')} ">
 				<g:select name="leadHours3" from="${['01','02','03','04','05','06','07','08','09','10','11','12']}" 
-				value="${leadHours3}" noSelection="${['00':'00']}"/>
+				value="${leadHours3}" noSelection="${['00':'00']}"
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
@@ -146,7 +159,8 @@
 				from="${['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20',
 					'21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40',
 					'41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60']}" 
-				value="${leadMinutes3}" noSelection="${['00':'00']}" />
+				value="${leadMinutes3}" noSelection="${['00':'00']}" 
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td>	
@@ -154,13 +168,15 @@
 				<g:select name="helper3" from="${com.superior.base.Helper.list()}"
 						optionKey="helperName" optionValue="helperName" 
 						value="${dailyWorkCommandInstance?.helper3}"
-						noSelection="${['None':'None']}"/>
+						noSelection="${['None':'--None--']}"
+						class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
 			<div class="fieldcontain ${hasErrors(bean: dailyWorkCommandInstance, field: 'helperHours3', 'error')} ">
 				<g:select name="helperHours3" from="${['01','02','03','04','05','06','07','08','09','10','11','12']}" 
-				value="${helperHours3}" noSelection="${['00':'00']}"/>
+				value="${helperHours3}" noSelection="${['00':'00']}"
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
@@ -169,7 +185,8 @@
 				from="${['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20',
 					'21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40',
 					'41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60']}" 
-				value="${helperMinutes3}" noSelection="${['00':'00']}"/>
+				value="${helperMinutes3}" noSelection="${['00':'00']}"
+				class="sorted-asc"/>
 			</div>
 		</td>
 	</tr>
@@ -182,13 +199,15 @@
 				<g:select name="lead4" from="${com.superior.base.Lead.list()}"
 						optionKey="leadName" optionValue="leadName" 
 						value="${dailyWorkCommandInstance?.lead4}"
-						noSelection="${['Pick a Name':'Pick a Name']}"/>
+						noSelection="${['Pick a Name':'--Pick a Name--']}"
+						class="sorted-asc"/>
 			</div>
 		</td>
 		<td>	
 			<div class="fieldcontain ${hasErrors(bean: dailyWorkCommandInstance, field: 'leadHours4', 'error')} ">
 				<g:select name="leadHours4" from="${['01','02','03','04','05','06','07','08','09','10','11','12']}" 
-				value="${leadHours4}" noSelection="${['00':'00']}"/>
+				value="${leadHours4}" noSelection="${['00':'00']}"
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
@@ -197,7 +216,8 @@
 				from="${['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20',
 					'21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40',
 					'41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60']}" 
-				value="${leadMinutes4}" noSelection="${['00':'00']}" />
+				value="${leadMinutes4}" noSelection="${['00':'00']}" 
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td>	
@@ -205,13 +225,15 @@
 				<g:select name="helper4" from="${com.superior.base.Helper.list()}"
 						optionKey="helperName" optionValue="helperName" 
 						value="${dailyWorkCommandInstance?.helper4}"
-						noSelection="${['None':'None']}"/>
+						noSelection="${['None':'--None--']}"
+						class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
 			<div class="fieldcontain ${hasErrors(bean: dailyWorkCommandInstance, field: 'helperHours4', 'error')} ">
 				<g:select name="helperHours4" from="${['01','02','03','04','05','06','07','08','09','10','11','12']}" 
-				value="${helperHours4}" noSelection="${['00':'00']}"/>
+				value="${helperHours4}" noSelection="${['00':'00']}"
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
@@ -220,7 +242,8 @@
 				from="${['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20',
 					'21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40',
 					'41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60']}" 
-				value="${helperMinutes4}" noSelection="${['00':'00']}"/>
+				value="${helperMinutes4}" noSelection="${['00':'00']}"
+				class="sorted-asc"/>
 			</div>
 		</td>
 	</tr>
@@ -233,13 +256,15 @@
 				<g:select name="lead5" from="${com.superior.base.Lead.list()}"
 						optionKey="leadName" optionValue="leadName" 
 						value="${dailyWorkCommandInstance?.lead5}"
-						noSelection="${['Pick a Name':'Pick a Name']}"/>
+						noSelection="${['Pick a Name':'--Pick a Name--']}"
+						class="sorted-asc"/>
 			</div>
 		</td>
 		<td>	
 			<div class="fieldcontain ${hasErrors(bean: dailyWorkCommandInstance, field: 'leadHours5', 'error')} ">
 				<g:select name="leadHours5" from="${['01','02','03','04','05','06','07','08','09','10','11','12']}" 
-				value="${leadHours5}" noSelection="${['00':'00']}"/>
+				value="${leadHours5}" noSelection="${['00':'00']}"
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
@@ -248,7 +273,8 @@
 				from="${['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20',
 					'21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40',
 					'41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60']}" 
-				value="${leadMinutes5}" noSelection="${['00':'00']}" />
+				value="${leadMinutes5}" noSelection="${['00':'00']}" 
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td>	
@@ -256,13 +282,15 @@
 				<g:select name="helper5" from="${com.superior.base.Helper.list()}"
 						optionKey="helperName" optionValue="helperName" 
 						value="${dailyWorkCommandInstance?.helper5}"
-						noSelection="${['None':'None']}"/>
+						noSelection="${['None':'--None--']}"
+						class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
 			<div class="fieldcontain ${hasErrors(bean: dailyWorkCommandInstance, field: 'helperHours5', 'error')} ">
 				<g:select name="helperHours5" from="${['01','02','03','04','05','06','07','08','09','10','11','12']}" 
-				value="${helperHours5}" noSelection="${['00':'00']}"/>
+				value="${helperHours5}" noSelection="${['00':'00']}"
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
@@ -271,7 +299,8 @@
 				from="${['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20',
 					'21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40',
 					'41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60']}" 
-				value="${helperMinutes5}" noSelection="${['00':'00']}"/>
+				value="${helperMinutes5}" noSelection="${['00':'00']}"
+				class="sorted-asc"/>
 			</div>
 		</td>
 	</tr>
@@ -284,13 +313,15 @@
 				<g:select name="lead6" from="${com.superior.base.Lead.list()}"
 						optionKey="leadName" optionValue="leadName" 
 						value="${dailyWorkCommandInstance?.lead6}"
-						noSelection="${['Pick a Name':'Pick a Name']}"/>
+						noSelection="${['Pick a Name':'--Pick a Name--']}"
+						class="sorted-asc"/>
 			</div>
 		</td>
 		<td>	
 			<div class="fieldcontain ${hasErrors(bean: dailyWorkCommandInstance, field: 'leadHours6', 'error')} ">
 				<g:select name="leadHours6" from="${['01','02','03','04','05','06','07','08','09','10','11','12']}" 
-				value="${leadHours6}" noSelection="${['00':'00']}"/>
+				value="${leadHours6}" noSelection="${['00':'00']}"
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
@@ -299,7 +330,8 @@
 				from="${['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20',
 					'21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40',
 					'41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60']}" 
-				value="${leadMinutes6}" noSelection="${['00':'00']}" />
+				value="${leadMinutes6}" noSelection="${['00':'00']}" 
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td>	
@@ -307,13 +339,15 @@
 				<g:select name="helper6" from="${com.superior.base.Helper.list()}"
 						optionKey="helperName" optionValue="helperName" 
 						value="${dailyWorkCommandInstance?.helper6}"
-						noSelection="${['None':'None']}"/>
+						noSelection="${['None':'--None--']}"
+						class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
 			<div class="fieldcontain ${hasErrors(bean: dailyWorkCommandInstance, field: 'helperHours6', 'error')} ">
 				<g:select name="helperHours6" from="${['01','02','03','04','05','06','07','08','09','10','11','12']}" 
-				value="${helperHours6}" noSelection="${['00':'00']}"/>
+				value="${helperHours6}" noSelection="${['00':'00']}"
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
@@ -322,7 +356,8 @@
 				from="${['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20',
 					'21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40',
 					'41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60']}" 
-				value="${helperMinutes6}" noSelection="${['00':'00']}"/>
+				value="${helperMinutes6}" noSelection="${['00':'00']}"
+				class="sorted-asc"/>
 			</div>
 		</td>
 	</tr>
@@ -340,7 +375,8 @@
 		<td>	
 			<div class="fieldcontain ${hasErrors(bean: dailyWorkCommandInstance, field: 'vanNumber1', 'error')} ">
 				<g:select name="vanNumber1" from="${['01','02','03','04','05','06']}" 
-				value="${vanNumber1}" noSelection="${['Pick a Van':'Pick a Van']}" />
+				value="${vanNumber1}" noSelection="${['Pick a Van':'--Pick a Van--']}" 
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td colspan="2">
@@ -366,7 +402,8 @@
 		<td>	
 			<div class="fieldcontain ${hasErrors(bean: dailyWorkCommandInstance, field: 'vanNumber2', 'error')} ">
 				<g:select name="vanNumber2" from="${['01','02','03','04','05','06']}" 
-				value="${vanNumber2}" noSelection="${['Pick a Van':'Pick a Van']}" />
+				value="${vanNumber2}" noSelection="${['Pick a Van':'--Pick a Van--']}" 
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td colspan="2">
@@ -392,7 +429,8 @@
 		<td>	
 			<div class="fieldcontain ${hasErrors(bean: dailyWorkCommandInstance, field: 'vanNumber3', 'error')} ">
 				<g:select name="vanNumber3" from="${['01','02','03','04','05','06']}" 
-				value="${vanNumber3}" noSelection="${['Pick a Van':'Pick a Van']}" />
+				value="${vanNumber3}" noSelection="${['Pick a Van':'--Pick a Van--']}" 
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td colspan="2">
@@ -418,7 +456,8 @@
 		<td>	
 			<div class="fieldcontain ${hasErrors(bean: dailyWorkCommandInstance, field: 'vanNumber4', 'error')} ">
 				<g:select name="vanNumber4" from="${['01','02','03','04','05','06']}" 
-				value="${vanNumber4}" noSelection="${['Pick a Van':'Pick a Van']}" />
+				value="${vanNumber4}" noSelection="${['Pick a Van':'--Pick a Van--']}" 
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td colspan="2">
@@ -444,7 +483,8 @@
 		<td>	
 			<div class="fieldcontain ${hasErrors(bean: dailyWorkCommandInstance, field: 'vanNumber5', 'error')} ">
 				<g:select name="vanNumber5" from="${['01','02','03','04','05','06']}" 
-				value="${vanNumber5}" noSelection="${['Pick a Van':'Pick a Van']}" />
+				value="${vanNumber5}" noSelection="${['Pick a Van':'--Pick a Van--']}" 
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td colspan="2">
@@ -470,7 +510,8 @@
 		<td>	
 			<div class="fieldcontain ${hasErrors(bean: dailyWorkCommandInstance, field: 'vanNumber6', 'error')} ">
 				<g:select name="vanNumber6" from="${['01','02','03','04','05','06']}" 
-				value="${vanNumber6}" noSelection="${['Pick a Van':'Pick a Van']}" />
+				value="${vanNumber6}" noSelection="${['Pick a Van':'--Pick a Van--']}" 
+				class="sorted-asc"/>
 			</div>
 		</td>
 		<td colspan="2">

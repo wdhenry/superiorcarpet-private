@@ -50,7 +50,8 @@
 				<g:select name="leadIn" from="${com.superior.base.Lead.list()}"
 					optionKey="leadName" optionValue="leadName" 
 					value="${dehumidifiersInstance?.leadIn}"
-					noSelection="${['null':'Pick a Name']}"/>
+					noSelection="${['null':'--Pick a Name--']}"
+					class="sorted-asc"/>
 			</g:if>
 		</td>
 		<td>
@@ -61,7 +62,8 @@
 				<g:select name="helperIn" from="${com.superior.base.Helper.list()}"
 					optionKey="helperName" optionValue="helperName" 
 					value="${dehumidifiersInstance?.helperIn}"
-					noSelection="${['null':'None']}"/>
+					noSelection="${['null':'--None--']}"
+					class="sorted-asc"/>
 			</g:if>
 		</td>
 		<td>

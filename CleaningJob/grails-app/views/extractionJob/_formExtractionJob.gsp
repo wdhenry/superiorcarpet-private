@@ -21,7 +21,8 @@
 				<g:select name="lead" from="${com.superior.base.Lead.list()}"
 						optionKey="leadName" optionValue="leadName" 
 						value="${extractionJobCommandInstance?.lead}"
-						noSelection="${['Pick a Name':'Pick a Name']}"/>
+						noSelection="${['Pick a Name':'--Pick a Name--']}"
+						class="sorted-asc"/>
 			</div>
 		</td>
 		<td>	
@@ -29,7 +30,8 @@
 				<g:select name="helper" from="${com.superior.base.Helper.list()}"
 						optionKey="helperName" optionValue="helperName" 
 						value="${extractionJobCommandInstance?.helper}"
-						noSelection="${['None':'None']}"/>
+						noSelection="${['None':'--None--']}"
+						class="sorted-asc"/>
 			</div>
 		</td>
 		<td>
@@ -56,7 +58,7 @@
 		<td>	
 			<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'startHour', 'error')} ">
 				<g:select name="startHour" from="${['01','02','03','04','05','06','07','08','09','10','11','12']}" 
-				value="${startHour}" />
+				value="${startHour}" class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
@@ -65,19 +67,19 @@
 				from="${['00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20',
 					'21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40',
 					'41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60']}" 
-				value="${startMinute}" />
+				value="${startMinute}" class="sorted-asc"/>
 			</div>
 		</td>
 		<td>
 			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'startAmPm', 'error')} ">
 				<g:select name="startAmPm" from="${['AM', 'PM']}"
-					value="${startAmPm}" />
+					value="${startAmPm}" class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
 			<div class="fieldcontain ${hasErrors(bean: extractionJobCommandInstance, field: 'endHour', 'error')} ">
 				<g:select name="endHour" from="${['01','02','03','04','05','06','07','08','09','10','11','12']}" 
-				value="${endHour}" />
+				value="${endHour}" class="sorted-asc"/>
 			</div>
 		</td>
 		<td>		
@@ -86,13 +88,13 @@
 				from="${['00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20',
 					'21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40',
 					'41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60']}" 
-				value="${endMinute}" />
+				value="${endMinute}" class="sorted-asc"/>
 			</div>
 		</td>
 		<td>
 			<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'endAmPm', 'error')} ">
 				<g:select name="endAmPm" from="${['AM', 'PM']}"
-					value="${endAmPm}" />
+					value="${endAmPm}" class="sorted-asc"/>
 			</div>
 		</td>
 	</tr>

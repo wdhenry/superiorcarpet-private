@@ -8,7 +8,8 @@
 				<g:message code="cleaningJob.numberStairs.label" default="Select Number of Sets of Stairs" />
 				<g:select name="stairCount" 
 					from="${['01','02','03']}"
-					noSelection="${['00':'00']}"/>
+					noSelection="${['00':'00']}"
+					class="sorted-asc"/>
 			</div>
 		</td>
 	</tr>
@@ -32,7 +33,8 @@
 					class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairDirection1', 'error')} ">
 					<g:select name="stairDirection1" from="${['Down - 1st Set', 'Down - 2nd Set', 'Up - 1st Set', 'Up - 2nd Set']}"
 						value="${stairDirection1}"
-						noSelection="${['Pick a Direction':'Pick a Direction']}" />
+						noSelection="${['Pick a Direction':'--Pick a Direction--']}" 
+						class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -61,7 +63,8 @@
 					class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairDirection2', 'error')} ">
 					<g:select name="stairDirection2" from="${['Down', 'Up']}"
 						value="${stairDirection2}"
-						noSelection="${['Pick a Direction':'Pick a Direction']}" />
+						noSelection="${['Pick a Direction':'--Pick a Direction--']}" 
+						class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -90,7 +93,8 @@
 					class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'stairDirection3', 'error')} ">
 					<g:select name="stairDirection3" from="${['Down', 'Up']}"
 						value="${stairDirection3}"
-						noSelection="${['Pick a Direction':'Pick a Direction']}" />
+						noSelection="${['Pick a Direction':'--Pick a Direction--']}" 
+						class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
