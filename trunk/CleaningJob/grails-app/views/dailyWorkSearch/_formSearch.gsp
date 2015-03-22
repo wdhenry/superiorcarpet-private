@@ -13,7 +13,8 @@
 				<g:select name="lead" from="${com.superior.base.Lead.list()}"
 						optionKey="leadName" optionValue="leadName" 
 						value="${dailySearchCommandInstance?.lead}"
-						noSelection="${['NONE':'Pick a Name']}"/>
+						noSelection="${['NONE':'--Pick a Name--']}"
+						class="sorted-asc"/>
 			</div>
 		</td>
 		<td>
@@ -41,7 +42,8 @@
 				<g:select name="helper" from="${com.superior.base.Helper.list()}"
 						optionKey="helperName" optionValue="helperName" 
 						value="${dailySearchCommandInstance?.helper}"
-						noSelection="${['NONE':'Pick a Name']}"/>
+						noSelection="${['NONE':'--Pick a Name--']}"
+						class="sorted-asc"/>
 			</div>
 		</td>
 		<td>

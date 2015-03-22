@@ -8,7 +8,8 @@
 				<g:message code="cleaningJob.numberRooms.label" default="Select Number of Additional Rooms" />
 				<g:select name="roomCount" 
 					from="${['01','02','03','04','05','06','07','08']}"
-					noSelection="${['00':'00']}"/>
+					noSelection="${['00':'00']}"
+					class="sorted-asc"/>
 			</div>
 		</td>
 	</tr>

@@ -22,7 +22,8 @@
 				<g:select name="lead" from="${com.superior.base.Lead.list()}"
 					optionKey="leadName" optionValue="leadName"
 					value="${cleaningJobCommandInstance?.lead}"
-					noSelection="${['Pick a Name':'Pick a Name']}" />
+					noSelection="${['Pick a Name':'--Pick a Name--']}" 
+					class="sorted-asc"/>
 			</div>
 		</td>
 		<td>
@@ -31,7 +32,8 @@
 				<g:select name="helper" from="${com.superior.base.Helper.list()}"
 					optionKey="helperName" optionValue="helperName"
 					value="${cleaningJobCommandInstance?.helper}"
-					noSelection="${['None':'None']}" />
+					noSelection="${['None':'--None--']}" 
+					class="sorted-asc"/>
 			</div>
 		</td>
 		<td>

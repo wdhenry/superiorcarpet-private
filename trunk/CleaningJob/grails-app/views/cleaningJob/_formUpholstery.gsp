@@ -8,7 +8,8 @@
 				<g:message code="cleaningJob.numberUpholstery.label" default="Select Number of Upholstery Items" />
 				<g:select name="upholsteryCount" 
 					from="${['01','02','03','04','05','06']}"
-					noSelection="${['00':'00']}"/>
+					noSelection="${['00':'00']}"
+					class="sorted-asc"/>
 			</div>
 		</td>
 	</tr>
@@ -34,7 +35,8 @@
 						from="${com.superior.base.UpholsteryName.list()}"
 						optionKey="upholsteryName" optionValue="upholsteryName" 
 						value="${cleaningJobCommandInstance?.upholsteryName1}"
-						noSelection="${['Pick Upholstery Name':'Pick Upholstery Name']}"/>
+						noSelection="${['Pick Upholstery Name':'--Pick Upholstery Name--']}"
+						class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -71,7 +73,8 @@
 						from="${com.superior.base.UpholsteryName.list()}"
 						optionKey="upholsteryName" optionValue="upholsteryName" 
 						value="${cleaningJobCommandInstance?.upholsteryName2}"
-						noSelection="${['Pick Upholstery Name':'Pick Upholstery Name']}"/>
+						noSelection="${['Pick Upholstery Name':'--Pick Upholstery Name--']}"
+						class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -108,7 +111,8 @@
 						from="${com.superior.base.UpholsteryName.list()}"
 						optionKey="upholsteryName" optionValue="upholsteryName" 
 						value="${cleaningJobCommandInstance?.upholsteryName3}"
-						noSelection="${['Pick Upholstery Name':'Pick Upholstery Name']}"/>
+						noSelection="${['Pick Upholstery Name':'--Pick Upholstery Name--']}"
+						class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -145,7 +149,8 @@
 						from="${com.superior.base.UpholsteryName.list()}"
 						optionKey="upholsteryName" optionValue="upholsteryName" 
 						value="${cleaningJobCommandInstance?.upholsteryName4}"
-						noSelection="${['Pick Upholstery Name':'Pick Upholstery Name']}"/>
+						noSelection="${['Pick Upholstery Name':'--Pick Upholstery Name--']}"
+						class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -182,7 +187,8 @@
 						from="${com.superior.base.UpholsteryName.list()}"
 						optionKey="upholsteryName" optionValue="upholsteryName" 
 						value="${cleaningJobCommandInstance?.upholsteryName5}"
-						noSelection="${['Pick Upholstery Name':'Pick Upholstery Name']}"/>
+						noSelection="${['Pick Upholstery Name':'--Pick Upholstery Name--']}"
+						class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -219,7 +225,8 @@
 						from="${com.superior.base.UpholsteryName.list()}"
 						optionKey="upholsteryName" optionValue="upholsteryName" 
 						value="${cleaningJobCommandInstance?.upholsteryName6}"
-						noSelection="${['Pick Upholstery Name':'Pick Upholstery Name']}"/>
+						noSelection="${['Pick Upholstery Name':'--Pick Upholstery Name--']}"
+						class="sorted-asc"/>
 				</div>
 			</td>
 			<td>

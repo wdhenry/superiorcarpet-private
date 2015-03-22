@@ -8,7 +8,8 @@
 				<g:message code="cleaningJob.numberMisc.label" default="Select Number of Miscellaneous Charges" />
 				<g:select name="miscCount" 
 					from="${['01','02','03']}"
-					noSelection="${['00':'00']}"/>
+					noSelection="${['00':'00']}"
+					class="sorted-asc"/>
 			</div>
 		</td>
 	</tr>
@@ -32,7 +33,8 @@
 						from="${com.superior.base.MiscChargesName.list()}"
 					 	optionKey="miscChargesName" optionValue="miscChargesName"
 						value="${cleaningJobCommandInstance?.miscChargesName1}" 
-						noSelection="${['Pick Misc. Description':'Pick Misc. Description']}"/>
+						noSelection="${['Pick Misc. Description':'--Pick Misc. Description--']}"
+						class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -55,7 +57,8 @@
 						from="${com.superior.base.MiscChargesName.list()}"
 					 	optionKey="miscChargesName" optionValue="miscChargesName"
 						value="${cleaningJobCommandInstance?.miscChargesName2}" 
-						noSelection="${['Pick Misc. Description':'Pick Misc. Description']}"/>
+						noSelection="${['Pick Misc. Description':'--Pick Misc. Description--']}"
+						class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -78,7 +81,8 @@
 						from="${com.superior.base.MiscChargesName.list()}"
 					 	optionKey="miscChargesName" optionValue="miscChargesName"
 						value="${cleaningJobCommandInstance?.miscChargesName3}" 
-						noSelection="${['Pick Misc. Description':'Pick Misc. Description']}"/>
+						noSelection="${['Pick Misc. Description':'--Pick Misc. Description--']}"
+						class="sorted-asc"/>
 				</div>
 			</td>
 			<td>

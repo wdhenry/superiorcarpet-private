@@ -8,7 +8,8 @@
 				<g:message code="cleaningJob.numberHsRooms.label" default="Select Number of Hard Surface Rooms" />
 				<g:select name="hsRoomCount" 
 					from="${['01','02','03','04','05','06']}"
-					noSelection="${['00':'00']}"/>
+					noSelection="${['00':'00']}"
+					class="sorted-asc"/>
 			</div>
 		</td>
 	</tr>
@@ -34,7 +35,8 @@
 					<g:select name="hsRoomName1" from="${com.superior.base.RoomName.list()}"
 							optionKey="roomName" optionValue="roomName" 
 							value="${cleaningJobCommandInstance?.hsRoomName1}"
-							noSelection="${['Pick a Room':'Pick a Room']}"/>
+							noSelection="${['Pick a Room':'--Pick a Room--']}"
+							class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -76,7 +78,8 @@
 					<g:select name="hsRoomName2" from="${com.superior.base.RoomName.list()}"
 							optionKey="roomName" optionValue="roomName" 
 							value="${cleaningJobCommandInstance?.hsRoomName2}"
-							noSelection="${['Pick a Room':'Pick a Room']}"/>
+							noSelection="${['Pick a Room':'--Pick a Room--']}"
+							class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -118,7 +121,8 @@
 					<g:select name="hsRoomName3" from="${com.superior.base.RoomName.list()}"
 							optionKey="roomName" optionValue="roomName" 
 							value="${cleaningJobCommandInstance?.hsRoomName3}"
-							noSelection="${['Pick a Room':'Pick a Room']}"/>
+							noSelection="${['Pick a Room':'--Pick a Room--']}"
+							class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -160,7 +164,8 @@
 					<g:select name="hsRoomName4" from="${com.superior.base.RoomName.list()}"
 							optionKey="roomName" optionValue="roomName" 
 							value="${cleaningJobCommandInstance?.hsRoomName4}"
-							noSelection="${['Pick a Room':'Pick a Room']}"/>
+							noSelection="${['Pick a Room':'--Pick a Room--']}"
+							class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -202,7 +207,8 @@
 					<g:select name="hsRoomName5" from="${com.superior.base.RoomName.list()}"
 							optionKey="roomName" optionValue="roomName" 
 							value="${cleaningJobCommandInstance?.hsRoomName5}"
-							noSelection="${['Pick a Room':'Pick a Room']}"/>
+							noSelection="${['Pick a Room':'--Pick a Room--']}"
+							class="sorted-asc"/>
 				</div>
 			</td>
 			<td>
@@ -244,7 +250,8 @@
 					<g:select name="hsRoomName6" from="${com.superior.base.RoomName.list()}"
 							optionKey="roomName" optionValue="roomName" 
 							value="${cleaningJobCommandInstance?.hsRoomName6}"
-							noSelection="${['Pick a Room':'Pick a Room']}"/>
+							noSelection="${['Pick a Room':'--Pick a Room--']}"
+							class="sorted-asc"/>
 				</div>
 			</td>
 			<td>

@@ -9,7 +9,8 @@
 				<g:message code="extractionJob.numberFans.label" default="Select Number of Fans Left on Job" />
 				<g:select name="fanCount" 
 					from="${['01','02','03','04','05','06','07','08','09','10','11','12']}"
-					noSelection="${['00':'00']}"/>
+					noSelection="${['00':'00']}"
+					class="sorted-asc"/>
 			</div>
 		</td>
 		<td>
@@ -17,7 +18,8 @@
 				<g:message code="extractionJob.numberDehus.label" default="Select Number of Dehumidifiers Left on Job" />
 				<g:select name="dehuCount" 
 					from="${['01','02','03','04','05','06','07','08','09','10','11','12']}"
-					noSelection="${['00':'00']}"/>
+					noSelection="${['00':'00']}"
+					class="sorted-asc"/>
 			</div>
 		</td>
 	</tr>
@@ -41,7 +43,8 @@
 										from="${com.superior.base.Fans.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.fanId01}"
-										noSelection="${['00':'Select Fan']}"/>
+										noSelection="${['00':'--Select Fan--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -58,7 +61,8 @@
 										from="${com.superior.base.Fans.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.fanId02}"
-										noSelection="${['00':'Select Fan']}"/>
+										noSelection="${['00':'--Select Fan--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -75,7 +79,8 @@
 										from="${com.superior.base.Fans.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.fanId03}"
-										noSelection="${['00':'Select Fan']}"/>
+										noSelection="${['00':'--Select Fan--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -92,7 +97,8 @@
 										from="${com.superior.base.Fans.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.fanId04}"
-										noSelection="${['00':'Select Fan']}"/>
+										noSelection="${['00':'--Select Fan--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -109,7 +115,8 @@
 										from="${com.superior.base.Fans.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.fanId05}"
-										noSelection="${['00':'Select Fan']}"/>
+										noSelection="${['00':'--Select Fan--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -126,7 +133,8 @@
 										from="${com.superior.base.Fans.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.fanId06}"
-										noSelection="${['00':'Select Fan']}"/>
+										noSelection="${['00':'--Select Fan--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -143,7 +151,8 @@
 										from="${com.superior.base.Fans.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.fanId07}"
-										noSelection="${['00':'Select Fan']}"/>
+										noSelection="${['00':'--Select Fan--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -160,7 +169,8 @@
 										from="${com.superior.base.Fans.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.fanId08}"
-										noSelection="${['00':'Select Fan']}"/>
+										noSelection="${['00':'--Select Fan--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -177,7 +187,8 @@
 										from="${com.superior.base.Fans.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.fanId09}"
-										noSelection="${['00':'Select Fan']}"/>
+										noSelection="${['00':'--Select Fan--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -194,7 +205,8 @@
 										from="${com.superior.base.Fans.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.fanId10}"
-										noSelection="${['00':'Select Fan']}"/>
+										noSelection="${['00':'--Select Fan--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -211,7 +223,8 @@
 										from="${com.superior.base.Fans.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.fanId11}"
-										noSelection="${['00':'Select Fan']}"/>
+										noSelection="${['00':'--Select Fan--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -228,7 +241,8 @@
 										from="${com.superior.base.Fans.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.fanId12}"
-										noSelection="${['00':'Select Fan']}"/>
+										noSelection="${['00':'--Select Fan--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -260,7 +274,8 @@
 										from="${com.superior.base.Dehumidifiers.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.dehuId01}"
-										noSelection="${['00':'Select Dehumidifier']}"/>
+										noSelection="${['00':'--Select Dehumidifier--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -277,7 +292,8 @@
 										from="${com.superior.base.Dehumidifiers.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.dehuId02}"
-										noSelection="${['00':'Select Dehumidifier']}"/>
+										noSelection="${['00':'--Select Dehumidifier--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -294,7 +310,8 @@
 										from="${com.superior.base.Dehumidifiers.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.dehuId03}"
-										noSelection="${['00':'Select Dehumidifier']}"/>
+										noSelection="${['00':'--Select Dehumidifier--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -311,7 +328,8 @@
 										from="${com.superior.base.Dehumidifiers.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.dehuId04}"
-										noSelection="${['00':'Select Dehumidifier']}"/>
+										noSelection="${['00':'--Select Dehumidifier--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -328,7 +346,8 @@
 										from="${com.superior.base.Dehumidifiers.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.dehuId05}"
-										noSelection="${['00':'Select Dehumidifier']}"/>
+										noSelection="${['00':'--Select Dehumidifier--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -345,7 +364,8 @@
 										from="${com.superior.base.Dehumidifiers.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.dehuId06}"
-										noSelection="${['00':'Select Dehumidifier']}"/>
+										noSelection="${['00':'--Select Dehumidifier--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -362,7 +382,8 @@
 										from="${com.superior.base.Dehumidifiers.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.dehuId07}"
-										noSelection="${['00':'Select Dehumidifier']}"/>
+										noSelection="${['00':'--Select Dehumidifier--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -379,7 +400,8 @@
 										from="${com.superior.base.Dehumidifiers.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.dehuId08}"
-										noSelection="${['00':'Select Dehumidifier']}"/>
+										noSelection="${['00':'--Select Dehumidifier--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -396,7 +418,8 @@
 										from="${com.superior.base.Dehumidifiers.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.dehuId09}"
-										noSelection="${['00':'Select Dehumidifier']}"/>
+										noSelection="${['00':'--Select Dehumidifier--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -413,7 +436,8 @@
 										from="${com.superior.base.Dehumidifiers.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.dehuId10}"
-										noSelection="${['00':'Select Dehumidifier']}"/>
+										noSelection="${['00':'--Select Dehumidifier--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -430,7 +454,8 @@
 										from="${com.superior.base.Dehumidifiers.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.dehuId11}"
-										noSelection="${['00':'Select Dehumidifier']}"/>
+										noSelection="${['00':'--Select Dehumidifier--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
@@ -447,7 +472,8 @@
 										from="${com.superior.base.Dehumidifiers.findAllByIsIn(true)}"
 										optionKey="idNumber" optionValue="displayValue" 
 										value="${extractionJobCommandInstance?.dehuId12}"
-										noSelection="${['00':'Select Dehumidifier']}"/>
+										noSelection="${['00':'--Select Dehumidifier--']}"
+										class="sorted-asc"/>
 							</div>
 						</td>
 						<td>
