@@ -3,6 +3,7 @@ package com.superior.dailywork
 import com.superior.base.DailyWorkRecord
 
 import grails.transaction.Transactional;
+import java.text.SimpleDateFormat
 
 @Transactional(readOnly = true)
 class DailyWorkController {
@@ -16,7 +17,10 @@ class DailyWorkController {
 	
 	def showWork(Integer max) {
 		params.max = Math.min(max ?: 10, 100)
-		respond DailyWorkRecord.list(params), model:[dailyWorkRecordInstanceCount: DailyWorkRecord.count()]
+		def currDate = new SimpleDateFormat("MMMM d, yyyy").format(new Date())
+		def date = new SimpleDateFormat("MMMM d, yyyy").parse(currDate)
+		def workList = DailyWorkRecord.findAllByDate(date)
+		respond workList, model:[dailyWorkRecordInstanceCount: workList.size()]
 	}
 			
 	@Transactional
