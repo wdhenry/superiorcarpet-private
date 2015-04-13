@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context>
+	<Resource name="jdbc/onlinedb" 
+			  type="javax.sql.DataSource"
+			  factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" 
+			  maxActive="50"
+			  maxIdle="25" 
+			  maxWait="10000" 
+			  username="superior" 
+			  password="Superior@7890"
+			  driverClassName="com.mysql.jdbc.Driver"
+			  url="jdbc:mysql://localhost:3307/superior_carpet" />
+</Context>
