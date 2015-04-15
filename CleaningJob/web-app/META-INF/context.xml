@@ -6,8 +6,8 @@
 			  maxActive="50"
 			  maxIdle="25" 
 			  maxWait="10000" 
-			  username="superior" 
-			  password="Superior@7890"
+			  username="root" 
+			  password="Scauc@7890"
 			  driverClassName="com.mysql.jdbc.Driver"
-			  url="jdbc:mysql://localhost:3307/superior_carpet" />
+			  url="jdbc:mysql://localhost:3306/superior_carpet" />
 </Context>
