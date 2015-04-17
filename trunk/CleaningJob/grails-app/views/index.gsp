@@ -108,14 +108,14 @@
 				</ol>
 			</div>
 			
-			<div id="controller-list" role="navigation">
-				<h2>Temporary List of Applications:</h2>
-				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-					</g:each>
-				</ul>
-			</div>
+<%--			<div id="controller-list" role="navigation">--%>
+<%--				<h2>Temporary List of Applications:</h2>--%>
+<%--				<ul>--%>
+<%--					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">--%>
+<%--						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>--%>
+<%--					</g:each>--%>
+<%--				</ul>--%>
+<%--			</div>--%>
 		</div>
 		
 <%--		<div id="status" role="complementary">--%>

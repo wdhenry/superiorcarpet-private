@@ -128,7 +128,7 @@ class CleaningJobSearchController {
 				}
 				groupCount = groupCount + 1
 			} else {
-				if (room.hardSurface()) {
+				if (room.isHardSurface()) {
 					def hsRoomCount = 1
 					if (hsRoomCount == 1) {
 						cleaningJobCommandInstance.setHsRoomName1(room.getRoomName())
@@ -220,17 +220,17 @@ class CleaningJobSearchController {
 		def stairCount = 1
 		for (stair in stairList) {
 			if (stairCount == 1) {
-				cleaningJobCommandInstance.setStairDirection1(stair.stairDirection())
-				cleaningJobCommandInstance.setStairCount1(stair.stairCount())
-				cleaningJobCommandInstance.setStairCharge1(stair.stairCharge())
+				cleaningJobCommandInstance.setStairDirection1(stair.getStairDirection())
+				cleaningJobCommandInstance.setStairCount1(stair.getStairCount())
+				cleaningJobCommandInstance.setStairCharge1(stair.getStairCharge())
 			} else if (stairCount == 2) {
-				cleaningJobCommandInstance.setStairDirection2(stair.stairDirection())
-				cleaningJobCommandInstance.setStairCount2(stair.stairCount())
-				cleaningJobCommandInstance.setStairCharge2(stair.stairCharge())
+				cleaningJobCommandInstance.setStairDirection2(stair.getStairDirection())
+				cleaningJobCommandInstance.setStairCount2(stair.getStairCount())
+				cleaningJobCommandInstance.setStairCharge2(stair.getStairCharge())
 			} else if (stairCount == 3) {
-				cleaningJobCommandInstance.setStairDirection3(stair.stairDirection())
-				cleaningJobCommandInstance.setStairCount3(stair.stairCount())
-				cleaningJobCommandInstance.setStairCharge3(stair.stairCharge())
+				cleaningJobCommandInstance.setStairDirection3(stair.getStairDirection())
+				cleaningJobCommandInstance.setStairCount3(stair.getStairCount())
+				cleaningJobCommandInstance.setStairCharge3(stair.getStairCharge())
 			}
 			stairCount = stairCount + 1
 		}
@@ -241,35 +241,35 @@ class CleaningJobSearchController {
 		def upholsteryCount = 1
 		for (upholstery in upholsteryList) {
 			if (upholsteryCount == 1) {
-				cleaningJobCommandInstance.setUpholsteryName1(upholstery.upholsteryName())
-				cleaningJobCommandInstance.setUpholsteryCount1(upholstery.upholsteryCount())
-				cleaningJobCommandInstance.setUpholsteryCharge1(upholstery.upholsteryCharge())
-				cleaningJobCommandInstance.setUpholsteryProtectorCharge1(upholstery.upholsteryProtectorCharge())
+				cleaningJobCommandInstance.setUpholsteryName1(upholstery.getUpholsteryName())
+				cleaningJobCommandInstance.setUpholsteryCount1(upholstery.getUpholsteryCount())
+				cleaningJobCommandInstance.setUpholsteryCharge1(upholstery.getUpholsteryCharge())
+				cleaningJobCommandInstance.setUpholsteryProtectorCharge1(upholstery.getUpholsteryProtectorCharge())
 			} else if (upholsteryCount == 2) {
-				cleaningJobCommandInstance.setUpholsteryName2(upholstery.upholsteryName())
-				cleaningJobCommandInstance.setUpholsteryCount2(upholstery.upholsteryCount())
-				cleaningJobCommandInstance.setUpholsteryCharge2(upholstery.upholsteryCharge())
-				cleaningJobCommandInstance.setUpholsteryProtectorCharge2(upholstery.upholsteryProtectorCharge())
+				cleaningJobCommandInstance.setUpholsteryName2(upholstery.getUpholsteryName())
+				cleaningJobCommandInstance.setUpholsteryCount2(upholstery.getUpholsteryCount())
+				cleaningJobCommandInstance.setUpholsteryCharge2(upholstery.getUpholsteryCharge())
+				cleaningJobCommandInstance.setUpholsteryProtectorCharge2(upholstery.getUpholsteryProtectorCharge())
 			} else if (upholsteryCount == 3) {
-				cleaningJobCommandInstance.setUpholsteryName3(upholstery.upholsteryName())
-				cleaningJobCommandInstance.setUpholsteryCount3(upholstery.upholsteryCount())
-				cleaningJobCommandInstance.setUpholsteryCharge3(upholstery.upholsteryCharge())
-				cleaningJobCommandInstance.setUpholsteryProtectorCharge3(upholstery.upholsteryProtectorCharge())
+				cleaningJobCommandInstance.setUpholsteryName3(upholstery.getUpholsteryName())
+				cleaningJobCommandInstance.setUpholsteryCount3(upholstery.getUpholsteryCount())
+				cleaningJobCommandInstance.setUpholsteryCharge3(upholstery.getUpholsteryCharge())
+				cleaningJobCommandInstance.setUpholsteryProtectorCharge3(upholstery.getUpholsteryProtectorCharge())
 			} else if (upholsteryCount == 4) {
-				cleaningJobCommandInstance.setUpholsteryName4(upholstery.upholsteryName())
-				cleaningJobCommandInstance.setUpholsteryCount4(upholstery.upholsteryCount())
-				cleaningJobCommandInstance.setUpholsteryCharge4(upholstery.upholsteryCharge())
-				cleaningJobCommandInstance.setUpholsteryProtectorCharge4(upholstery.upholsteryProtectorCharge())
+				cleaningJobCommandInstance.setUpholsteryName4(upholstery.getUpholsteryName())
+				cleaningJobCommandInstance.setUpholsteryCount4(upholstery.getUpholsteryCount())
+				cleaningJobCommandInstance.setUpholsteryCharge4(upholstery.getUpholsteryCharge())
+				cleaningJobCommandInstance.setUpholsteryProtectorCharge4(upholstery.getUpholsteryProtectorCharge())
 			} else if (upholsteryCount == 5) {
-				cleaningJobCommandInstance.setUpholsteryName5(upholstery.upholsteryName())
-				cleaningJobCommandInstance.setUpholsteryCount5(upholstery.upholsteryCount())
-				cleaningJobCommandInstance.setUpholsteryCharge5(upholstery.upholsteryCharge())
-				cleaningJobCommandInstance.setUpholsteryProtectorCharge5(upholstery.upholsteryProtectorCharge())
+				cleaningJobCommandInstance.setUpholsteryName5(upholstery.getUpholsteryName())
+				cleaningJobCommandInstance.setUpholsteryCount5(upholstery.getUpholsteryCount())
+				cleaningJobCommandInstance.setUpholsteryCharge5(upholstery.getUpholsteryCharge())
+				cleaningJobCommandInstance.setUpholsteryProtectorCharge5(upholstery.getUpholsteryProtectorCharge())
 			} else if (upholsteryCount == 6) {
-				cleaningJobCommandInstance.setUpholsteryName6(upholstery.upholsteryName())
-				cleaningJobCommandInstance.setUpholsteryCount6(upholstery.upholsteryCount())
-				cleaningJobCommandInstance.setUpholsteryCharge6(upholstery.upholsteryCharge())
-				cleaningJobCommandInstance.setUpholsteryProtectorCharge6(upholstery.upholsteryProtectorCharge())
+				cleaningJobCommandInstance.setUpholsteryName6(upholstery.getUpholsteryName())
+				cleaningJobCommandInstance.setUpholsteryCount6(upholstery.getUpholsteryCount())
+				cleaningJobCommandInstance.setUpholsteryCharge6(upholstery.getUpholsteryCharge())
+				cleaningJobCommandInstance.setUpholsteryProtectorCharge6(upholstery.getUpholsteryProtectorCharge())
 			}
 			upholsteryCount = upholsteryCount + 1
 		}
@@ -280,14 +280,14 @@ class CleaningJobSearchController {
 		def miscChargeCount = 1
 		for (miscCharge in miscChargeList) {
 			if (miscChargeCount == 1) {
-				cleaningJobCommandInstance.setMiscChargesName1(miscCharge.miscDescription())
-				cleaningJobCommandInstance.setMiscCharge1(miscCharge.miscCharge())
+				cleaningJobCommandInstance.setMiscChargesName1(miscCharge.getMiscDescription())
+				cleaningJobCommandInstance.setMiscCharge1(miscCharge.getMiscCharge())
 			} else if (miscChargeCount == 2) {
-				cleaningJobCommandInstance.setMiscChargesName2(miscCharge.miscDescription())
-				cleaningJobCommandInstance.setMiscCharge2(miscCharge.miscCharge())
+				cleaningJobCommandInstance.setMiscChargesName2(miscCharge.getMiscDescription())
+				cleaningJobCommandInstance.setMiscCharge2(miscCharge.getMiscCharge())
 			} else if (miscChargeCount == 3) {
-				cleaningJobCommandInstance.setMiscChargesName3(miscCharge.miscDescription())
-				cleaningJobCommandInstance.setMiscCharge3(miscCharge.miscCharge())
+				cleaningJobCommandInstance.setMiscChargesName3(miscCharge.getMiscDescription())
+				cleaningJobCommandInstance.setMiscCharge3(miscCharge.getMiscCharge())
 			}
 			miscChargeCount = miscChargeCount + 1
 		}
