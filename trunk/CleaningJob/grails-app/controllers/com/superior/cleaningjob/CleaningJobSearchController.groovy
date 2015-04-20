@@ -236,7 +236,7 @@ class CleaningJobSearchController {
 		}
 
 		def upholsteryList = new ArrayList()
-		upholsteryList = Upholstery.findByJobId(carpetCareJobInstance.id)
+		upholsteryList = Upholstery.findAllByJobId(carpetCareJobInstance.id)
 		
 		def upholsteryCount = 1
 		for (upholstery in upholsteryList) {
@@ -275,7 +275,7 @@ class CleaningJobSearchController {
 		}
 		
 		def miscChargeList = new ArrayList()
-		miscChargeList = MiscCharges.findByJobId(carpetCareJobInstance.id)
+		miscChargeList = MiscCharges.findAllByJobId(carpetCareJobInstance.id)
 		
 		def miscChargeCount = 1
 		for (miscCharge in miscChargeList) {
