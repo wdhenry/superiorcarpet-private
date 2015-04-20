@@ -23,7 +23,7 @@
 			<div
 				class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'groupRate', 'error')} ">
 				<g:field name="groupRate" type="number" step="any"
-					value="${fieldValue(bean: cleaningJobCommandInstance, field: 'groupRate')} " />
+					value="${groupRate}" />
 			</div>
 		</td>
 	</tr>
