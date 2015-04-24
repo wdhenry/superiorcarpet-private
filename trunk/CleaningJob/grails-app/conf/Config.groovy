@@ -92,8 +92,8 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-        grails.serverURL = "http://www.superiorcarpetandupholsterycare.com:8080"
-		grails.app.context="/CleaningJob"
+        grails.serverURL = "http://www.superiorcarpetandupholsterycare.com:8080/${appName}"
+		//grails.app.context="/CleaningJob"
     }
 }
 
@@ -117,3 +117,7 @@ log4j.main = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+tomcat.deploy.username="admin"
+tomcat.deploy.password="Sup3r!orC@rp3tC@r3"
+tomcat.deploy.url="http://www.superiorcarpetandupholsterycare.com:8080/manager"
