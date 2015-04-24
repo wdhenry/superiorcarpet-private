@@ -31,7 +31,7 @@
 					<g:render template="formSearch"/>
 				</fieldset>
 				<fieldset class="buttons">
-					<g:actionSubmit class="save" action="search" value="${message(code: 'default.button.search.label', default: 'Search')}" />
+					<g:submitButton class="save" name="search" value="${message(code: 'default.button.search.label', default: 'Search')}" />
 				</fieldset>
 			</g:form>
 		</div>
