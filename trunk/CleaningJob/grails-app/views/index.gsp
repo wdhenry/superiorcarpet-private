@@ -87,24 +87,24 @@
 			<div id="controller-list" role="navigation">
 				<h2>Main Menu:</h2>
 				<ol>
-					<li class="controller"><a href="/CleaningJob/customer/index">Add/Maintain Customers</a></li>
-					<li class="controller"><a href="/CleaningJob/cleaningJob/index">Enter A Cleaning Job</a></li>
-					<li class="controller"><a href="/CleaningJob/extractionJob/index">Enter A Water Extraction Job</a></li>
-					<li class="controller"><a href="/CleaningJob/dailyWork/index">Enter Team Daily Work</a></li>
-					<li class="controller"><a href="/CleaningJob/dehuReturn/index">Dehumidifier Return</a></li>
-					<li class="controller"><a href="/CleaningJob/fanReturn/index">Fan Return</a></li>
+					<li class="controller"><a href="${createLink(uri: 'customer/index')}">Add/Maintain Customers</a></li>
+					<li class="controller"><a href="${createLink(uri: 'cleaningJob/index')}">Enter A Cleaning Job</a></li>
+					<li class="controller"><a href="${createLink(uri: 'extractionJob/index')}">Enter A Water Extraction Job</a></li>
+					<li class="controller"><a href="${createLink(uri: 'dailyWork/index')}">Enter Team Daily Work</a></li>
+					<li class="controller"><a href="${createLink(uri: 'dehuReturn/index')}">Dehumidifier Return</a></li>
+					<li class="controller"><a href="${createLink(uri: 'fanReturn/index')}">Fan Return</a></li>
 				</ol>
 			</div>
 			
 			<div id="controller-list" role="navigation">
 				<h2>Search Menu:</h2>
 				<ol>
-					<li class="controller"><a href="/CleaningJob/customerSearch/index">Search for Customers</a></li>
-					<li class="controller"><a href="/CleaningJob/cleaningJobSearch/index">Search for Cleaning Jobs</a></li>
-					<li class="controller"><a href="/CleaningJob/extractionJobSearch/index">Search for Extraction Jobs</a></li>
-					<li class="controller"><a href="/CleaningJob/dailyWorkSearch/index">Search for Daily Work</a></li>
-					<li class="controller"><a href="/CleaningJob/dehumidifiersList/index">List of Dehumidifiers</a></li>
-					<li class="controller"><a href="/CleaningJob/fansList/index">List of Fans</a></li>
+					<li class="controller"><a href="${createLink(uri: 'customerSearch/index')}">Search for Customers</a></li>
+					<li class="controller"><a href="${createLink(uri: 'cleaningJobSearch/index')}">Search for Cleaning Jobs</a></li>
+					<li class="controller"><a href="${createLink(uri: 'extractionJobSearch/index')}">Search for Extraction Jobs</a></li>
+					<li class="controller"><a href="${createLink(uri: 'dailyWorkSearch/index')}">Search for Daily Work</a></li>
+					<li class="controller"><a href="${createLink(uri: 'dehumidifiersList/index')}">List of Dehumidifiers</a></li>
+					<li class="controller"><a href="${createLink(uri: 'fansList/index')}">List of Fans</a></li>
 				</ol>
 			</div>
 			
