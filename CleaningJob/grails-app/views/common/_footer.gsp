@@ -2,7 +2,7 @@
 <tr>
 	<td><span class="copyright">Superior Carpet & Upholstery Care @ 2015</span></td>
 	<td><div id="maintenance" role="navigation">
-			<a href="/CleaningJob/maintenance">Maintenance Tools</a>
+			<a href="${createLink(uri: '/maintenance/index')}">Maintenance Tools</a>
 		</div>
 	</td>
 </tr>
