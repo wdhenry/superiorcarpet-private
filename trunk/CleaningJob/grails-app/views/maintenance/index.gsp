@@ -29,15 +29,15 @@
 			<div id="controller-list" role="navigation">
 				<h2>Maintenance Tools:</h2>
 				<ol>
-					<li class="controller"><a href="/CleaningJob/lead/index">Lead Names</a></li>
-					<li class="controller"><a href="/CleaningJob/helper/index">Helper Names</a></li>
-					<li class="controller"><a href="/CleaningJob/rates/index">Rates</a></li>
-					<li class="controller"><a href="/CleaningJob/roomGroup/index">Room Groups</a></li>
-					<li class="controller"><a href="/CleaningJob/roomName/index">Room Names</a></li>
-					<li class="controller"><a href="/CleaningJob/upholsteryName/index">Upholstery Names and Rates</a></li>
-					<li class="controller"><a href="/CleaningJob/miscChargesName/index">Miscellaneous Charge Descriptions</a></li>
-					<li class="controller"><a href="/CleaningJob/dehumidifiers/index">Dehumidifiers</a></li>
-					<li class="controller"><a href="/CleaningJob/fans/index">Fans</a></li>
+					<li class="controller"><a href="${createLink(uri: '/lead/index')}">Lead Names</a></li>
+					<li class="controller"><a href="${createLink(uri: '/helper/index')}">Helper Names</a></li>
+					<li class="controller"><a href="${createLink(uri: '/rates/index')}">Rates</a></li>
+					<li class="controller"><a href="${createLink(uri: '/roomGroup/index')}">Room Groups</a></li>
+					<li class="controller"><a href="${createLink(uri: '/roomName/index')}">Room Names</a></li>
+					<li class="controller"><a href="${createLink(uri: '/upholsteryName/index')}">Upholstery Names and Rates</a></li>
+					<li class="controller"><a href="${createLink(uri: '/miscChargesName/index')}">Miscellaneous Charge Descriptions</a></li>
+					<li class="controller"><a href="${createLink(uri: '/dehumidifiers/index')}">Dehumidifiers</a></li>
+					<li class="controller"><a href="${createLink(uri: '/fans/index')}">Fans</a></li>
 				</ol>
 			</div>
 		</div>
