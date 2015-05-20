@@ -93,6 +93,9 @@ class CleaningJobSearchController {
 		roomList = Room.findAllByJobId(carpetCareJobInstance.id)
 
 		def groupCount = 1
+		def hsRoomCount = 1
+		def roomCount = 1
+		
 		for (room in roomList) {
 			if (room.isInGroup()) {
 				if (groupCount == 1) {
@@ -129,7 +132,6 @@ class CleaningJobSearchController {
 				groupCount = groupCount + 1
 			} else {
 				if (room.isHardSurface()) {
-					def hsRoomCount = 1
 					if (hsRoomCount == 1) {
 						cleaningJobCommandInstance.setHsRoomName1(room.getRoomName())
 						cleaningJobCommandInstance.setHsSquareFootage1(room.getSquareFootage())
@@ -148,10 +150,27 @@ class CleaningJobSearchController {
 						cleaningJobCommandInstance.setHsRoomCharge3(room.getRoomCharge())
 						cleaningJobCommandInstance.setHsEtchedCharge3(room.getEtchedCharge())
 						cleaningJobCommandInstance.setHsSealedWaxedCharge3(room.getSealWaxCharge())
+					} else if (hsRoomCount == 4) {
+						cleaningJobCommandInstance.setHsRoomName4(room.getRoomName())
+						cleaningJobCommandInstance.setHsSquareFootage4(room.getSquareFootage())
+						cleaningJobCommandInstance.setHsRoomCharge4(room.getRoomCharge())
+						cleaningJobCommandInstance.setHsEtchedCharge4(room.getEtchedCharge())
+						cleaningJobCommandInstance.setHsSealedWaxedCharge4(room.getSealWaxCharge())
+					} else if (hsRoomCount == 5) {
+						cleaningJobCommandInstance.setHsRoomName5(room.getRoomName())
+						cleaningJobCommandInstance.setHsSquareFootage5(room.getSquareFootage())
+						cleaningJobCommandInstance.setHsRoomCharge5(room.getRoomCharge())
+						cleaningJobCommandInstance.setHsEtchedCharge5(room.getEtchedCharge())
+						cleaningJobCommandInstance.setHsSealedWaxedCharge5(room.getSealWaxCharge())
+					} else if (hsRoomCount == 6) {
+						cleaningJobCommandInstance.setHsRoomName6(room.getRoomName())
+						cleaningJobCommandInstance.setHsSquareFootage6(room.getSquareFootage())
+						cleaningJobCommandInstance.setHsRoomCharge6(room.getRoomCharge())
+						cleaningJobCommandInstance.setHsEtchedCharge6(room.getEtchedCharge())
+						cleaningJobCommandInstance.setHsSealedWaxedCharge6(room.getSealWaxCharge())
 					}
 					hsRoomCount = hsRoomCount + 1
 				} else {
-					def roomCount = 1
 					if (roomCount == 1) {
 						cleaningJobCommandInstance.setRoomName001(room.getRoomName())
 						cleaningJobCommandInstance.setSquareFootage001(room.getSquareFootage())

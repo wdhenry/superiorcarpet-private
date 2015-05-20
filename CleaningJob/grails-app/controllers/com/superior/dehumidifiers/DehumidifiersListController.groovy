@@ -1,7 +1,9 @@
 package com.superior.dehumidifiers
 
 
+import com.superior.base.Customer
 import com.superior.base.Dehumidifiers
+import com.superior.base.WaterExtractionJob
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -18,4 +20,20 @@ class DehumidifiersListController {
     def show(Dehumidifiers dehumidifiersInstance) {
         respond dehumidifiersInstance
     }
+	
+	def showJob(Dehumidifiers dehumidifiersInstance) {
+		WaterExtractionJob w = WaterExtractionJob.findById(dehumidifiersInstance.jobId)
+		if (w == null) {
+			notFound()
+			return
+		} else {
+			Customer customerInstance = Customer.findById(w.customerId)
+			if (customerInstance == null) {
+				notFound()
+				return
+			} else {
+				respond customerInstance, view:'customer';
+			}
+		}
+	}
 }

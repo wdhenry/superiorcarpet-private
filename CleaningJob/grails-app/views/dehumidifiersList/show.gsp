@@ -58,7 +58,7 @@
 					</td>
 					<td>
 						<div class="fieldcontain">
-							<g:fieldValue bean="${dehumidifiersInstance}" field="jobId"/>
+							<g:link action="showJob" id="${dehumidifiersInstance.id}">${fieldValue(bean: dehumidifiersInstance, field: "jobId")}</g:link>
 						</div>
 					</td>
 				</tr>
