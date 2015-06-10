@@ -64,10 +64,16 @@ class CleaningJobSearchController {
 			respond jobList, view:'summary', model:[jobs: jobList, carpetCareJobInstanceCount: jobList.size()]
 			return
 		} else {
-			CustomerSearchCommand customerSearchCommandInstance = new CustomerSearchCommand();
-			customerSearchCommandInstance.errors.rejectValue('', 'No matching Cleaning Jobs Found   ')
-			def err = 'No matching Cleaning Jobs Found   '
-			redirect view:'search', controller:'customerSearch', model: [CustomerSearchCommand: customerSearchCommandInstance]
+//			CustomerSearchCommand customerSearchCommandInstance = new CustomerSearchCommand();
+//			customerSearchCommandInstance.errors.rejectValue('', 'No matching Cleaning Jobs Found   ')
+//			def err = 'No matching Cleaning Jobs Found   '
+//			redirect view:'search', controller:'customerSearch', model: [CustomerSearchCommand: customerSearchCommandInstance]
+			Customer customerInstance = new Customer();
+			def custList = new ArrayList()
+			
+			customerInstance.errors.rejectValue('', 'No matching Cleaning Jobs Found   ')
+			flash.message = "No matching Cleaning Jobs Found   "
+			redirect view:'details', controller:'customerSearch', model:[customerInstance: customerInstance]
 			return
 		}
 	}
@@ -307,7 +313,23 @@ class CleaningJobSearchController {
 			} else if (miscChargeCount == 3) {
 				cleaningJobCommandInstance.setMiscChargesName3(miscCharge.getMiscDescription())
 				cleaningJobCommandInstance.setMiscCharge3(miscCharge.getMiscCharge())
+			} else if (miscChargeCount == 4) {
+				cleaningJobCommandInstance.setMiscChargesName4(miscCharge.getMiscDescription())
+				cleaningJobCommandInstance.setMiscCharge4(miscCharge.getMiscCharge())
+			} else if (miscChargeCount == 5) {
+				cleaningJobCommandInstance.setMiscChargesName5(miscCharge.getMiscDescription())
+				cleaningJobCommandInstance.setMiscCharge5(miscCharge.getMiscCharge())
+			} else if (miscChargeCount == 6) {
+				cleaningJobCommandInstance.setMiscChargesName6(miscCharge.getMiscDescription())
+				cleaningJobCommandInstance.setMiscCharge6(miscCharge.getMiscCharge())
+			} else if (miscChargeCount == 7) {
+				cleaningJobCommandInstance.setMiscChargesName7(miscCharge.getMiscDescription())
+				cleaningJobCommandInstance.setMiscCharge7(miscCharge.getMiscCharge())
+			} else if (miscChargeCount == 8) {
+				cleaningJobCommandInstance.setMiscChargesName8(miscCharge.getMiscDescription())
+				cleaningJobCommandInstance.setMiscCharge8(miscCharge.getMiscCharge())
 			}
+			
 			miscChargeCount = miscChargeCount + 1
 		}
 		return cleaningJobCommandInstance

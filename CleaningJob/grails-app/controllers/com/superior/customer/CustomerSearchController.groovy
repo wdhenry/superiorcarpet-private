@@ -60,10 +60,4 @@ class CustomerSearchController {
 		respond customerInstance
 	}
 	
-	def errmsg() {
-		CustomerSearchCommand customerSearchCommandInstance = new CustomerSearchCommand()
-		customerSearchCommandInstance.errors.rejectValue('', msg)
-		respond customerSearchCommandInstance.errors, view:'search'
-		return
-	}
 }

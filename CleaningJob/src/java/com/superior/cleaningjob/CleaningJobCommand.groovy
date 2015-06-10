@@ -241,6 +241,21 @@ class CleaningJobCommand {
 	String miscChargesName3
 	BigDecimal miscCharge3
 	String miscVisible3
+	String miscChargesName4
+	BigDecimal miscCharge4
+	String miscVisible4
+	String miscChargesName5
+	BigDecimal miscCharge5
+	String miscVisible5
+	String miscChargesName6
+	BigDecimal miscCharge6
+	String miscVisible6
+	String miscChargesName7
+	BigDecimal miscCharge7
+	String miscVisible7
+	String miscChargesName8
+	BigDecimal miscCharge8
+	String miscVisible8
 	
 	static constraints = {
 		date(blank:false)
@@ -467,7 +482,21 @@ class CleaningJobCommand {
 		miscChargesName3(nullable:true)
 		miscCharge3(nullable:true, scale: 2, min: 0.00)
 		miscVisible3(nullable:true)
-		
+		miscChargesName4(nullable:true)
+		miscCharge4(nullable:true, scale: 2, min: 0.00)
+		miscVisible4(nullable:true)
+		miscChargesName5(nullable:true)
+		miscCharge5(nullable:true, scale: 2, min: 0.00)
+		miscVisible5(nullable:true)
+		miscChargesName6(nullable:true)
+		miscCharge6(nullable:true, scale: 2, min: 0.00)
+		miscVisible6(nullable:true)
+		miscChargesName7(nullable:true)
+		miscCharge7(nullable:true, scale: 2, min: 0.00)
+		miscVisible7(nullable:true)
+		miscChargesName8(nullable:true)
+		miscCharge8(nullable:true, scale: 2, min: 0.00)
+		miscVisible8(nullable:true)
 	}
 	
 	String toString() {

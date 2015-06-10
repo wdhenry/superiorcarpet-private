@@ -60,10 +60,17 @@ class ExtractionJobSearchController {
 			respond jobList, view:'summary', model:[jobs: jobList, waterExtractionJobInstanceCount: jobList.size()]
 			return
 		} else {
-			CustomerSearchCommand customerSearchCommandInstance = new CustomerSearchCommand();
-			customerSearchCommandInstance.errors.rejectValue('', 'No matching Extraction Jobs Found   ')
-			def err = 'No matching Extraction Jobs Found   '
-			redirect view:'search', controller:'customerSearch', model: [CustomerSearchCommand: customerSearchCommandInstance]
+//			CustomerSearchCommand customerSearchCommandInstance = new CustomerSearchCommand();
+//			customerSearchCommandInstance.errors.rejectValue('', 'No matching Extraction Jobs Found   ')
+//			def err = 'No matching Extraction Jobs Found   '
+//			redirect view:'search', controller:'customerSearch', model: [CustomerSearchCommand: customerSearchCommandInstance]
+			
+			Customer customerInstance = new Customer();
+			def custList = new ArrayList()
+	
+			customerInstance.errors.rejectValue('', 'No matching Extraction Jobs Found   ')
+			flash.message = "No matching Extraction Jobs Found   "
+			redirect view:'details', controller:'customerSearch', model:[customerInstance: customerInstance]
 			return
 		}
 	}

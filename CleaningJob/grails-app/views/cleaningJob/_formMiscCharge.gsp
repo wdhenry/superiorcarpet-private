@@ -7,7 +7,7 @@
 			<div>
 				<g:message code="cleaningJob.numberMisc.label" default="Select Number of Miscellaneous Charges" />
 				<g:select name="miscCount" 
-					from="${['01','02','03']}"
+					from="${['01','02','03','04','05','06','07','08']}"
 					noSelection="${['00':'00']}"
 					class="sorted-asc"/>
 			</div>
@@ -95,6 +95,126 @@
 				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscVisible3', 'error')} ">
 					<g:field name="miscVisible3" type="hidden"  
 						value="${miscVisible3} "/>
+				</div>
+			</td>
+		</tr>
+		<tr id="misc04">
+			<td>
+				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscChargesName4', 'error')} ">
+					<g:select name="miscChargesName4" 
+						from="${com.superior.base.MiscChargesName.list()}"
+					 	optionKey="miscChargesName" optionValue="miscChargesName"
+						value="${cleaningJobCommandInstance?.miscChargesName4}" 
+						noSelection="${['Pick Misc. Description':'--Pick Misc. Description--']}"
+						class="sorted-asc"/>
+				</div>
+			</td>
+			<td>
+				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscCharge4', 'error')} ">
+					<g:field name="miscCharge4" type="number" step="any" 
+						value="${miscCharge4}" />
+				</div>
+			</td>
+			<td>
+				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscVisible4', 'error')} ">
+					<g:field name="miscVisible4" type="hidden"  
+						value="${miscVisible4} "/>
+				</div>
+			</td>
+		</tr>
+		<tr id="misc05">
+			<td>
+				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscChargesName5', 'error')} ">
+					<g:select name="miscChargesName5" 
+						from="${com.superior.base.MiscChargesName.list()}"
+					 	optionKey="miscChargesName" optionValue="miscChargesName"
+						value="${cleaningJobCommandInstance?.miscChargesName5}" 
+						noSelection="${['Pick Misc. Description':'--Pick Misc. Description--']}"
+						class="sorted-asc"/>
+				</div>
+			</td>
+			<td>
+				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscCharge5', 'error')} ">
+					<g:field name="miscCharge5" type="number" step="any" 
+						value="${miscCharge5}" />
+				</div>
+			</td>
+			<td>
+				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscVisible5', 'error')} ">
+					<g:field name="miscVisible5" type="hidden"  
+						value="${miscVisible5} "/>
+				</div>
+			</td>
+		</tr>
+		<tr id="misc06">
+			<td>
+				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscChargesName6', 'error')} ">
+					<g:select name="miscChargesName6" 
+						from="${com.superior.base.MiscChargesName.list()}"
+					 	optionKey="miscChargesName" optionValue="miscChargesName"
+						value="${cleaningJobCommandInstance?.miscChargesName6}" 
+						noSelection="${['Pick Misc. Description':'--Pick Misc. Description--']}"
+						class="sorted-asc"/>
+				</div>
+			</td>
+			<td>
+				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscCharge6', 'error')} ">
+					<g:field name="miscCharge6" type="number" step="any" 
+						value="${miscCharge6}" />
+				</div>
+			</td>
+			<td>
+				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscVisible6', 'error')} ">
+					<g:field name="miscVisible6" type="hidden"  
+						value="${miscVisible6} "/>
+				</div>
+			</td>
+		</tr>
+		<tr id="misc07">
+			<td>
+				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscChargesName7', 'error')} ">
+					<g:select name="miscChargesName7" 
+						from="${com.superior.base.MiscChargesName.list()}"
+					 	optionKey="miscChargesName" optionValue="miscChargesName"
+						value="${cleaningJobCommandInstance?.miscChargesName7}" 
+						noSelection="${['Pick Misc. Description':'--Pick Misc. Description--']}"
+						class="sorted-asc"/>
+				</div>
+			</td>
+			<td>
+				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscCharge7', 'error')} ">
+					<g:field name="miscCharge7" type="number" step="any" 
+						value="${miscCharge7}" />
+				</div>
+			</td>
+			<td>
+				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscVisible7', 'error')} ">
+					<g:field name="miscVisible7" type="hidden"  
+						value="${miscVisible7} "/>
+				</div>
+			</td>
+		</tr>
+		<tr id="misc08">
+			<td>
+				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscChargesName8', 'error')} ">
+					<g:select name="miscChargesName8" 
+						from="${com.superior.base.MiscChargesName.list()}"
+					 	optionKey="miscChargesName" optionValue="miscChargesName"
+						value="${cleaningJobCommandInstance?.miscChargesName8}" 
+						noSelection="${['Pick Misc. Description':'--Pick Misc. Description--']}"
+						class="sorted-asc"/>
+				</div>
+			</td>
+			<td>
+				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscCharge8', 'error')} ">
+					<g:field name="miscCharge8" type="number" step="any" 
+						value="${miscCharge8}" />
+				</div>
+			</td>
+			<td>
+				<div class="fieldcontain ${hasErrors(bean: cleaningJobCommandInstance, field: 'miscVisible8', 'error')} ">
+					<g:field name="miscVisible8" type="hidden"  
+						value="${miscVisible8} "/>
 				</div>
 			</td>
 		</tr>

@@ -750,6 +750,85 @@ class CleaningJobController {
 				return
 			}
 		}
+		if (cleaningJobCommandInstance.miscVisible4 == "Y") {
+			def miscChargesInstance4 = new MiscCharges(jobId: carpetCareJob.id,
+				miscDescription: cleaningJobCommandInstance.miscChargesName4,
+				miscCharge: cleaningJobCommandInstance.miscCharge4)
+	
+			if(!miscChargesInstance4.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Fourth Miscellaneous Charge record',
+					['', 'class MiscCharges'] as Object[],
+					'Error saving Fourth Miscellaneous Charge record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.miscVisible5 == "Y") {
+			def miscChargesInstance5 = new MiscCharges(jobId: carpetCareJob.id,
+				miscDescription: cleaningJobCommandInstance.miscChargesName5,
+				miscCharge: cleaningJobCommandInstance.miscCharge5)
+	
+			if(!miscChargesInstance5.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Fifth Miscellaneous Charge record',
+					['', 'class MiscCharges'] as Object[],
+					'Error saving Fifth Miscellaneous Charge record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.miscVisible6 == "Y") {
+			def miscChargesInstance6 = new MiscCharges(jobId: carpetCareJob.id,
+				miscDescription: cleaningJobCommandInstance.miscChargesName6,
+				miscCharge: cleaningJobCommandInstance.miscCharge6)
+	
+			if(!miscChargesInstance6.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Sixth Miscellaneous Charge record',
+					['', 'class MiscCharges'] as Object[],
+					'Error saving Sixth Miscellaneous Charge record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		if (cleaningJobCommandInstance.miscVisible7 == "Y") {
+			def miscChargesInstance7 = new MiscCharges(jobId: carpetCareJob.id,
+				miscDescription: cleaningJobCommandInstance.miscChargesName7,
+				miscCharge: cleaningJobCommandInstance.miscCharge7)
+	
+			if(!miscChargesInstance7.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Seventh Miscellaneous Charge record',
+					['', 'class MiscCharges'] as Object[],
+					'Error saving Seventh Miscellaneous Charge record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+		
+		if (cleaningJobCommandInstance.miscVisible8 == "Y") {
+			def miscChargesInstance8 = new MiscCharges(jobId: carpetCareJob.id,
+				miscDescription: cleaningJobCommandInstance.miscChargesName8,
+				miscCharge: cleaningJobCommandInstance.miscCharge8)
+	
+			if(!miscChargesInstance8.save(flush:true)) {
+				carpetCareJobInstance.delete()
+				cleaningJobCommandInstance.errors.reject(
+					'Error saving Eighth Miscellaneous Charge record',
+					['', 'class MiscCharges'] as Object[],
+					'Error saving Eighth Miscellaneous Charge record')
+				respond cleaningJobCommandInstance.errors, view:'newJob'
+				return
+			}
+		}
+
 		redirect action: "index", controller: "cleaningJob"
 
 	}
