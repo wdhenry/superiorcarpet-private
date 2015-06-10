@@ -5,6 +5,7 @@ import com.superior.base.Dehumidifiers
 import com.superior.base.Fans
 import com.superior.base.WaterExtractionJob
 import com.superior.cleaningjob.CleaningJobCommand;
+import com.superior.customer.CustomerSearchCommand;
 import com.superior.extractionjob.ExtractionJobCommand
 
 import grails.transaction.Transactional
@@ -16,9 +17,49 @@ class ExtractionJobController {
 
 	static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 	
-	def index(Integer max) {
-		params.max = Math.min(max ?: 10, 100)
-		respond Customer.list(params), model:[customerInstanceCount: Customer.count()]
+	def index() {
+		CustomerSearchCommand customerSearchCommandInstance = new CustomerSearchCommand()
+		respond customerSearchCommandInstance , view:'search'
+	}
+	
+	def search(CustomerSearchCommand customerSearchCommandInstance) {
+		if (customerSearchCommandInstance == null) {
+			respond customerSearchCommandInstance , view:'search'
+			return
+		}
+		
+		def custList = new ArrayList()
+		if ((customerSearchCommandInstance.lastName != null) ||
+			(customerSearchCommandInstance.firstName != null)) {
+			if ((customerSearchCommandInstance.lastName != null) &&
+				(customerSearchCommandInstance.firstName != null)) {
+				custList = Customer.findAllByLastNameAndFirstName(customerSearchCommandInstance.lastName, customerSearchCommandInstance.firstName)
+			} else if (customerSearchCommandInstance.lastName != null) {
+					custList = Customer.findAllByLastName(customerSearchCommandInstance.lastName)
+			} else if (customerSearchCommandInstance.firstName != null) {
+					custList = Customer.findAllByFirstName(customerSearchCommandInstance.firstName)
+			}
+		} else if ((customerSearchCommandInstance.addressLineOne != null) ||
+			(customerSearchCommandInstance.addressLineTwo != null)) {
+			if ((customerSearchCommandInstance.addressLineOne != null) &&
+				(customerSearchCommandInstance.addressLineTwo != null)) {
+				custList = Customer.findAllByAddressLineOneAndAddressLineTwo(customerSearchCommandInstance.addressLineOne, customerSearchCommandInstance.addressLineTwo)
+			} else if (customerSearchCommandInstance.addressLineOne != null) {
+					custList = Customer.findAllByAddressLineOne(customerSearchCommandInstance.addressLineOne)
+			} else if (customerSearchCommandInstance.addressLineTwo != null) {
+					custList = Customer.findAllByAddressLineTwo(customerSearchCommandInstance.addressLineTwo)
+			}
+		}
+			
+		if (custList.size() > 0) {
+			respond custList, view:'summary', model:[customers: custList,
+											custListInstanceCount: custList.size()]
+			return
+		} else {
+			customerSearchCommandInstance.errors.rejectValue('', 'No matching Customers Found   ')
+			respond customerSearchCommandInstance.errors, view:'search'
+			return
+		}
 	}
 	
 	def create() {
