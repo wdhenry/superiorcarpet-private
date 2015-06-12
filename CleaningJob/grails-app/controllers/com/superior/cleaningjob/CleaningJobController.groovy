@@ -82,7 +82,7 @@ class CleaningJobController {
 
 		customerInstance.save flush:true
 
-		redirect action: "index", controller: "cleaningJob"
+		redirect action: "index", controller: "cleaningJob" 
 	}
 	
 	def newJob(Customer customerInstance) {
