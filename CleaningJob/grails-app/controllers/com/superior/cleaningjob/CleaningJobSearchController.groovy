@@ -316,18 +316,18 @@ class CleaningJobSearchController {
 			} else if (miscChargeCount == 4) {
 				cleaningJobCommandInstance.setMiscChargesName4(miscCharge.getMiscDescription())
 				cleaningJobCommandInstance.setMiscCharge4(miscCharge.getMiscCharge())
-			} else if (miscChargeCount == 5) {
-				cleaningJobCommandInstance.setMiscChargesName5(miscCharge.getMiscDescription())
-				cleaningJobCommandInstance.setMiscCharge5(miscCharge.getMiscCharge())
-			} else if (miscChargeCount == 6) {
-				cleaningJobCommandInstance.setMiscChargesName6(miscCharge.getMiscDescription())
-				cleaningJobCommandInstance.setMiscCharge6(miscCharge.getMiscCharge())
-			} else if (miscChargeCount == 7) {
-				cleaningJobCommandInstance.setMiscChargesName7(miscCharge.getMiscDescription())
-				cleaningJobCommandInstance.setMiscCharge7(miscCharge.getMiscCharge())
-			} else if (miscChargeCount == 8) {
-				cleaningJobCommandInstance.setMiscChargesName8(miscCharge.getMiscDescription())
-				cleaningJobCommandInstance.setMiscCharge8(miscCharge.getMiscCharge())
+//			} else if (miscChargeCount == 5) {
+//				cleaningJobCommandInstance.setMiscChargesName5(miscCharge.getMiscDescription())
+//				cleaningJobCommandInstance.setMiscCharge5(miscCharge.getMiscCharge())
+//			} else if (miscChargeCount == 6) {
+//				cleaningJobCommandInstance.setMiscChargesName6(miscCharge.getMiscDescription())
+//				cleaningJobCommandInstance.setMiscCharge6(miscCharge.getMiscCharge())
+//			} else if (miscChargeCount == 7) {
+//				cleaningJobCommandInstance.setMiscChargesName7(miscCharge.getMiscDescription())
+//				cleaningJobCommandInstance.setMiscCharge7(miscCharge.getMiscCharge())
+//			} else if (miscChargeCount == 8) {
+//				cleaningJobCommandInstance.setMiscChargesName8(miscCharge.getMiscDescription())
+//				cleaningJobCommandInstance.setMiscCharge8(miscCharge.getMiscCharge())
 			}
 			
 			miscChargeCount = miscChargeCount + 1

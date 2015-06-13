@@ -22,23 +22,23 @@
 		<td><g:formatNumber number="${cleaningJobCommandInstance.miscCharge4}" 
 				type="currency" maxFractionDigits="2" currencyCode="USD" /></td>
 	</tr>
-	<tr>
-		<td><g:fieldValue bean="${cleaningJobCommandInstance}" field="miscChargesName5"/></td>
-		<td><g:formatNumber number="${cleaningJobCommandInstance.miscCharge5}" 
-				type="currency" maxFractionDigits="2" currencyCode="USD" /></td>
-	</tr>
-	<tr>
-		<td><g:fieldValue bean="${cleaningJobCommandInstance}" field="miscChargesName6"/></td>
-		<td><g:formatNumber number="${cleaningJobCommandInstance.miscCharge6}" 
-				type="currency" maxFractionDigits="2" currencyCode="USD" /></td>
-	</tr>
-	<tr>
-		<td><g:fieldValue bean="${cleaningJobCommandInstance}" field="miscChargesName7"/></td>
-		<td><g:formatNumber number="${cleaningJobCommandInstance.miscCharge7}" 
-				type="currency" maxFractionDigits="2" currencyCode="USD" /></td>
-	</tr>
-	<tr>
-		<td><g:fieldValue bean="${cleaningJobCommandInstance}" field="miscChargesName8"/></td>
-		<td><g:formatNumber number="${cleaningJobCommandInstance.miscCharge8}" 
-				type="currency" maxFractionDigits="2" currencyCode="USD" /></td>
-	</tr>
+<%--	<tr>--%>
+<%--		<td><g:fieldValue bean="${cleaningJobCommandInstance}" field="miscChargesName5"/></td>--%>
+<%--		<td><g:formatNumber number="${cleaningJobCommandInstance.miscCharge5}" --%>
+<%--				type="currency" maxFractionDigits="2" currencyCode="USD" /></td>--%>
+<%--	</tr>--%>
+<%--	<tr>--%>
+<%--		<td><g:fieldValue bean="${cleaningJobCommandInstance}" field="miscChargesName6"/></td>--%>
+<%--		<td><g:formatNumber number="${cleaningJobCommandInstance.miscCharge6}" --%>
+<%--				type="currency" maxFractionDigits="2" currencyCode="USD" /></td>--%>
+<%--	</tr>--%>
+<%--	<tr>--%>
+<%--		<td><g:fieldValue bean="${cleaningJobCommandInstance}" field="miscChargesName7"/></td>--%>
+<%--		<td><g:formatNumber number="${cleaningJobCommandInstance.miscCharge7}" --%>
+<%--				type="currency" maxFractionDigits="2" currencyCode="USD" /></td>--%>
+<%--	</tr>--%>
+<%--	<tr>--%>
+<%--		<td><g:fieldValue bean="${cleaningJobCommandInstance}" field="miscChargesName8"/></td>--%>
+<%--		<td><g:formatNumber number="${cleaningJobCommandInstance.miscCharge8}" --%>
+<%--				type="currency" maxFractionDigits="2" currencyCode="USD" /></td>--%>
+<%--	</tr>--%>
