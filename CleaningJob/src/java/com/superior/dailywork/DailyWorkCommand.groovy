@@ -75,18 +75,39 @@ class DailyWorkCommand {
 	BigDecimal hoursOnUnit6
 	BigDecimal dollarsCollected6
 		
+	String lead7
+	String leadHours7
+	String leadMinutes7
+	String helper7
+	String helperHours7
+	String helperMinutes7
+	String vanNumber7
+	BigDecimal milesDriven7
+	BigDecimal hoursOnUnit7
+	BigDecimal dollarsCollected7
+	
+	String lead8
+	String leadHours8
+	String leadMinutes8
+	String helper8
+	String helperHours8
+	String helperMinutes8
+	String vanNumber8
+	BigDecimal milesDriven8
+	BigDecimal hoursOnUnit8
+	BigDecimal dollarsCollected8
 	static constraints = {
 		date(blank:false)
-		lead1(blank:false)
-		leadHours1(blank:false)
-		leadMinutes1(blank:false)
+		lead1(nullable:true)
+		leadHours1(nullable:true)
+		leadMinutes1(nullable:true)
 		helper1(nullable:true)
-		helperHours1(blank:false)
-		helperMinutes1(blank:false)
-		vanNumber1(blank:false)
-		milesDriven1(nullable:false, scale: 1, min: 0.0)
-		hoursOnUnit1(nullable:false, scale: 1, min: 0.0)
-		dollarsCollected1(nullable:false, scale: 2, min: 0.00)
+		helperHours1(nullable:true)
+		helperMinutes1(nullable:true)
+		vanNumber1(nullable:true)
+		milesDriven1(nullable:true, scale: 1, min: 0.0)
+		hoursOnUnit1(nullable:true, scale: 1, min: 0.0)
+		dollarsCollected1(nullable:true, scale: 2, min: 0.00)
 		lead2(nullable:true)
 		leadHours2(nullable:true)
 		leadMinutes2(nullable:true)
@@ -137,5 +158,25 @@ class DailyWorkCommand {
 		milesDriven6(nullable:true, scale: 1, min: 0.0)
 		hoursOnUnit6(nullable:true, scale: 1, min: 0.0)
 		dollarsCollected6(nullable:true, scale: 2, min: 0.00)
+		lead7(nullable:true)
+		leadHours7(nullable:true)
+		leadMinutes7(nullable:true)
+		helper7(nullable:true)
+		helperHours7(nullable:true)
+		helperMinutes7(nullable:true)
+		vanNumber7(nullable:true)
+		milesDriven7(nullable:true, scale: 1, min: 0.0)
+		hoursOnUnit7(nullable:true, scale: 1, min: 0.0)
+		dollarsCollected7(nullable:true, scale: 2, min: 0.00)
+		lead8(nullable:true)
+		leadHours8(nullable:true)
+		leadMinutes8(nullable:true)
+		helper8(nullable:true)
+		helperHours8(nullable:true)
+		helperMinutes8(nullable:true)
+		vanNumber8(nullable:true)
+		milesDriven8(nullable:true, scale: 1, min: 0.0)
+		hoursOnUnit8(nullable:true, scale: 1, min: 0.0)
+		dollarsCollected8(nullable:true, scale: 2, min: 0.00)
 	}
 }

@@ -22,9 +22,6 @@
 			<table>
 			<thead>
 					<tr>
-					
-						<g:sortableColumn property="id" title="${message(code: 'dailyWorkRecord.id.label', default: 'Id')}" />
-						
 						<g:sortableColumn property="date" title="${message(code: 'dailyWorkRecord.date.label', default: 'Date')}" />
 					
 						<g:sortableColumn property="lead" title="${message(code: 'dailyWorkRecord.lead.label', default: 'Lead')}" />
@@ -52,9 +49,6 @@
 				<tbody>
 				<g:each in="${dailyWorkRecordInstanceList}" status="i" var="dailyWorkRecordInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td>${fieldValue(bean: dailyWorkRecordInstance, field: "id")}</td>
-					
 						<td><g:formatDate format="MM-dd-yyyy" date="${dailyWorkRecordInstance.date}" /></td>
 						
 						<td>${fieldValue(bean: dailyWorkRecordInstance, field: "lead")}</td>
