@@ -90,7 +90,7 @@ environments {
     development {
         grails.logging.jul.usebridge = true
         grails.serverURL = "http://localhost:8080"
-		grails.app.context="/"
+		grails.app.context="/CleaningJob"
     }
     production {
         grails.logging.jul.usebridge = false
