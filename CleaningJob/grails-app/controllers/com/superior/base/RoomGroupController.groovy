@@ -18,6 +18,10 @@ class RoomGroupController {
     def show(RoomGroup roomGroupInstance) {
         respond roomGroupInstance
     }
+	
+	def findByGroupName(String groupName) {
+		respond RoomGroup.findByGroupName(groupName)
+	}
 
     def create() {
         respond new RoomGroup(params)
