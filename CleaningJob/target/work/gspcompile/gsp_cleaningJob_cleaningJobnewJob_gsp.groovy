@@ -90,20 +90,22 @@ invokeTag('javascript','g',40,['src':("cleaningJob/miscChargesNameService.js")],
 printHtmlPart(1)
 invokeTag('javascript','g',41,['src':("cleaningJob/upholsteryNameService.js")],-1)
 printHtmlPart(1)
-invokeTag('javascript','g',42,['src':("cleaningJob/groupRooms.js")],-1)
+invokeTag('javascript','g',42,['src':("cleaningJob/roomGroupService.js")],-1)
 printHtmlPart(1)
-invokeTag('javascript','g',43,['src':("cleaningJob/additionalRooms.js")],-1)
+invokeTag('javascript','g',43,['src':("cleaningJob/groupRooms.js")],-1)
 printHtmlPart(1)
-invokeTag('javascript','g',44,['src':("cleaningJob/stairs.js")],-1)
+invokeTag('javascript','g',44,['src':("cleaningJob/additionalRooms.js")],-1)
 printHtmlPart(1)
-invokeTag('javascript','g',45,['src':("cleaningJob/hardSurfaceRoom.js")],-1)
+invokeTag('javascript','g',45,['src':("cleaningJob/stairs.js")],-1)
 printHtmlPart(1)
-invokeTag('javascript','g',46,['src':("cleaningJob/upholstery.js")],-1)
+invokeTag('javascript','g',46,['src':("cleaningJob/hardSurfaceRoom.js")],-1)
 printHtmlPart(1)
-invokeTag('javascript','g',47,['src':("cleaningJob/miscCharge.js")],-1)
+invokeTag('javascript','g',47,['src':("cleaningJob/upholstery.js")],-1)
+printHtmlPart(1)
+invokeTag('javascript','g',48,['src':("cleaningJob/miscCharge.js")],-1)
 printHtmlPart(2)
 })
-invokeTag('captureBody','sitemesh',48,[:],1)
+invokeTag('captureBody','sitemesh',49,[:],1)
 printHtmlPart(27)
 }
 public static final Map JSP_TAGS = new HashMap()
@@ -111,7 +113,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1432088625380L
+public static final long LAST_MODIFIED = 1435374564381L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'
