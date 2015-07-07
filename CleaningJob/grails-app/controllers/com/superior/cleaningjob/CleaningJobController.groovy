@@ -69,6 +69,23 @@ class CleaningJobController {
 	}
 	
 	@Transactional
+	def saveCustomer(Customer customerInstance) {
+		if (customerInstance == null) {
+			notFound()
+			return
+		}
+
+		if (customerInstance.hasErrors()) {
+			respond customerInstance.errors, view:'create'
+			return
+		}
+
+		customerInstance.save flush:true
+
+		redirect action:'newJob', controller: "cleaningJob", params: [id: customerInstance.id]
+	}
+	
+	@Transactional
 	def save(Customer customerInstance) {
 		if (customerInstance == null) {
 			notFound()

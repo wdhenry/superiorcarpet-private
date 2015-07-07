@@ -29,7 +29,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[controller:'cleaningJob', action:'save']" >
+			<g:form url="[controller:'cleaningJob', action:'saveCustomer']" >
 				<fieldset class="form">
 					<g:render template="formCustomer"/>
 				</fieldset>
