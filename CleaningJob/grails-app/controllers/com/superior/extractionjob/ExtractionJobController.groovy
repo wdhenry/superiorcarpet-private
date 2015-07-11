@@ -4,7 +4,6 @@ import com.superior.base.Customer;
 import com.superior.base.Dehumidifiers
 import com.superior.base.Fans
 import com.superior.base.WaterExtractionJob
-import com.superior.cleaningjob.CleaningJobCommand;
 import com.superior.customer.CustomerSearchCommand;
 import com.superior.extractionjob.ExtractionJobCommand
 

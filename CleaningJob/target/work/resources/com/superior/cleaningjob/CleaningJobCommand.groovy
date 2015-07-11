@@ -46,11 +46,6 @@ class CleaningJobCommand {
 	BigDecimal preVacCharge4
 	BigDecimal protectorCharge4
 	BigDecimal moveFurnitureCharge4
-	String roomName5
-	BigDecimal squareFootage5
-	BigDecimal preVacCharge5
-	BigDecimal protectorCharge5
-	BigDecimal moveFurnitureCharge5
 	
 	String roomName001
 	BigDecimal squareFootage001
@@ -244,18 +239,18 @@ class CleaningJobCommand {
 	String miscChargesName4
 	BigDecimal miscCharge4
 	String miscVisible4
-//	String miscChargesName5
-//	BigDecimal miscCharge5
-//	String miscVisible5
-//	String miscChargesName6
-//	BigDecimal miscCharge6
-//	String miscVisible6
-//	String miscChargesName7
-//	BigDecimal miscCharge7
-//	String miscVisible7
-//	String miscChargesName8
-//	BigDecimal miscCharge8
-//	String miscVisible8
+	String miscChargesName5
+	BigDecimal miscCharge5
+	String miscVisible5
+	String miscChargesName6
+	BigDecimal miscCharge6
+	String miscVisible6
+	String miscChargesName7
+	BigDecimal miscCharge7
+	String miscVisible7
+	String miscChargesName8
+	BigDecimal miscCharge8
+	String miscVisible8
 	
 	static constraints = {
 		date(blank:false)
@@ -269,6 +264,7 @@ class CleaningJobCommand {
 		groupName(nullable:true)
 		groupRate(nullable:true, scale: 2, min: 0.00)
 		comment(nullable:true)
+		
 		roomName1(nullable:true)
 		squareFootage1(nullable:true, scale: 1, min: 0.0)
 		_preVacCheck1(nullable:true)
@@ -292,11 +288,7 @@ class CleaningJobCommand {
 		preVacCharge4(nullable:true, scale: 2, min: 0.00)
 		protectorCharge4(nullable:true, scale: 2, min: 0.00)
 		moveFurnitureCharge4(nullable:true, scale: 2, min: 0.00)
-		roomName5(nullable:true)
-		squareFootage5(nullable:true, scale: 1, min: 0.0)
-		preVacCharge5(nullable:true, scale: 2, min: 0.00)
-		protectorCharge5(nullable:true, scale: 2, min: 0.00)
-		moveFurnitureCharge5(nullable:true, scale: 2, min: 0.00)
+
 		roomName001(nullable:true)
 		roomCharge001(nullable:true, scale: 2, min: 0.00)
 		squareFootage001(nullable:true, scale: 1, min: 0.0)
@@ -377,6 +369,7 @@ class CleaningJobCommand {
 		_moveFurnitureCheck008(nullable:true)
 		moveFurnitureCharge008(nullable:true, scale: 2, min: 0.00)
 		visible008(nullable:true)
+		
 		stairDirection1(nullable:true)
 		stairCount1(nullable:true, scale: 0, min: 0.0)
 		stairCharge1(nullable:true, scale: 2, min: 0.00)
@@ -389,6 +382,7 @@ class CleaningJobCommand {
 		stairCount3(nullable:true, scale: 0, min: 0.0)
 		stairCharge3(nullable:true, scale: 2, min: 0.00)
 		stairVisible3(nullable:true)
+		
 		hsRoomName1(nullable:true)
 		hsRoomCharge1(nullable:true, scale: 2, min: 0.00)
 		hsSquareFootage1(nullable:true, scale: 1, min: 0.0)
@@ -437,6 +431,7 @@ class CleaningJobCommand {
 		_hsSealedWaxedCheck6(nullable:true)
 		hsSealedWaxedCharge6(nullable:true, scale: 2, min: 0.00)
 		hsVisible6(nullable:true)
+		
 		upholsteryName1(nullable:true)
 		upholsteryCount1(nullable:true, scale: 0, min: 0.0)
 		upholsteryCharge1(nullable:true, scale: 2, min: 0.00)
@@ -473,6 +468,7 @@ class CleaningJobCommand {
 		_upholsteryProtectorCheck6(nullable:true)
 		upholsteryProtectorCharge6(nullable:true, scale: 2, min: 0.00)
 		uVisible6(nullable:true)
+		
 		miscChargesName1(nullable:true)
 		miscCharge1(nullable:true, scale: 2, min: 0.00)
 		miscVisible1(nullable:true)
@@ -485,18 +481,18 @@ class CleaningJobCommand {
 		miscChargesName4(nullable:true)
 		miscCharge4(nullable:true, scale: 2, min: 0.00)
 		miscVisible4(nullable:true)
-//		miscChargesName5(nullable:true)
-//		miscCharge5(nullable:true, scale: 2, min: 0.00)
-//		miscVisible5(nullable:true)
-//		miscChargesName6(nullable:true)
-//		miscCharge6(nullable:true, scale: 2, min: 0.00)
-//		miscVisible6(nullable:true)
-//		miscChargesName7(nullable:true)
-//		miscCharge7(nullable:true, scale: 2, min: 0.00)
-//		miscVisible7(nullable:true)
-//		miscChargesName8(nullable:true)
-//		miscCharge8(nullable:true, scale: 2, min: 0.00)
-//		miscVisible8(nullable:true)
+		miscChargesName5(nullable:true)
+		miscCharge5(nullable:true, scale: 2, min: 0.00)
+		miscVisible5(nullable:true)
+		miscChargesName6(nullable:true)
+		miscCharge6(nullable:true, scale: 2, min: 0.00)
+		miscVisible6(nullable:true)
+		miscChargesName7(nullable:true)
+		miscCharge7(nullable:true, scale: 2, min: 0.00)
+		miscVisible7(nullable:true)
+		miscChargesName8(nullable:true)
+		miscCharge8(nullable:true, scale: 2, min: 0.00)
+		miscVisible8(nullable:true)
 	}
 	
 	String toString() {

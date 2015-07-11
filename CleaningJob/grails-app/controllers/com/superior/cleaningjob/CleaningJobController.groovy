@@ -144,147 +144,171 @@ class CleaningJobController {
 		}
 		
 		//Group rooms
-		for (int i = 1; i < 6; i++) {
-			if (cleaningJobCommandInstance."roomName${i}" != "Pick a Room") {
-				def roomInstance = new Room(jobId: carpetCareJob.id,
-					inGroup: true,
-					hardSurface: false,
-					roomName: cleaningJobCommandInstance."roomName${i}",
-					squareFootage: cleaningJobCommandInstance."squareFootage${i}",
-					roomCharge: 0.00,
-					preVacCharge: cleaningJobCommandInstance."preVacCharge${i}",
-					protectorCharge: cleaningJobCommandInstance."protectorCharge${i}",
-					moveFurnitureCharge: cleaningJobCommandInstance."moveFurnitureCharge${i}",
-					etchedCharge: 0.00,
-					sealWaxCharge: 0.00)
-				
-				if (!roomInstance.save(flush:true)) {
-					carpetCareJobInstance.delete()
-					cleaningJobCommandInstance.errors.reject(
-						"Error saving Room ${i} record of a Group",
-						['', 'class Room'] as Object[],
-						"Error saving Room ${i} record of a Group")
-					respond cleaningJobCommandInstance.errors, view:'newJob'
-					return
-				}
-			}
-		}
+		saveGroupRooms(carpetCareJob, cleaningJobCommandInstance, carpetCareJobInstance)
 		
 		//Additional Rooms
-		for (int i = 1; i < 9; i++) {
-			if (cleaningJobCommandInstance."visible00${i}" == "Y") {
-				def roomInstance = new Room(jobId: carpetCareJob.id,
-					inGroup: false,
-					hardSurface: false,
-					roomName: cleaningJobCommandInstance."roomName00${i}",
-					squareFootage: cleaningJobCommandInstance."squareFootage00${i}",
-					roomCharge: cleaningJobCommandInstance."roomCharge00${i}",
-					preVacCharge: cleaningJobCommandInstance."preVacCharge00${i}",
-					protectorCharge: cleaningJobCommandInstance."protectorCharge00${i}",
-					moveFurnitureCharge: cleaningJobCommandInstance."moveFurnitureCharge00${i}",
-					etchedCharge: 0.00,
-					sealWaxCharge: 0.00)
-		
-				if(!roomInstance.save(flush:true)) {
-					carpetCareJobInstance.delete()
-					cleaningJobCommandInstance.errors.reject(
-						"Error saving Additional Room record numbet ${i}",
-						['', 'class Room'] as Object[],
-						"Error saving Additional Room record ${i}")
-					respond cleaningJobCommandInstance.errors, view:'newJob'
-					return
-				}
-			}
-		}
+		saveAdditionalRooms(carpetCareJob, cleaningJobCommandInstance, carpetCareJobInstance)
 		
 		//Stairs
-		for (int i = 1; i < 4; i++) {
-			if (cleaningJobCommandInstance."stairVisible${i}" == "Y") {
-				def stairInstance = new Stair(jobId: carpetCareJob.id,
-					stairDirection: cleaningJobCommandInstance."stairDirection${i}",
-					stairCount: cleaningJobCommandInstance."stairCount${i}",
-					stairCharge: cleaningJobCommandInstance."stairCharge${i}")
-		
-				if (!stairInstance.save(flush:true)) {
-					cleaningJobCommandInstance.errors.reject(
-						"Error saving Stair record ${i}",
-						['', 'class Stair'] as Object[],
-						"Error saving Stair record ${i}")
-					respond cleaningJobCommandInstance.errors, view:'newJob'
-					return
-				}
-			}
-		}
+		saveStairs(carpetCareJob, cleaningJobCommandInstance)
 			
 		//Hard Surface Rooms
-		for (int i = 1; i < 7; i++) {
-			if (cleaningJobCommandInstance."hsVisible${i}" == "Y") {
-				def hsRoomInstance = new Room(jobId: carpetCareJob.id,
-					inGroup: false,
-					hardSurface: true,
-					roomName: cleaningJobCommandInstance."hsRoomName${i}",
-					squareFootage: cleaningJobCommandInstance."hsSquareFootage${i}",
-					roomCharge: cleaningJobCommandInstance."hsRoomCharge${i}",
-					preVacCharge: 0.00,
-					protectorCharge: 0.00,
-					moveFurnitureCharge: 0.00,
-					etchedCharge: cleaningJobCommandInstance."hsEtchedCharge${i}",
-					sealWaxCharge: cleaningJobCommandInstance."hsSealedWaxedCharge${i}")
-		
-				if(!hsRoomInstance.save(flush:true)) {
-					carpetCareJobInstance.delete()
-					cleaningJobCommandInstance.errors.reject(
-						"Error saving Hard Surface Room record ${i}",
-						['', 'class Room'] as Object[],
-						"Error saving Hard Surface Room record ${i}")
-					respond cleaningJobCommandInstance.errors, view:'newJob'
-					return
-				}
-			}
-		}
+		saveHardSurfaceRoom(carpetCareJob, cleaningJobCommandInstance, carpetCareJobInstance)
 		
 		//Upholstery
-		for (int i = 1; i < 7; i++) {
-			if (cleaningJobCommandInstance."uVisible${i}" == "Y") {
-				def upholsteryInstance = new Upholstery(jobId: carpetCareJob.id,
-					upholsteryName: cleaningJobCommandInstance."upholsteryName${i}",
-					upholsteryCount: cleaningJobCommandInstance."upholsteryCount${i}",
-					upholsteryCharge: cleaningJobCommandInstance."upholsteryCharge${i}",
-					upholsteryProtectorCharge: cleaningJobCommandInstance."upholsteryProtectorCharge${i}")
-		
-				if(!upholsteryInstance.save(flush:true)) {
-					carpetCareJobInstance.delete()
-					cleaningJobCommandInstance.errors.reject(
-						"Error saving Upholstery record ${i}",
-						['', 'class Upholstery'] as Object[],
-						"Error saving Upholstery record ${i}")
-					respond cleaningJobCommandInstance.errors, view:'newJob'
-					return
-				}
-			}
-		}
+		saveUpholstery(carpetCareJob, cleaningJobCommandInstance, carpetCareJobInstance)
 		
 		//Miscellaneous Charges
-		for (int i = 1; i < 5; i++) {
-			if (cleaningJobCommandInstance."miscVisible${i}" == "Y") {
-				def miscChargesInstance = new MiscCharges(jobId: carpetCareJob.id,
-					miscDescription: cleaningJobCommandInstance."miscChargesName${i}",
-					miscCharge: cleaningJobCommandInstance."miscCharge${i}")
-		
-				if(!miscChargesInstance.save(flush:true)) {
-					carpetCareJobInstance.delete()
-					cleaningJobCommandInstance.errors.reject(
-						"Error saving Miscellaneous Charge record ${i}",
-						['', 'class MiscCharges'] as Object[],
-						"Error saving Miscellaneous Charge record ${i}")
-					respond cleaningJobCommandInstance.errors, view:'newJob'
-					return
-				}
-			}
-		}
+		saveMiscellaneous(carpetCareJob, cleaningJobCommandInstance, carpetCareJobInstance)
 
 		redirect action: "index", controller: "cleaningJob"
 
+	}
+
+	private saveGroupRooms(CarpetCareJob carpetCareJob, CleaningJobCommand cleaningJobCommandInstance, CarpetCareJob carpetCareJobInstance) {
+		for (int i = 1; i < 5; i++) {
+			if (cleaningJobCommandInstance."roomName${i}" != "Pick a Room") {
+				def roomInstance = new Room(jobId: carpetCareJob.id,
+				inGroup: true,
+				hardSurface: false,
+				roomName: cleaningJobCommandInstance."roomName${i}",
+				squareFootage: cleaningJobCommandInstance."squareFootage${i}",
+				roomCharge: 0.00,
+				preVacCharge: cleaningJobCommandInstance."preVacCharge${i}",
+				protectorCharge: cleaningJobCommandInstance."protectorCharge${i}",
+				moveFurnitureCharge: cleaningJobCommandInstance."moveFurnitureCharge${i}",
+				etchedCharge: 0.00,
+				sealWaxCharge: 0.00)
+
+				if (!roomInstance.save(flush:true)) {
+					carpetCareJobInstance.delete()
+					cleaningJobCommandInstance.errors.reject(
+							"Error saving Room ${i} record of a Group",
+							['', 'class Room'] as Object[],
+							"Error saving Room ${i} record of a Group")
+					respond cleaningJobCommandInstance.errors, view:'newJob'
+					return
+				}
+			}
+		}
+	}
+	
+	private saveAdditionalRooms(CarpetCareJob carpetCareJob, CleaningJobCommand cleaningJobCommandInstance, CarpetCareJob carpetCareJobInstance) {
+		for (int i = 1; i < 9; i++) {
+			if (cleaningJobCommandInstance."visible00${i}" == "Y") {
+				def roomInstance = new Room(jobId: carpetCareJob.id,
+				inGroup: false,
+				hardSurface: false,
+				roomName: cleaningJobCommandInstance."roomName00${i}",
+				squareFootage: cleaningJobCommandInstance."squareFootage00${i}",
+				roomCharge: cleaningJobCommandInstance."roomCharge00${i}",
+				preVacCharge: cleaningJobCommandInstance."preVacCharge00${i}",
+				protectorCharge: cleaningJobCommandInstance."protectorCharge00${i}",
+				moveFurnitureCharge: cleaningJobCommandInstance."moveFurnitureCharge00${i}",
+				etchedCharge: 0.00,
+				sealWaxCharge: 0.00)
+
+				if(!roomInstance.save(flush:true)) {
+					carpetCareJobInstance.delete()
+					cleaningJobCommandInstance.errors.reject(
+							"Error saving Additional Room record numbet ${i}",
+							['', 'class Room'] as Object[],
+							"Error saving Additional Room record ${i}")
+					respond cleaningJobCommandInstance.errors, view:'newJob'
+					return
+				}
+			}
+		}
+	}
+
+	private saveStairs(CarpetCareJob carpetCareJob, CleaningJobCommand cleaningJobCommandInstance) {
+		for (int i = 1; i < 4; i++) {
+			if (cleaningJobCommandInstance."stairVisible${i}" == "Y") {
+				def stairInstance = new Stair(jobId: carpetCareJob.id,
+				stairDirection: cleaningJobCommandInstance."stairDirection${i}",
+				stairCount: cleaningJobCommandInstance."stairCount${i}",
+				stairCharge: cleaningJobCommandInstance."stairCharge${i}")
+
+				if (!stairInstance.save(flush:true)) {
+					cleaningJobCommandInstance.errors.reject(
+							"Error saving Stair record ${i}",
+							['', 'class Stair'] as Object[],
+							"Error saving Stair record ${i}")
+					respond cleaningJobCommandInstance.errors, view:'newJob'
+					return
+				}
+			}
+		}
+	}
+
+	private saveHardSurfaceRoom(CarpetCareJob carpetCareJob, CleaningJobCommand cleaningJobCommandInstance, CarpetCareJob carpetCareJobInstance) {
+		for (int i = 1; i < 7; i++) {
+			if (cleaningJobCommandInstance."hsVisible${i}" == "Y") {
+				def hsRoomInstance = new Room(jobId: carpetCareJob.id,
+				inGroup: false,
+				hardSurface: true,
+				roomName: cleaningJobCommandInstance."hsRoomName${i}",
+				squareFootage: cleaningJobCommandInstance."hsSquareFootage${i}",
+				roomCharge: cleaningJobCommandInstance."hsRoomCharge${i}",
+				preVacCharge: 0.00,
+				protectorCharge: 0.00,
+				moveFurnitureCharge: 0.00,
+				etchedCharge: cleaningJobCommandInstance."hsEtchedCharge${i}",
+				sealWaxCharge: cleaningJobCommandInstance."hsSealedWaxedCharge${i}")
+
+				if(!hsRoomInstance.save(flush:true)) {
+					carpetCareJobInstance.delete()
+					cleaningJobCommandInstance.errors.reject(
+							"Error saving Hard Surface Room record ${i}",
+							['', 'class Room'] as Object[],
+							"Error saving Hard Surface Room record ${i}")
+					respond cleaningJobCommandInstance.errors, view:'newJob'
+					return
+				}
+			}
+		}
+	}
+
+	private saveUpholstery(CarpetCareJob carpetCareJob, CleaningJobCommand cleaningJobCommandInstance, CarpetCareJob carpetCareJobInstance) {
+		for (int i = 1; i < 7; i++) {
+			if (cleaningJobCommandInstance."uVisible${i}" == "Y") {
+				def upholsteryInstance = new Upholstery(jobId: carpetCareJob.id,
+				upholsteryName: cleaningJobCommandInstance."upholsteryName${i}",
+				upholsteryCount: cleaningJobCommandInstance."upholsteryCount${i}",
+				upholsteryCharge: cleaningJobCommandInstance."upholsteryCharge${i}",
+				upholsteryProtectorCharge: cleaningJobCommandInstance."upholsteryProtectorCharge${i}")
+
+				if(!upholsteryInstance.save(flush:true)) {
+					carpetCareJobInstance.delete()
+					cleaningJobCommandInstance.errors.reject(
+							"Error saving Upholstery record ${i}",
+							['', 'class Upholstery'] as Object[],
+							"Error saving Upholstery record ${i}")
+					respond cleaningJobCommandInstance.errors, view:'newJob'
+					return
+				}
+			}
+		}
+	}
+
+	private saveMiscellaneous(CarpetCareJob carpetCareJob, CleaningJobCommand cleaningJobCommandInstance, CarpetCareJob carpetCareJobInstance) {
+		for (int i = 1; i < 5; i++) {
+			if (cleaningJobCommandInstance."miscVisible${i}" == "Y") {
+				def miscChargesInstance = new MiscCharges(jobId: carpetCareJob.id,
+				miscDescription: cleaningJobCommandInstance."miscChargesName${i}",
+				miscCharge: cleaningJobCommandInstance."miscCharge${i}")
+
+				if(!miscChargesInstance.save(flush:true)) {
+					carpetCareJobInstance.delete()
+					cleaningJobCommandInstance.errors.reject(
+							"Error saving Miscellaneous Charge record ${i}",
+							['', 'class MiscCharges'] as Object[],
+							"Error saving Miscellaneous Charge record ${i}")
+					respond cleaningJobCommandInstance.errors, view:'newJob'
+					return
+				}
+			}
+		}
 	}
 
 	private completenessCheck(CleaningJobCommand cleaningJobCommandInstance) {
@@ -292,6 +316,19 @@ class CleaningJobController {
 			cleaningJobCommandInstance.errors.rejectValue('lead', 'Must pick a Lead Name   ')
 		}
 
+		editGroupRooms(cleaningJobCommandInstance)
+
+		//Additional Rooms
+		editAdditionalRooms(cleaningJobCommandInstance)
+		
+		//Hard Surface Rooms
+		editHardSurface(cleaningJobCommandInstance)
+		
+		//Stairs
+		editStairs(cleaningJobCommandInstance)
+	}
+
+	private editGroupRooms(CleaningJobCommand cleaningJobCommandInstance) {
 		if ((cleaningJobCommandInstance.groupName == "No Special") &&
 		(cleaningJobCommandInstance.visible001 != "Y") &&
 		(cleaningJobCommandInstance.hsVisible1 != "Y") &&
@@ -355,12 +392,13 @@ class CleaningJobController {
 
 		for (int i = 1; i < 6; i++) {
 			if ((cleaningJobCommandInstance."roomName${i}" != "Pick a Room") &&
-				(cleaningJobCommandInstance."squareFootage${i}" == null)) {
-					cleaningJobCommandInstance.errors.rejectValue("squareFootage${i}", "Must enter Square Footage of Room Number ${i}   ")
+			(cleaningJobCommandInstance."squareFootage${i}" == null)) {
+				cleaningJobCommandInstance.errors.rejectValue("squareFootage${i}", "Must enter Square Footage of Room Number ${i}   ")
 			}
 		}
+	}
 
-		//Additional Rooms
+	private editAdditionalRooms(CleaningJobCommand cleaningJobCommandInstance) {
 		for (int i = 1; i < 9; i++) {
 			if (cleaningJobCommandInstance."visible00${i}" == "Y") {
 				if (cleaningJobCommandInstance."roomName00${i}" == null) {
@@ -371,31 +409,33 @@ class CleaningJobController {
 				}
 			}
 		}
-		
-		//Hard Surface Rooms
+	}
+
+	private editHardSurface(CleaningJobCommand cleaningJobCommandInstance) {
 		for (int i = 1; i < 7; i++) {
 			if (cleaningJobCommandInstance."hsVisible${i}" == "Y") {
 				if (cleaningJobCommandInstance."hsRoomName${i}" == null) {
 					cleaningJobCommandInstance.errors.rejectValue("hsRoomName${i}", "Must enter Room Name for Hard Surface Room ${i}   ")
 				}
-	
+
 				if (cleaningJobCommandInstance."hsSquareFootage${i}" == null) {
 					cleaningJobCommandInstance.errors.rejectValue("hsSquareFootage${i}", "Must enter Square Footage for Hard Surface Room ${i}   ")
 				}
-			}	
+			}
 		}
-		
-		//Stairs
+	}
+
+	private editStairs(CleaningJobCommand cleaningJobCommandInstance) {
 		for (int i = 1; i < 4; i++) {
 			if (cleaningJobCommandInstance."stairVisible${i}" == "Y") {
 				if (cleaningJobCommandInstance."stairDirection${i}" == null) {
 					cleaningJobCommandInstance.errors.rejectValue("stairDirection${i}", "Must enter a Stair Direction for Stair Set ${i}   ")
 				}
-			
+
 				if (cleaningJobCommandInstance."stairCount${i}" == null) {
 					cleaningJobCommandInstance.errors.rejectValue("stairCount${i}", "Must enter a Stair Count for Stair Set ${i}   ")
 				}
-			} 	
+			}
 		}
 	}
 }
