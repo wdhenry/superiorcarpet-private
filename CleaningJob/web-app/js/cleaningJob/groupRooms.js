@@ -36,7 +36,7 @@
         var roomGroup = RoomGroupService.getByGroupName(groupName.val());
         
         if (isNotEmpty(roomGroup)) {
-          $("#groupRate").val(roomGroup.groupCharge);
+          $("#groupRate").val(roomGroup.groupCharge.toFixed(2));
         }
       } else {
         $("#groupRate").val("");
