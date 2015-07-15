@@ -2,11 +2,17 @@ package com.superior.cleaningjob
 
 import grails.validation.Validateable
 
-import org.apache.commons.collections.list.LazyList;
-import org.apache.commons.collections.FactoryUtils;
+import com.superior.cleaningjob.traits.misccharges.MiscCharges1Trait
+import com.superior.cleaningjob.traits.misccharges.MiscCharges2Trait
+import com.superior.cleaningjob.traits.misccharges.MiscCharges3Trait
+import com.superior.cleaningjob.traits.misccharges.MiscCharges4Trait
+import com.superior.cleaningjob.traits.misccharges.MiscCharges5Trait
+import com.superior.cleaningjob.traits.misccharges.MiscCharges6Trait
+import com.superior.cleaningjob.traits.misccharges.MiscCharges7Trait
+import com.superior.cleaningjob.traits.misccharges.MiscCharges8Trait
 
 @Validateable
-class CleaningJobCommand {
+class CleaningJobCommand implements MiscCharges1Trait, MiscCharges2Trait, MiscCharges3Trait, MiscCharges4Trait, MiscCharges5Trait, MiscCharges6Trait, MiscCharges7Trait, MiscCharges8Trait {
 
 	Date date
 	String date_day
@@ -468,31 +474,6 @@ class CleaningJobCommand {
 		_upholsteryProtectorCheck6(nullable:true)
 		upholsteryProtectorCharge6(nullable:true, scale: 2, min: 0.00)
 		uVisible6(nullable:true)
-		
-		miscChargesName1(nullable:true)
-		miscCharge1(nullable:true, scale: 2, min: 0.00)
-		miscVisible1(nullable:true)
-		miscChargesName2(nullable:true)
-		miscCharge2(nullable:true, scale: 2, min: 0.00)
-		miscVisible2(nullable:true)
-		miscChargesName3(nullable:true)
-		miscCharge3(nullable:true, scale: 2, min: 0.00)
-		miscVisible3(nullable:true)
-		miscChargesName4(nullable:true)
-		miscCharge4(nullable:true, scale: 2, min: 0.00)
-		miscVisible4(nullable:true)
-		miscChargesName5(nullable:true)
-		miscCharge5(nullable:true, scale: 2, min: 0.00)
-		miscVisible5(nullable:true)
-		miscChargesName6(nullable:true)
-		miscCharge6(nullable:true, scale: 2, min: 0.00)
-		miscVisible6(nullable:true)
-		miscChargesName7(nullable:true)
-		miscCharge7(nullable:true, scale: 2, min: 0.00)
-		miscVisible7(nullable:true)
-		miscChargesName8(nullable:true)
-		miscCharge8(nullable:true, scale: 2, min: 0.00)
-		miscVisible8(nullable:true)
 	}
 	
 	String toString() {
