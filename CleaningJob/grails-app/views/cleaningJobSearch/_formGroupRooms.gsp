@@ -65,18 +65,5 @@
 									type="currency" maxFractionDigits="2" currencyCode="USD" /></td>
 		</tr>
 	</g:if>
-	<g:if test="${cleaningJobCommandInstance.roomName5 != null}">
-		<tr>
-			<td><g:fieldValue bean="${cleaningJobCommandInstance}" field="roomName5"/></td>
-			<td><g:formatNumber number="${cleaningJobCommandInstance.squareFootage5}"
-									type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
-			<td><g:formatNumber number="${cleaningJobCommandInstance.preVacCharge5}"
-									type="currency" maxFractionDigits="2" currencyCode="USD" /></td>
-			<td><g:formatNumber number="${cleaningJobCommandInstance.protectorCharge5}"
-									type="currency" maxFractionDigits="2" currencyCode="USD" /></td>
-			<td><g:formatNumber number="${cleaningJobCommandInstance.moveFurnitureCharge5}"
-									type="currency" maxFractionDigits="2" currencyCode="USD" /></td>
-		</tr>
-	</g:if>
 	
 </table>

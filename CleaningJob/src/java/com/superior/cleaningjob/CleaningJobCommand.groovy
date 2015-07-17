@@ -233,31 +233,6 @@ class CleaningJobCommand implements MiscCharges1Trait, MiscCharges2Trait, MiscCh
 	BigDecimal upholsteryProtectorCharge6
 	String uVisible6
 	
-	String miscChargesName1
-	BigDecimal miscCharge1
-	String miscVisible1
-	String miscChargesName2
-	BigDecimal miscCharge2
-	String miscVisible2
-	String miscChargesName3
-	BigDecimal miscCharge3
-	String miscVisible3
-	String miscChargesName4
-	BigDecimal miscCharge4
-	String miscVisible4
-	String miscChargesName5
-	BigDecimal miscCharge5
-	String miscVisible5
-	String miscChargesName6
-	BigDecimal miscCharge6
-	String miscVisible6
-	String miscChargesName7
-	BigDecimal miscCharge7
-	String miscVisible7
-	String miscChargesName8
-	BigDecimal miscCharge8
-	String miscVisible8
-	
 	static constraints = {
 		date(blank:false)
 		lead(blank:false)

@@ -7,7 +7,7 @@
 			<div>
 				<g:message code="cleaningJob.numberMisc.label" default="Select Number of Miscellaneous Charges" />
 				<g:select name="miscCount" 
-					from="${['01','02','03','04']}"
+					from="${['01','02','03','04','05','06','07','08']}"
 					noSelection="${['00':'00']}"
 					class="sorted-asc"/>
 			</div>
