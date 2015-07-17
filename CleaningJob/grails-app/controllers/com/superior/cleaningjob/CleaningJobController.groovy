@@ -342,8 +342,7 @@ class CleaningJobController {
 			if ((cleaningJobCommandInstance.roomName1 != "Pick a Room") &&
 			(cleaningJobCommandInstance.roomName2 != "Pick a Room") &&
 			(cleaningJobCommandInstance.roomName3 != "Pick a Room") &&
-			(cleaningJobCommandInstance.roomName4 != "Pick a Room") &&
-			(cleaningJobCommandInstance.roomName5 != "Pick a Room")) {
+			(cleaningJobCommandInstance.roomName4 != "Pick a Room")) {
 				cleaningJobCommandInstance.errors.rejectValue('groupName', 'Must pick a Room Special if a Room is picked   ')
 			}
 		}
@@ -356,41 +355,32 @@ class CleaningJobController {
 		}
 
 		if ((cleaningJobCommandInstance.groupName != "No Special") &&
-		(cleaningJobCommandInstance.roomName1 == "Pick a Room")) {
+			(cleaningJobCommandInstance.roomName1 == "Pick a Room")) {
 			cleaningJobCommandInstance.errors.rejectValue('roomName1', 'Must pick 1st Room if a Room Special is picked   ')
 		}
 
 		if ((cleaningJobCommandInstance.groupName == "2 Room Special") ||
-		(cleaningJobCommandInstance.groupName == "3 Room Special") ||
-		(cleaningJobCommandInstance.groupName == "4 Room Special") ||
-		(cleaningJobCommandInstance.groupName == "5 Room Special")) {
+			(cleaningJobCommandInstance.groupName == "3 Room Special") ||
+			(cleaningJobCommandInstance.groupName == "4 Room Special")) {
 			if (cleaningJobCommandInstance.roomName2 == "Pick a Room") {
 				cleaningJobCommandInstance.errors.rejectValue('roomName2', 'Must pick 2nd Room if a Room Special is picked   ')
 			}
 		}
 
 		if ((cleaningJobCommandInstance.groupName == "3 Room Special") ||
-		(cleaningJobCommandInstance.groupName == "4 Room Special") ||
-		(cleaningJobCommandInstance.groupName == "5 Room Special")) {
+			(cleaningJobCommandInstance.groupName == "4 Room Special")) {
 			if (cleaningJobCommandInstance.roomName3 == "Pick a Room") {
 				cleaningJobCommandInstance.errors.rejectValue('roomName3', 'Must pick 3rd Room if a Room Special is picked   ')
 			}
 		}
 
-		if ((cleaningJobCommandInstance.groupName == "4 Room Special") ||
-		(cleaningJobCommandInstance.groupName == "5 Room Special")) {
+		if ((cleaningJobCommandInstance.groupName == "4 Room Special")) {
 			if (cleaningJobCommandInstance.roomName4 == "Pick a Room") {
 				cleaningJobCommandInstance.errors.rejectValue('roomName4', 'Must pick 4th Room if a Room Special is picked   ')
 			}
 		}
 
-		if ((cleaningJobCommandInstance.groupName == "5 Room Special")) {
-			if (cleaningJobCommandInstance.roomName5 == "Pick a Room") {
-				cleaningJobCommandInstance.errors.rejectValue('roomName5', 'Must pick 5th Room if a Room Special is picked   ')
-			}
-		}
-
-		for (int i = 1; i < 6; i++) {
+		for (int i = 1; i < 5; i++) {
 			if ((cleaningJobCommandInstance."roomName${i}" != "Pick a Room") &&
 			(cleaningJobCommandInstance."squareFootage${i}" == null)) {
 				cleaningJobCommandInstance.errors.rejectValue("squareFootage${i}", "Must enter Square Footage of Room Number ${i}   ")
