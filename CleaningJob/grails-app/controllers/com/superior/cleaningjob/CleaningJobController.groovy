@@ -18,56 +18,56 @@ import grails.transaction.Transactional
 class CleaningJobController {
 
 	static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-	
+
 	def index() {
 		CustomerSearchCommand customerSearchCommandInstance = new CustomerSearchCommand()
 		respond customerSearchCommandInstance , view:'search'
 	}
-	
+
 	def search(CustomerSearchCommand customerSearchCommandInstance) {
 		if (customerSearchCommandInstance == null) {
 			respond customerSearchCommandInstance , view:'search'
 			return
 		}
-		
+
 		def custList = new ArrayList()
 		if ((customerSearchCommandInstance.lastName != null) ||
-			(customerSearchCommandInstance.firstName != null)) {
+		(customerSearchCommandInstance.firstName != null)) {
 			if ((customerSearchCommandInstance.lastName != null) &&
-				(customerSearchCommandInstance.firstName != null)) {
+			(customerSearchCommandInstance.firstName != null)) {
 				custList = Customer.findAllByLastNameAndFirstName(customerSearchCommandInstance.lastName, customerSearchCommandInstance.firstName)
 			} else if (customerSearchCommandInstance.lastName != null) {
-					custList = Customer.findAllByLastName(customerSearchCommandInstance.lastName)
+				custList = Customer.findAllByLastName(customerSearchCommandInstance.lastName)
 			} else if (customerSearchCommandInstance.firstName != null) {
-					custList = Customer.findAllByFirstName(customerSearchCommandInstance.firstName)
+				custList = Customer.findAllByFirstName(customerSearchCommandInstance.firstName)
 			}
 		} else if ((customerSearchCommandInstance.addressLineOne != null) ||
-			(customerSearchCommandInstance.addressLineTwo != null)) {
+		(customerSearchCommandInstance.addressLineTwo != null)) {
 			if ((customerSearchCommandInstance.addressLineOne != null) &&
-				(customerSearchCommandInstance.addressLineTwo != null)) {
+			(customerSearchCommandInstance.addressLineTwo != null)) {
 				custList = Customer.findAllByAddressLineOneAndAddressLineTwo(customerSearchCommandInstance.addressLineOne, customerSearchCommandInstance.addressLineTwo)
 			} else if (customerSearchCommandInstance.addressLineOne != null) {
-					custList = Customer.findAllByAddressLineOne(customerSearchCommandInstance.addressLineOne)
+				custList = Customer.findAllByAddressLineOne(customerSearchCommandInstance.addressLineOne)
 			} else if (customerSearchCommandInstance.addressLineTwo != null) {
-					custList = Customer.findAllByAddressLineTwo(customerSearchCommandInstance.addressLineTwo)
+				custList = Customer.findAllByAddressLineTwo(customerSearchCommandInstance.addressLineTwo)
 			}
 		}
-			
+
 		if (custList.size() > 0) {
 			respond custList, view:'summary', model:[customers: custList,
-											custListInstanceCount: custList.size()]
+				custListInstanceCount: custList.size()]
 			return
 		} else {
-			customerSearchCommandInstance.errors.rejectValue('', 'No matching Customers Found   ')
+			customerSearchCommandInstance.errors.reject('No matching customers found')
 			respond customerSearchCommandInstance.errors, view:'search'
 			return
 		}
 	}
-	
+
 	def create() {
 		respond new Customer(params)
 	}
-	
+
 	@Transactional
 	def saveCustomer(Customer customerInstance) {
 		if (customerInstance == null) {
@@ -84,7 +84,7 @@ class CleaningJobController {
 
 		redirect action:'newJob', controller: "cleaningJob", params: [id: customerInstance.id]
 	}
-	
+
 	@Transactional
 	def save(Customer customerInstance) {
 		if (customerInstance == null) {
@@ -99,65 +99,65 @@ class CleaningJobController {
 
 		customerInstance.save flush:true
 
-		redirect action: "index", controller: "cleaningJob" 
+		redirect action: "index", controller: "cleaningJob"
 	}
-	
+
 	def newJob(Customer customerInstance) {
-		CleaningJobCommand cleaningJobCommandInstance = new CleaningJobCommand(customerId: customerInstance.id, 
-															firstName: customerInstance.firstName, 
-															lastName: customerInstance.lastName)
+		CleaningJobCommand cleaningJobCommandInstance = new CleaningJobCommand(customerId: customerInstance.id,
+		firstName: customerInstance.firstName,
+		lastName: customerInstance.lastName)
 		respond cleaningJobCommandInstance
 	}
-	
+
 	@Transactional
 	def saveJob(CleaningJobCommand cleaningJobCommandInstance) {
-	
+
 		if (cleaningJobCommandInstance == null) {
 			notFound()
 			return
 		}
 
 		completenessCheck(cleaningJobCommandInstance)
-		
+
 		if (cleaningJobCommandInstance.hasErrors()) {
 			respond cleaningJobCommandInstance.errors, view:'newJob'
 			return
 		}
-		
+
 		//Save Records
 		def carpetCareJobInstance = new CarpetCareJob(date: cleaningJobCommandInstance.date,
-														lead: cleaningJobCommandInstance.lead,
-														helper: cleaningJobCommandInstance.helper,
-														customerId: cleaningJobCommandInstance.customerId,
-														groupName: cleaningJobCommandInstance.groupName,
-														groupRate: cleaningJobCommandInstance.groupRate,
-														comment: cleaningJobCommandInstance.comment)
-		
+		lead: cleaningJobCommandInstance.lead,
+		helper: cleaningJobCommandInstance.helper,
+		customerId: cleaningJobCommandInstance.customerId,
+		groupName: cleaningJobCommandInstance.groupName,
+		groupRate: cleaningJobCommandInstance.groupRate,
+		comment: cleaningJobCommandInstance.comment)
+
 		def carpetCareJob = carpetCareJobInstance.save(flush:true)
 		if (carpetCareJob == null) {
 			cleaningJobCommandInstance.errors.reject(
-				'Error saving the Job record',
-				['', 'class CarpetCareJob'] as Object[],
-				'Error saving the Job record')
+					'Error saving the Job record',
+					['', 'class CarpetCareJob'] as Object[],
+					'Error saving the Job record')
 			respond cleaningJobCommandInstance.errors, view:'newJob'
 			return
 		}
-		
+
 		//Group rooms
 		saveGroupRooms(carpetCareJob, cleaningJobCommandInstance, carpetCareJobInstance)
-		
+
 		//Additional Rooms
 		saveAdditionalRooms(carpetCareJob, cleaningJobCommandInstance, carpetCareJobInstance)
-		
+
 		//Stairs
 		saveStairs(carpetCareJob, cleaningJobCommandInstance)
-			
+
 		//Hard Surface Rooms
 		saveHardSurfaceRoom(carpetCareJob, cleaningJobCommandInstance, carpetCareJobInstance)
-		
+
 		//Upholstery
 		saveUpholstery(carpetCareJob, cleaningJobCommandInstance, carpetCareJobInstance)
-		
+
 		//Miscellaneous Charges
 		saveMiscellaneous(carpetCareJob, cleaningJobCommandInstance, carpetCareJobInstance)
 
@@ -192,7 +192,7 @@ class CleaningJobController {
 			}
 		}
 	}
-	
+
 	private saveAdditionalRooms(CarpetCareJob carpetCareJob, CleaningJobCommand cleaningJobCommandInstance, CarpetCareJob carpetCareJobInstance) {
 		for (int i = 1; i < 9; i++) {
 			if (cleaningJobCommandInstance."visible00${i}" == "Y") {
@@ -320,10 +320,10 @@ class CleaningJobController {
 
 		//Additional Rooms
 		editAdditionalRooms(cleaningJobCommandInstance)
-		
+
 		//Hard Surface Rooms
 		editHardSurface(cleaningJobCommandInstance)
-		
+
 		//Stairs
 		editStairs(cleaningJobCommandInstance)
 	}
@@ -355,20 +355,20 @@ class CleaningJobController {
 		}
 
 		if ((cleaningJobCommandInstance.groupName != "No Special") &&
-			(cleaningJobCommandInstance.roomName1 == "Pick a Room")) {
+		(cleaningJobCommandInstance.roomName1 == "Pick a Room")) {
 			cleaningJobCommandInstance.errors.rejectValue('roomName1', 'Must pick 1st Room if a Room Special is picked   ')
 		}
 
 		if ((cleaningJobCommandInstance.groupName == "2 Room Special") ||
-			(cleaningJobCommandInstance.groupName == "3 Room Special") ||
-			(cleaningJobCommandInstance.groupName == "4 Room Special")) {
+		(cleaningJobCommandInstance.groupName == "3 Room Special") ||
+		(cleaningJobCommandInstance.groupName == "4 Room Special")) {
 			if (cleaningJobCommandInstance.roomName2 == "Pick a Room") {
 				cleaningJobCommandInstance.errors.rejectValue('roomName2', 'Must pick 2nd Room if a Room Special is picked   ')
 			}
 		}
 
 		if ((cleaningJobCommandInstance.groupName == "3 Room Special") ||
-			(cleaningJobCommandInstance.groupName == "4 Room Special")) {
+		(cleaningJobCommandInstance.groupName == "4 Room Special")) {
 			if (cleaningJobCommandInstance.roomName3 == "Pick a Room") {
 				cleaningJobCommandInstance.errors.rejectValue('roomName3', 'Must pick 3rd Room if a Room Special is picked   ')
 			}
