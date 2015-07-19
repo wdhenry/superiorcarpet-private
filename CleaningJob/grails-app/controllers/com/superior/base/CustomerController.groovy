@@ -50,7 +50,7 @@ class CustomerController {
 											custListInstanceCount: custList.size()]
 			return
 		} else {
-			customerSearchCommandInstance.errors.rejectValue('', 'No matching Customers Found   ')
+			customerSearchCommandInstance.errors.reject('No matching customers found')
 			respond customerSearchCommandInstance.errors, view:'search'
 			return
 		}
