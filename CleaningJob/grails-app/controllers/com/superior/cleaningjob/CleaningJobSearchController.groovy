@@ -126,13 +126,23 @@ class CleaningJobSearchController {
 					cleaningJobCommandInstance."setHsSealedWaxedCharge${hsRoomCount}"(room.getSealWaxCharge())
 					hsRoomCount = hsRoomCount + 1
 				} else {
-					cleaningJobCommandInstance."setRoomName00${roomCount}"(room.getRoomName())
-					cleaningJobCommandInstance."setSquareFootage00${roomCount}"(room.getSquareFootage())
-					cleaningJobCommandInstance."setRoomCharge00${roomCount}"(room.getRoomCharge())
-					cleaningJobCommandInstance."setPreVacCharge00${roomCount}"(room.getPreVacCharge())
-					cleaningJobCommandInstance."setProtectorCharge00${roomCount}"(room.getProtectorCharge())
-					cleaningJobCommandInstance."setMoveFurnitureCharge00${roomCount}"(room.getMoveFurnitureCharge())
-					roomCount = roomCount + 1
+					if (roomCount < 10) {
+						cleaningJobCommandInstance."setRoomName00${roomCount}"(room.getRoomName())
+						cleaningJobCommandInstance."setSquareFootage00${roomCount}"(room.getSquareFootage())
+						cleaningJobCommandInstance."setRoomCharge00${roomCount}"(room.getRoomCharge())
+						cleaningJobCommandInstance."setPreVacCharge00${roomCount}"(room.getPreVacCharge())
+						cleaningJobCommandInstance."setProtectorCharge00${roomCount}"(room.getProtectorCharge())
+						cleaningJobCommandInstance."setMoveFurnitureCharge00${roomCount}"(room.getMoveFurnitureCharge())
+						roomCount = roomCount + 1
+					} else {
+						cleaningJobCommandInstance."setRoomName0${roomCount}"(room.getRoomName())
+						cleaningJobCommandInstance."setSquareFootage0${roomCount}"(room.getSquareFootage())
+						cleaningJobCommandInstance."setRoomCharge0${roomCount}"(room.getRoomCharge())
+						cleaningJobCommandInstance."setPreVacCharge0${roomCount}"(room.getPreVacCharge())
+						cleaningJobCommandInstance."setProtectorCharge0${roomCount}"(room.getProtectorCharge())
+						cleaningJobCommandInstance."setMoveFurnitureCharge0${roomCount}"(room.getMoveFurnitureCharge())
+						roomCount = roomCount + 1
+					}
 				}
 			}
 		}

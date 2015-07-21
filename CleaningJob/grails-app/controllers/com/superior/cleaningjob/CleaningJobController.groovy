@@ -194,7 +194,7 @@ class CleaningJobController {
 	}
 
 	private saveAdditionalRooms(CarpetCareJob carpetCareJob, CleaningJobCommand cleaningJobCommandInstance, CarpetCareJob carpetCareJobInstance) {
-		for (int i = 1; i < 9; i++) {
+		for (int i = 1; i < 10; i++) {
 			if (cleaningJobCommandInstance."visible00${i}" == "Y") {
 				def roomInstance = new Room(jobId: carpetCareJob.id,
 				inGroup: false,
@@ -211,7 +211,33 @@ class CleaningJobController {
 				if(!roomInstance.save(flush:true)) {
 					carpetCareJobInstance.delete()
 					cleaningJobCommandInstance.errors.reject(
-							"Error saving Additional Room record numbet ${i}",
+							"Error saving Additional Room record number ${i}",
+							['', 'class Room'] as Object[],
+							"Error saving Additional Room record ${i}")
+					respond cleaningJobCommandInstance.errors, view:'newJob'
+					return
+				}
+			}
+		}
+		
+		for (int i = 10; i < 13; i++) {
+			if (cleaningJobCommandInstance."visible0${i}" == "Y") {
+				def roomInstance = new Room(jobId: carpetCareJob.id,
+				inGroup: false,
+				hardSurface: false,
+				roomName: cleaningJobCommandInstance."roomName0${i}",
+				squareFootage: cleaningJobCommandInstance."squareFootage0${i}",
+				roomCharge: cleaningJobCommandInstance."roomCharge0${i}",
+				preVacCharge: cleaningJobCommandInstance."preVacCharge0${i}",
+				protectorCharge: cleaningJobCommandInstance."protectorCharge0${i}",
+				moveFurnitureCharge: cleaningJobCommandInstance."moveFurnitureCharge0${i}",
+				etchedCharge: 0.00,
+				sealWaxCharge: 0.00)
+
+				if(!roomInstance.save(flush:true)) {
+					carpetCareJobInstance.delete()
+					cleaningJobCommandInstance.errors.reject(
+							"Error saving Additional Room record number ${i}",
 							['', 'class Room'] as Object[],
 							"Error saving Additional Room record ${i}")
 					respond cleaningJobCommandInstance.errors, view:'newJob'

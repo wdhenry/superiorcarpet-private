@@ -2,6 +2,19 @@ package com.superior.cleaningjob
 
 import grails.validation.Validateable
 
+import com.superior.cleaningjob.traits.addlrooms.AdditionalRoom001Trait
+import com.superior.cleaningjob.traits.addlrooms.AdditionalRoom002Trait
+import com.superior.cleaningjob.traits.addlrooms.AdditionalRoom003Trait
+import com.superior.cleaningjob.traits.addlrooms.AdditionalRoom004Trait
+import com.superior.cleaningjob.traits.addlrooms.AdditionalRoom005Trait
+import com.superior.cleaningjob.traits.addlrooms.AdditionalRoom006Trait
+import com.superior.cleaningjob.traits.addlrooms.AdditionalRoom007Trait
+import com.superior.cleaningjob.traits.addlrooms.AdditionalRoom008Trait
+import com.superior.cleaningjob.traits.addlrooms.AdditionalRoom009Trait
+import com.superior.cleaningjob.traits.addlrooms.AdditionalRoom010Trait
+import com.superior.cleaningjob.traits.addlrooms.AdditionalRoom011Trait
+import com.superior.cleaningjob.traits.addlrooms.AdditionalRoom012Trait
+
 import com.superior.cleaningjob.traits.misccharges.MiscCharges1Trait
 import com.superior.cleaningjob.traits.misccharges.MiscCharges2Trait
 import com.superior.cleaningjob.traits.misccharges.MiscCharges3Trait
@@ -12,7 +25,11 @@ import com.superior.cleaningjob.traits.misccharges.MiscCharges7Trait
 import com.superior.cleaningjob.traits.misccharges.MiscCharges8Trait
 
 @Validateable
-class CleaningJobCommand implements MiscCharges1Trait, MiscCharges2Trait, MiscCharges3Trait, MiscCharges4Trait, MiscCharges5Trait, MiscCharges6Trait, MiscCharges7Trait, MiscCharges8Trait {
+class CleaningJobCommand implements 
+	MiscCharges1Trait, MiscCharges2Trait, MiscCharges3Trait, MiscCharges4Trait, 
+	MiscCharges5Trait, MiscCharges6Trait, MiscCharges7Trait, MiscCharges8Trait,
+	AdditionalRoom001Trait, AdditionalRoom002Trait, AdditionalRoom003Trait, AdditionalRoom004Trait, AdditionalRoom005Trait, AdditionalRoom006Trait,
+	AdditionalRoom007Trait, AdditionalRoom008Trait, AdditionalRoom009Trait, AdditionalRoom010Trait, AdditionalRoom011Trait, AdditionalRoom012Trait {
 
 	Date date
 	String date_day
@@ -52,87 +69,6 @@ class CleaningJobCommand implements MiscCharges1Trait, MiscCharges2Trait, MiscCh
 	BigDecimal preVacCharge4
 	BigDecimal protectorCharge4
 	BigDecimal moveFurnitureCharge4
-	
-	String roomName001
-	BigDecimal squareFootage001
-	BigDecimal roomCharge001
-	String _preVacCheck001
-	BigDecimal preVacCharge001
-	String _protectorCheck001
-	BigDecimal protectorCharge001
-	String _moveFurnitureCheck001
-	BigDecimal moveFurnitureCharge001
-	String visible001
-	String roomName002
-	BigDecimal squareFootage002
-	BigDecimal roomCharge002
-	String _preVacCheck002
-	BigDecimal preVacCharge002
-	String _protectorCheck002
-	BigDecimal protectorCharge002
-	String _moveFurnitureCheck002
-	BigDecimal moveFurnitureCharge002
-	String visible002
-	String roomName003
-	BigDecimal squareFootage003
-	BigDecimal roomCharge003
-	String _preVacCheck003
-	BigDecimal preVacCharge003
-	String _protectorCheck003
-	BigDecimal protectorCharge003
-	String _moveFurnitureCheck003
-	BigDecimal moveFurnitureCharge003
-	String visible003
-	String roomName004
-	BigDecimal squareFootage004
-	BigDecimal roomCharge004
-	String _preVacCheck004
-	BigDecimal preVacCharge004
-	String _protectorCheck004
-	BigDecimal protectorCharge004
-	String _moveFurnitureCheck004
-	BigDecimal moveFurnitureCharge004
-	String visible004
-	String roomName005
-	BigDecimal squareFootage005
-	BigDecimal roomCharge005
-	String _preVacCheck005
-	BigDecimal preVacCharge005
-	String _protectorCheck005
-	BigDecimal protectorCharge005
-	String _moveFurnitureCheck005
-	BigDecimal moveFurnitureCharge005
-	String visible005
-	String roomName006
-	BigDecimal squareFootage006
-	BigDecimal roomCharge006
-	String _preVacCheck006
-	BigDecimal preVacCharge006
-	String _protectorCheck006
-	BigDecimal protectorCharge006
-	String _moveFurnitureCheck006
-	BigDecimal moveFurnitureCharge006
-	String visible006
-	String roomName007
-	BigDecimal squareFootage007
-	BigDecimal roomCharge007
-	String _preVacCheck007
-	BigDecimal preVacCharge007
-	String _protectorCheck007
-	BigDecimal protectorCharge007
-	String _moveFurnitureCheck007
-	BigDecimal moveFurnitureCharge007
-	String visible007
-	String roomName008
-	BigDecimal squareFootage008
-	BigDecimal roomCharge008
-	String _preVacCheck008
-	BigDecimal preVacCharge008
-	String _protectorCheck008
-	BigDecimal protectorCharge008
-	String _moveFurnitureCheck008
-	BigDecimal moveFurnitureCharge008
-	String visible008
 	
 	String stairDirection1
 	BigDecimal stairCount1
@@ -270,87 +206,6 @@ class CleaningJobCommand implements MiscCharges1Trait, MiscCharges2Trait, MiscCh
 		protectorCharge4(nullable:true, scale: 2, min: 0.00)
 		moveFurnitureCharge4(nullable:true, scale: 2, min: 0.00)
 
-		roomName001(nullable:true)
-		roomCharge001(nullable:true, scale: 2, min: 0.00)
-		squareFootage001(nullable:true, scale: 1, min: 0.0)
-		_preVacCheck001(nullable:true)
-		preVacCharge001(nullable:true, scale: 2, min: 0.00)
-		_protectorCheck001(nullable:true)
-		protectorCharge001(nullable:true, scale: 2, min: 0.00)
-		_moveFurnitureCheck001(nullable:true)
-		moveFurnitureCharge001(nullable:true, scale: 2, min: 0.00)
-		visible001(nullable:true)
-		roomName002(nullable:true)
-		roomCharge002(nullable:true, scale: 2, min: 0.00)
-		squareFootage002(nullable:true, scale: 1, min: 0.0)
-		_preVacCheck002(nullable:true)
-		preVacCharge002(nullable:true, scale: 2, min: 0.00)
-		_protectorCheck002(nullable:true)
-		protectorCharge002(nullable:true, scale: 2, min: 0.00)
-		_moveFurnitureCheck002(nullable:true)
-		moveFurnitureCharge002(nullable:true, scale: 2, min: 0.00)
-		visible002(nullable:true)
-		roomName003(nullable:true)
-		roomCharge003(nullable:true, scale: 2, min: 0.00)
-		squareFootage003(nullable:true, scale: 1, min: 0.0)
-		_preVacCheck003(nullable:true)
-		preVacCharge003(nullable:true, scale: 2, min: 0.00)
-		_protectorCheck003(nullable:true)
-		protectorCharge003(nullable:true, scale: 2, min: 0.00)
-		_moveFurnitureCheck003(nullable:true)
-		moveFurnitureCharge003(nullable:true, scale: 2, min: 0.00)
-		visible003(nullable:true)
-		roomName004(nullable:true)
-		roomCharge004(nullable:true, scale: 2, min: 0.00)
-		squareFootage004(nullable:true, scale: 1, min: 0.0)
-		_preVacCheck004(nullable:true)
-		preVacCharge004(nullable:true, scale: 2, min: 0.00)
-		_protectorCheck004(nullable:true)
-		protectorCharge004(nullable:true, scale: 2, min: 0.00)
-		_moveFurnitureCheck004(nullable:true)
-		moveFurnitureCharge004(nullable:true, scale: 2, min: 0.00)
-		visible004(nullable:true)
-		roomName005(nullable:true)
-		roomCharge005(nullable:true, scale: 2, min: 0.00)
-		squareFootage005(nullable:true, scale: 1, min: 0.0)
-		_preVacCheck005(nullable:true)
-		preVacCharge005(nullable:true, scale: 2, min: 0.00)
-		_protectorCheck005(nullable:true)
-		protectorCharge005(nullable:true, scale: 2, min: 0.00)
-		_moveFurnitureCheck005(nullable:true)
-		moveFurnitureCharge005(nullable:true, scale: 2, min: 0.00)
-		visible005(nullable:true)
-		roomName006(nullable:true)
-		roomCharge006(nullable:true, scale: 2, min: 0.00)
-		squareFootage006(nullable:true, scale: 1, min: 0.0)
-		_preVacCheck006(nullable:true)
-		preVacCharge006(nullable:true, scale: 2, min: 0.00)
-		_protectorCheck006(nullable:true)
-		protectorCharge006(nullable:true, scale: 2, min: 0.00)
-		_moveFurnitureCheck006(nullable:true)
-		moveFurnitureCharge006(nullable:true, scale: 2, min: 0.00)
-		visible006(nullable:true)
-		roomName007(nullable:true)
-		roomCharge007(nullable:true, scale: 2, min: 0.00)
-		squareFootage007(nullable:true, scale: 1, min: 0.0)
-		_preVacCheck007(nullable:true)
-		preVacCharge007(nullable:true, scale: 2, min: 0.00)
-		_protectorCheck007(nullable:true)
-		protectorCharge007(nullable:true, scale: 2, min: 0.00)
-		_moveFurnitureCheck007(nullable:true)
-		moveFurnitureCharge007(nullable:true, scale: 2, min: 0.00)
-		visible007(nullable:true)
-		roomName008(nullable:true)
-		roomCharge008(nullable:true, scale: 2, min: 0.00)
-		squareFootage008(nullable:true, scale: 1, min: 0.0)
-		_preVacCheck008(nullable:true)
-		preVacCharge008(nullable:true, scale: 2, min: 0.00)
-		_protectorCheck008(nullable:true)
-		protectorCharge008(nullable:true, scale: 2, min: 0.00)
-		_moveFurnitureCheck008(nullable:true)
-		moveFurnitureCharge008(nullable:true, scale: 2, min: 0.00)
-		visible008(nullable:true)
-		
 		stairDirection1(nullable:true)
 		stairCount1(nullable:true, scale: 0, min: 0.0)
 		stairCharge1(nullable:true, scale: 2, min: 0.00)
