@@ -27,41 +27,9 @@
 					<g:render template="formExtractionJob"/>
 				</fieldset>
 			
-<%--			<ol class="property-list waterExtractionJob">--%>
-<%--				<li class="fieldcontain">--%>
-<%--					<span id="customerId-label" class="property-label"><g:message code="waterExtractionJob.customerId.label" default="Customer Id" /></span>--%>
-<%--					<span class="property-value" aria-labelledby="customerId-label"><g:fieldValue bean="${extractionJobCommandInstance}" field="customerId"/></span>--%>
-<%--				</li>--%>
-<%--				--%>
-<%--				<li class="fieldcontain">--%>
-<%--					<span id="date-label" class="property-label"><g:message code="waterExtractionJob.date.label" default="Date" /></span>--%>
-<%--					<span class="property-value" aria-labelledby="date-label"><g:formatDate date="${extractionJobCommandInstance?.date}" /></span>--%>
-<%--				</li>--%>
-<%--			--%>
-<%--				<li class="fieldcontain">--%>
-<%--					<span id="lead-label" class="property-label"><g:message code="waterExtractionJob.lead.label" default="Lead" /></span>--%>
-<%--					<span class="property-value" aria-labelledby="lead-label"><g:fieldValue bean="${extractionJobCommandInstance}" field="lead"/></span>--%>
-<%--				</li>--%>
-<%--				--%>
-<%--				<li class="fieldcontain">--%>
-<%--					<span id="helper-label" class="property-label"><g:message code="waterExtractionJob.helper.label" default="Helper" /></span>--%>
-<%--					<span class="property-value" aria-labelledby="helper-label"><g:fieldValue bean="${extractionJobCommandInstance}" field="helper"/></span>--%>
-<%--				</li>--%>
-<%--				--%>
-<%--				<li class="fieldcontain">--%>
-<%--					<span id="groupName-label" class="property-label"><g:message code="waterExtractionJob.startTime.label" default="Start Time" /></span>--%>
-<%--					<span class="property-value" aria-labelledby="groupName-label"><g:formatDate date="${extractionJobCommandInstance?.startTime}" /></span>--%>
-<%--				</li>--%>
-<%--			--%>
-<%--				<li class="fieldcontain">--%>
-<%--					<span id="groupRate-label" class="property-label"><g:message code="waterExtractionJob.endTime.label" default="End Time" /></span>--%>
-<%--					<span class="property-value" aria-labelledby="groupRate-label"><g:formatDate date="${extractionJobCommandInstance?.endTime}" /></span>--%>
-<%--				</li>--%>
-<%--			</ol>--%>
-			
-			<fieldset class="buttons">
-				<g:link class="print" action="print" controller="extractionJobSearch" resource="${extractionJobCommandInstance}"><g:message code="default.button.print.label" default="Print" /></g:link>
-			</fieldset>
+<%--			<fieldset class="buttons">--%>
+<%--				<g:link class="print" action="print" controller="extractionJobSearch" resource="${extractionJobCommandInstance}"><g:message code="default.button.print.label" default="Print" /></g:link>--%>
+<%--			</fieldset>--%>
 		</div>
 	</body>
 </html>

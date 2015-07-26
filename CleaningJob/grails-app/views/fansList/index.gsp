@@ -52,9 +52,9 @@
 			<div class="pagination">
 				<g:paginate total="${fansInstanceCount ?: 0}" />
 			</div>
-			<fieldset class="buttons">
-					<g:link class="print" action="print" resource="${fansInstance}"><g:message code="default.button.print.label" default="Print" /></g:link>
-			</fieldset>
+<%--			<fieldset class="buttons">--%>
+<%--					<g:link class="print" action="print" resource="${fansInstance}"><g:message code="default.button.print.label" default="Print" /></g:link>--%>
+<%--			</fieldset>--%>
 		</div>
 	</body>
 </html>

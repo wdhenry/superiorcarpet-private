@@ -27,9 +27,9 @@
 				<g:render template="formCleaningJob"/>
 			</fieldset>
 
-			<fieldset class="buttons">
-				<g:link class="print" action="print" controller="cleaningJobSearch" resource="${carpetCareJobInstance}"><g:message code="default.button.print.label" default="Print" /></g:link>
-			</fieldset>
+<%--			<fieldset class="buttons">--%>
+<%--				<g:link class="print" action="print" controller="cleaningJobSearch" resource="${carpetCareJobInstance}"><g:message code="default.button.print.label" default="Print" /></g:link>--%>
+<%--			</fieldset>--%>
 		</div>
 	</body>
 </html>
