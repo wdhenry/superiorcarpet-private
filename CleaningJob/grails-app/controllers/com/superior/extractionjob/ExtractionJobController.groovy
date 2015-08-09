@@ -55,8 +55,9 @@ class ExtractionJobController {
 											custListInstanceCount: custList.size()]
 			return
 		} else {
-			customerSearchCommandInstance.errors.reject('No matching customers found')
-			respond customerSearchCommandInstance.errors, view:'search'
+			customerSearchCommandInstance.errors.reject('default.search.not.found', ["customers"].toArray(), '')
+			respond customerSearchCommandInstance.errors, view:'summary', model:[customers: custList,
+				custListInstanceCount: custList.size()]
 			return
 		}
 	}
