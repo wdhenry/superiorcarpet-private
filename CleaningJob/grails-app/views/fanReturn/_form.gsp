@@ -39,7 +39,7 @@
 				</span>
 			</g:if>
 			<g:if test="${!fansInstance?.isIn}">
-				<g:datePicker name="date" precision="day"  value="${fansInstance?.dateIn}"  />
+				<g:datePicker name="dateIn" precision="day"  value="${fansInstance?.dateIn}"  />
 			</g:if>
 		</td>
 		<td>

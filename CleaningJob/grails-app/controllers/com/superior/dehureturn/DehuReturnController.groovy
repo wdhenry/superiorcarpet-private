@@ -46,7 +46,7 @@ class DehuReturnController {
 	}
 	
     @Transactional
-    def update(Dehumidifiers dehumidifiersInstance) {
+    def updateDehuReturn(Dehumidifiers dehumidifiersInstance) {
         if (dehumidifiersInstance == null) {
             notFound()
             return
@@ -57,7 +57,7 @@ class DehuReturnController {
             return
         }
 
-		Dehumidifiers f = Dehumidifiers.findByIdNumber(dehumidifiersInstance.id)
+		Dehumidifiers f = Dehumidifiers.findByIdNumber(dehumidifiersInstance.idNumber)
 		f.dateIn = dehumidifiersInstance.dateIn
 		f.isIn = true
 		f.leadIn = dehumidifiersInstance.leadIn

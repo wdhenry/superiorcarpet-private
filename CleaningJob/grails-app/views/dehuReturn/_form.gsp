@@ -36,10 +36,12 @@
 	<tr>
 		<td>
 			<g:if test="${dehumidifiersInstance?.isIn}">
-				<span class="property-value" aria-labelledby="dateIn-label"><g:formatDate format="MM-dd-yyyy" date="${dehumidifiersInstance?.dateIn}" /></span>
+				<span class="property-value" aria-labelledby="dateIn-label">
+					<g:formatDate format="MM-dd-yyyy" date="${dehumidifiersInstance?.dateIn}" />
+				</span>
 			</g:if>
 			<g:if test="${!dehumidifiersInstance?.isIn}">
-				<g:datePicker name="date" precision="day"  value="${dehumidifiersInstance?.dateIn}"  />
+				<g:datePicker name="dateIn" precision="day"  value="${dehumidifiersInstance?.dateIn}"  />
 			</g:if>
 		</td>
 		<td>

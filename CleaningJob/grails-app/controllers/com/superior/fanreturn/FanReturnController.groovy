@@ -17,7 +17,7 @@ class FanReturnController {
     }
 
     def edit(Fans fansInstance) {
-        respond fansInstance
+        respond fansInstance, view:'edit'
     }
 
 	def showJob(Fans fansInstance) {
@@ -37,7 +37,7 @@ class FanReturnController {
 	}
 	
     @Transactional
-    def update(Fans fansInstance) {
+    def updateFanReturn(Fans fansInstance) {
         if (fansInstance == null) {
             notFound()
             return
@@ -48,7 +48,7 @@ class FanReturnController {
             return
         }
 		
-		Fans f = Fans.findByIdNumber(fansInstance.id)
+		Fans f = Fans.findByIdNumber(fansInstance.idNumber)
 		f.dateIn = fansInstance.dateIn
 		f.isIn = true
 		f.leadIn = fansInstance.leadIn
