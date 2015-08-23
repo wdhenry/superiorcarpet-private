@@ -79,7 +79,7 @@ class ExtractionJobController {
 
 		customerInstance.save flush:true
 
-		redirect action: "index", controller: "extractionJob"
+		redirect action: "newJob", controller: "extractionJob", params: [id: customerInstance.id]
 	}
 	
 	def newJob(Customer customerInstance) {
