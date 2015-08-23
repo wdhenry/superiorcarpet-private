@@ -36,7 +36,7 @@ class ExtractionJobSearchController {
 			respond jobList, view:'summary', model:[jobs: jobList, extractionJobInstanceCount: jobList.size()]
 			return
 		} else {
-			extractionSearchCommandInstance.errors.rejectValue('', 'No matching Extraction Jobs Found   ')
+			extractionSearchCommandInstance.errors.reject('default.search.not.found', ["extract jobs"].toArray(), '')
 			respond extractionSearchCommandInstance.errors, view:'search'
 			return
 		}

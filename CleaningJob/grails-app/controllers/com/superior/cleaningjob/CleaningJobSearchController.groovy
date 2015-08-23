@@ -40,7 +40,7 @@ class CleaningJobSearchController {
 			respond jobList, view:'summary', model:[jobs: jobList, carpetCareJobInstanceCount: jobList.size()]
 			return
 		} else {
-			cleaningSearchCommandInstance.errors.rejectValue('', 'No matching Cleaning Jobs Found   ')
+			cleaningSearchCommandInstance.errors.reject('default.search.not.found', ["cleaning jobs"].toArray(), '')
 			respond cleaningSearchCommandInstance.errors, view:'search'
 			return
 		}

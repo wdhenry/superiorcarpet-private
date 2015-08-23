@@ -36,10 +36,6 @@ class DailyWorkSearchController {
 				date in dailySearchCommandInstance.lowDate..dailySearchCommandInstance.highDate
 			}
 			workList = query.list()
-		} else {
-			dailySearchCommandInstance.errors.rejectValue('', 'No Search Criteria Entered   ')
-			respond dailySearchCommandInstance.errors, view:'search'
-			return
 		}
 				
 		if (workList.size() > 0) {
@@ -54,11 +50,10 @@ class DailyWorkSearchController {
 				totals.dollarsCollected = totals.dollarsCollected + wr.dollarsCollected
 			}
 			workList.add(totals)
-			respond workList, view:'summary', model:[work: workList,
-												dailyWorkJobInstanceCount: workList.size()]
+			respond workList, view:'summary', model:[work: workList, dailyWorkJobInstanceCount: workList.size()]
 			return
 		} else {
-			dailySearchCommandInstance.errors.rejectValue('', 'No matching Daily Work Found   ')
+			dailySearchCommandInstance.errors.reject('default.search.not.found', ["daily work"].toArray(), '')
 			respond dailySearchCommandInstance.errors, view:'search'
 			return
 		}

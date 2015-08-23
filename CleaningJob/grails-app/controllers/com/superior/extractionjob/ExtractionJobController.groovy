@@ -56,8 +56,7 @@ class ExtractionJobController {
 			return
 		} else {
 			customerSearchCommandInstance.errors.reject('default.search.not.found', ["customers"].toArray(), '')
-			respond customerSearchCommandInstance.errors, view:'summary', model:[customers: custList,
-				custListInstanceCount: custList.size()]
+			respond customerSearchCommandInstance.errors, view:'search'
 			return
 		}
 	}

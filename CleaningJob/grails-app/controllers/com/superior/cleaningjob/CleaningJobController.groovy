@@ -58,7 +58,7 @@ class CleaningJobController {
 				custListInstanceCount: custList.size()]
 			return
 		} else {
-			customerSearchCommandInstance.errors.reject('No matching customers found')
+			customerSearchCommandInstance.errors.reject('default.search.not.found', ["customers"].toArray(), '')
 			respond customerSearchCommandInstance.errors, view:'search'
 			return
 		}
